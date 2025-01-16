@@ -45,14 +45,14 @@ Since we are building a web application, we will be using HTML, CSS, and JavaScr
 ### Risks
 The largest risk will be in figuring out how to write code that can use the Spotify API to fetch user data, so we can then process it for our uses. On one level, this is challenging because it requires us to set up a system that can successfully interact with the spotify API, which we haven’t used before, and use the API calls. Furthermore, this will be additionally challenging because we are going to be fetching individual user music listening data. This requires implementing additional authorization code so that the user can login to their account to provide authorization for our app to fetch their data. Luckily these risks should appear very early on in our development process, as there isn’t much to be done if we don’t have any data to play with. So it should become apparent quite quickly if we took on more than we could effectively manage, in which case we could either adjust the scope of our project or work together to concoct a solution. If we do overcome this challenge though, the rest of the development process will be quite manageable. 
 
-### Features of Our Project
+## Features of Our Project
 
-## Major Features:
+### Major Features:
 User’s should be able to view their top recent tracks, say for about the last 4-weeks.
 User’s should be able to view their top recent artists, say for about the last 4-weeks.
 User’s should be able to view their top recent genre, say for about the last 4-weeks.
 Users should be able to select different time frames to view data for.
 
-## Stretch Goals
+### Stretch Goals
 Users should be able to view all of their recently listened to tracks by listen count.
 Users should be able to share different statistics with others.
