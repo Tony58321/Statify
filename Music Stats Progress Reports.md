@@ -19,7 +19,7 @@ Team members who cannot make it to key meetings should reach out to other team m
 
 ## Project Description
 
-## Project Name: Music Stats Website
+### Project Name: Music Stats Website
 By Aaron Pina-Ramirez, Antonio Rodriguez, Elizabeth Stahlke, Ellie Tanferani, James Grant, Shraddha Hegde, & Trinity Paulson
 
 ### Abstract
