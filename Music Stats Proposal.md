@@ -1,12 +1,12 @@
 # Project Proposal/Ellicitation
 ## Team Information
 Aaron Pina-Ramirez - Researcher & Backend Developer
-Antonio Rodriguez - Leader & full stack developer
-Elizabeth Stahlke - Designer & Frontend Developer?
-Ellie Tanferani - 
+Antonio Rodriguez - Leader & Full Stack Developer
+Elizabeth Stahlke - Designer & Frontend Developer
+Ellie Tanferani - Programmer 
 James Grant - 
 Shraddha Hegde - 
-Trinity Paulson - Skrum Master & programmer
+Trinity Paulson - Scrum Master & Programmer
 
 ### Communication Tools: 
 Text & Microsoft Teams
