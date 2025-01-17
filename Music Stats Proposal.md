@@ -4,7 +4,7 @@ Aaron Pina-Ramirez - Researcher & Backend Developer
 Antonio Rodriguez - Leader & Full Stack Developer
 Elizabeth Stahlke - Designer & Frontend Developer
 Ellie Tanferani - Programmer 
-James Grant - 
+James Grant - Front End Developer
 Shraddha Hegde - Programmer
 Trinity Paulson - Scrum Master & Programmer
 
