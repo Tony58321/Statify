@@ -6,7 +6,7 @@ Elizabeth Stahlke - Designer & Frontend Developer?
 Ellie Tanferani - 
 James Grant - 
 Shraddha Hegde - 
-Trinity Paulson - 
+Trinity Paulson - Skrum Master & programmer
 
 ### Communication Tools: 
 Text & Microsoft Teams
