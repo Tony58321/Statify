@@ -4,6 +4,7 @@ Our project will be a statistics web application that connects with the popular 
 documentation/web-api). It will allow the application to authorize and fetch user data.
 
 ## Goals:
+Our system will make statistics available to Spotify users, so that users can enjoy seeing information about their top music choices throughout a year. This is information that is not available with typical usage of the Spotify App, so it will give Spotify user’s a fun way to interact with their own statistics.
 Our ultimate goal is to enrich users' music streaming experience by providing personalized statistics on:
 - Top artists
 - Top songs
@@ -12,6 +13,7 @@ Our ultimate goal is to enrich users' music streaming experience by providing pe
 
 ## Layout of Repository:
 Our GitHub repository currently has 3 main sections: README.md (what you are reading now), Project_Proposal.md, and a Reports folder.
+The structure is as follows:
 
 /Statify\
 │\
@@ -19,6 +21,7 @@ Our GitHub repository currently has 3 main sections: README.md (what you are rea
 ├── Project_Proposal.md\
 ├── Reports\
 │   └── 2025-01-15.md
+│   └── any future reports!
 
 ## Trello Board Link:
 https://trello.com/invite/b/6781b371dc6c556bd42e1c12/ATTIb456c94c7c8170c4f48586d388bb203e4743DDC3/pt8-statify
