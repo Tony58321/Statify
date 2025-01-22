@@ -19,7 +19,7 @@ The structure is as follows:
 ├── README.md\
 ├── Project_Proposal.md\
 ├── Reports\
-│   └── 2025-01-15.md
+│   └── 2025-01-15.md\
 │   └── any future reports!
 
 ## Trello Board Link:
