@@ -1,0 +1,31 @@
+# Team Report
+## Goals From Last Week:
+- Establish who will be implementing which features (everyone)
+ 
+## Progress and Issues:
+- We were able to schedule out the term for both frontend AND backend. (refer to project proposal elicitation)
+- Each group member was tasked with a use case that they will implement in the web app.
+- We established roles for each team member so that we can work in subgroups and divide the work load evenly.
+ 
+## Plans and Goals for Next Week:
+- Get project base set-up including the coding environment and API.
+- Frontend: Simple account information will be displayed such as their username, profile picture, email etc
+- Backend: The server should be able to communicate with the API! Set up communication so that we can pull the information needed for user information.
+ 
+# Contributions of Individual Team Members
+## Goals From Last Week:
+- Each person took over a use case to write about in our elicitation.
+- Each person justified their role in our elicitation.
+- The group met up in person to finish our elicitation and project slide, with Aaron, Antonio, Elizabeth, Ellie, and Trinity speaking.
+ 
+## Progress and Issues:
+- Everyone did their expected part!
+- Turned in our assignments on time!
+- We now have a schedule that we can stick to and have achievable goals we can track.
+- Some issues we might have is that not everyone is comfortable with Vite, or HTML, CSS, and Javascript, but we made sure to split up the work based on what everyone is comfortable with.
+ 
+## Plans and Goals for Next Week:
+- Antonio, Aaron, and Ellie will set up the spotify API to get a working backend for the frontend to integrate
+- Elizabeth and Trinity will implement a basic HTML, CSS, and JavaScript program so that we have a working app to develop.
+- Shraddha is our tester and debugger so she will make sure that our expectations are met.
+- James will help out with backend and potentially some frontend work this week as a full stack developer.
