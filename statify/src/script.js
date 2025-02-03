@@ -8,11 +8,13 @@ if (!code) {
 else {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
-	console.log(profile)
+	  console.log(profile)
     populateUI(profile);
 
     //testing out function, remove later
-    fetchTopItems(accessToken)
+    //const accessToken2 = await getAccessToken(clientId, code);
+    const top123 = await fetchTopItems(accessToken);
+    console.log(top123);
 }
 
 export async function redirectToAuthCodeFlow(clientId) {
@@ -25,7 +27,7 @@ export async function redirectToAuthCodeFlow(clientId) {
   params.append("client_id", clientId);
   params.append("response_type", "code");
   params.append("redirect_uri", "http://localhost:5173/callback");
-  params.append("scope", "user-read-private user-read-email");
+  params.append("scope", "user-read-private user-read-email user-top-read"); // asks user for authorization to access their info! if you want to access more info, add it here
   params.append("code_challenge_method", "S256");
   params.append("code_challenge", challenge);
 
@@ -94,9 +96,6 @@ function populateUI(profile) {
     document.getElementById("url").setAttribute("href", profile.href);
 }
 
-
-
-
 /*Fetch User top Tracks */
 //itemType = True means get top tracks
 //itemType = False means get top artists
@@ -111,8 +110,8 @@ async function fetchTopItems(token) {
     return null; // Or throw an error
   }
 
-  const data = await response.json();
-  console.log(data);
-  return data;
+  //const data = await response.json();
+  //console.log(data);
+  return await response.json();
 }
 
