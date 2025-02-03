@@ -40,7 +40,7 @@ function App() {
     }
 
     if (!code) {
-      redirectToAuthCodeFlow(clientId, "user-read-private user-read-email");
+      redirectToAuthCodeFlow(clientId, "user-read-private user-read-email user-top-read");
     } else {
       return;  // this should only be reached if this function is called betweenthe user loggin in and the profile being fetched
     }
