@@ -3,6 +3,7 @@ import redirectToAuthCodeFlow from './LoginRedirect';
 import getAccessToken from './getToken';
 import fetchProfile from './GetProfile';
 import './App.css'
+import getTopTracks from './getTopTracks';
 
 const clientId = import.meta.env.VITE_CLIENT_ID;  // this is from the spotify account used for the app
 const params = new URLSearchParams(window.location.search);  // this is data contained within the url
@@ -49,6 +50,7 @@ function App() {
 
 
 
+
   /*
     The jsx (similar to HTML) to return/display
   */
@@ -73,6 +75,7 @@ function App() {
               {profile.images[0] ? profile.images[0].url : " no profile image"}
             </li>
           </ul>
+          <button onClick={getTopTracks}>Get Top Tracks Test</button>
         </>
         :  // else, display log in button
         <button onClick={onButtonPress}>Log in</button>
