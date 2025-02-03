@@ -1,4 +1,4 @@
-const clientId = "77afaa29d8e94991bf69f7fdf41f6f69";
+const clientId = import.meta.env.VITE_CLIENT_ID;
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
