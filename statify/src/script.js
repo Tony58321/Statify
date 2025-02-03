@@ -10,6 +10,9 @@ else {
     const profile = await fetchProfile(accessToken);
 	console.log(profile)
     populateUI(profile);
+
+    //testing out function, remove later
+    fetchTopItems(accessToken)
 }
 
 export async function redirectToAuthCodeFlow(clientId) {
@@ -90,3 +93,26 @@ function populateUI(profile) {
     document.getElementById("url").innerText = profile.href;
     document.getElementById("url").setAttribute("href", profile.href);
 }
+
+
+
+
+/*Fetch User top Tracks */
+//itemType = True means get top tracks
+//itemType = False means get top artists
+async function fetchTopItems(token) {
+  const response = await fetch("https://api.spotify.com/v1/me/top/tracks", {
+    method: "GET",
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!response.ok) {
+    console.error("Error fetching top tracks:", response.status, response.statusText);
+    return null; // Or throw an error
+  }
+
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+
