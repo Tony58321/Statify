@@ -13,6 +13,7 @@ function App() {
 
   var [profile, setProfile] = useState(null);  // default profile to none (logged out)
   var [token, setToken] = useState(null);  // the access token for communicating with the spotify API
+  let [topTracks, setTopTracks] = useState(null);  // the access token for communicating with the spotify API
   
   if (code && !token) {  // this is called after the user logs in, and before this app fetches and sets profile
     getAccessToken(clientId, code).then((accessToken) => {
@@ -75,7 +76,8 @@ function App() {
               {profile.images[0] ? profile.images[0].url : " no profile image"}
             </li>
           </ul>
-          <button onClick={getTopTracks}>Get Top Tracks Test</button>
+          <button onClick={() => getTopTracks(setTopTracks)}>Get Top Tracks Test</button>
+        
         </>
         :  // else, display log in button
         <button onClick={onButtonPress}>Log in</button>
