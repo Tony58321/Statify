@@ -308,7 +308,7 @@ Trinity Paulson - UX Expert & Frontend Developer
 |Week 9|Make last minute improvements based on user feedback.|Backend developers will ensure loading times are within decided guidelines.|Any additional formatting will be completed. Front end developers will ask for feedback on design from 3 other people.|
 |Week 10|Complete the project - ready to present.|All members will collaborate on final presentation and submission materials.|All members will collaborate on final presentation and submission materials.|
 
-###Project Schedule
+# Project Schedule
 |Project Milestones|Specific Tasks|Dependencies|
 |------------------|--------------|------------|
 |Connect all developers to the Spotify API.| Clone the repository for each developer.- Set up Node modules to run the website. - Whitelist developer’s Spotify accounts.-  Run the website.|Completing this milestone is critical to continue on developing our project. We will not be able to complete the login page until it is finished. |
@@ -320,6 +320,7 @@ Trinity Paulson - UX Expert & Frontend Developer
 Our app will have two major components: the web app, and the Spotify API. The Spotify API is an existing API that we will be using to source data for our web app. Our web app will interface with the user (except for logging in to Spotify), and make any API calls to retrieve needed data.
 
 BACK END: 
+
 Spotify API:
 - Our app uses the Spotify API. The app will interface with Spotify directly from the user’s browser.
 
