@@ -166,41 +166,41 @@ Additionally, our team will be using certain tools, including Vite, Javascript, 
 
 ## Risks
 We have identified our top five risks to be the following:
-1. Using the Spotify API for our project.
-a. There is a medium likelihood of our team not being able to use the Spotify API for our project because it requires us to Vite to integrate the API into our project, which is a new tool for all team members.
-b. If this risk happens, it will highly impact our project because we would have to find another API to use and our project would no longer be Spotify based.
-c. We have already begun to integrate the API - it has posed some challenges already, in terms of connecting the API to a Developers account, but our team is working through these challenges.
-d. To reduce the likelihood of this risk happening, we are testing the API usage early and often. We also proactively read the documentation to ensure that our goals are reasonable based on the info.
-e. To detect this problem and hopefully prevent it from happening, we will be testing the API consistently on different devices to ensure that it is able to fetch data for any user.
-f. We will consult the Spotify API as much as possible to learn the API, but if that fails we will consult the wider knowledge community, by looking for youtube videos or asking people on forums such as substack.
-2. Fetching individual user data from the API.
-a. There is a medium likelihood of this being an issue
-b. The impact if this occurs would be high!!!
-c. The likelihood of this was estimated to be medium for a few reasons. One of the reasons would be certain permissions needing to be granted. Our group has whitelisted each member’s Spotify account, but this will need to be done for each user wanting to use our app. As for the impact, it would be high because if fetching data from the API fails, the user wouldn’t be able to see any of their desired statistics!
-d. To reduce the likelihood of this being an issue, we will ensure that authorization keys are given to the TA and professor. To reduce the impact, we can provide error messages to the user if the API fails.
-e. In order to detect the problem, we will each log in with our individual credentials for Spotify to ensure our app is fetching the right information.
-f. Our mitigation plan will be to display a message to the user and retry after a set time. If for some reason the API format changes, we will update the logic to accept the new format.
-3. Privacy issues with using the API within a website.
-a. Very low risk of this being an issue
-b. If this were to be an issue, it would be medium to high impact, because it would mean unauthorized actors could hypothetically gain access to listening information of users. Which would be a massive issue for us in terms of delivering a safe project.
-c. We have already implemented the secure authorization code recommended by the Spotify API documentation (https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow). Our flow includes a code verifier and code challenge. With this high standard of security, we ensure that user data is not compromised.
-d. Moving forward, we are also ensuring to not store any user data. We don’t have any sort of database in which we will store user data. All fetched user data will only exist locally and temporarily when the user is looking at it. This ensures we won’t have to deal with implementing security measures for a database, since we are not storing the data.
-e. Monitor the our Spotify API dashboard, if we notice suspicious or unexpected API calls, that will be our sign that something is wrong.
-f. In the unlikely event a security breach somehow does occur, we will immediately shut down the app on the Spotify API dashboard and revoke all user access while we have time to diagnose the source of the issue and implement fixes. We will then use a “dummy” spotify account to test out our fixes before giving everyone access again.
-4. Issues with integrating all of the tools necessary to build.
-a. There is a low risk of this being an issue.
-b. If this becomes an issue, the severity of it will depend on the conflicting tools and the timeframe of when it becomes an issue. The spotify API is central to our project, and not being able to use it would likely necessitate an entire redirection of our project.
-c. We followed a tutorial for the Spotify API and have ensured that it does work. From working with Vite, we found that it provides templates for different web apps. One of these templates is for react, but it seems that adapting a different template for react would be difficult.
-d. We do not anticipate needing to integrate any new tools throughout the development process, so we will focus the beginning of the development process on integrating the tools we know we will need.
-e. Given the short development cycle for this project, we do not anticipate any integration requirements changing dramatically. We will know if integration of any tools fails if we receive error messages that cannot be resolved within the confines of those tools.
-f. If we have integration issues early in the development cycle, we will discuss routes forward and possible alternatives.
-5. Unable to provide a UI that is user friendly.
-a. There is medium risk of this being an issue.
-b. If this risk occurs, it will have a medium impact. This would not be detrimental to our application, as it would still work properly, but it may steer users away from the website or create a confusing user experience.
-c. I base my estimates upon my experience as a user of other applications. Lots of web applications are useful, but have poor UX design, which dims the performance and makes me less eager to use the application. My estimation for the likelihood of this risk occurring is based on common modern design principles. Our application aims to look cool and modern, but this may get in the way of user experience.
-d. We will follow usability heuristics to mitigate these risks. This includes Nielson’s 10 Inclusivity Heuristics. We can also refer to Web Content Accessibility Guidelines (WCAG) when making design decisions.
-e. The front-end designers will refer to other teammates to get feedback on design. We can also consult external users who fall within our target audience to get their feedback. Doing this frequently will help us detect problems before they become significant.
-f. Our mitigation plan is to identify the aspects of the design that are causing an unfriendly user experience, and change them to a more effective and aesthetic design.
+1. Using the Spotify API for our project.\
+a. There is a medium likelihood of our team not being able to use the Spotify API for our project because it requires us to Vite to integrate the API into our project, which is a new tool for all team members.\
+b. If this risk happens, it will highly impact our project because we would have to find another API to use and our project would no longer be Spotify based.\
+c. We have already begun to integrate the API - it has posed some challenges already, in terms of connecting the API to a Developers account, but our team is working through these challenges.\
+d. To reduce the likelihood of this risk happening, we are testing the API usage early and often. We also proactively read the documentation to ensure that our goals are reasonable based on the info.\
+e. To detect this problem and hopefully prevent it from happening, we will be testing the API consistently on different devices to ensure that it is able to fetch data for any user.\
+f. We will consult the Spotify API as much as possible to learn the API, but if that fails we will consult the wider knowledge community, by looking for youtube videos or asking people on forums such as substack.\
+2. Fetching individual user data from the API.\
+a. There is a medium likelihood of this being an issue\
+b. The impact if this occurs would be high!!!\
+c. The likelihood of this was estimated to be medium for a few reasons. One of the reasons would be certain permissions needing to be granted. Our group has whitelisted each member’s Spotify account, but this will need to be done for each user wanting to use our app. As for the impact, it would be high because if fetching data from the API fails, the user wouldn’t be able to see any of their desired statistics!\
+d. To reduce the likelihood of this being an issue, we will ensure that authorization keys are given to the TA and professor. To reduce the impact, we can provide error messages to the user if the API fails.\
+e. In order to detect the problem, we will each log in with our individual credentials for Spotify to ensure our app is fetching the right information.\
+f. Our mitigation plan will be to display a message to the user and retry after a set time. If for some reason the API format changes, we will update the logic to accept the new format.\
+3. Privacy issues with using the API within a website.\
+a. Very low risk of this being an issue\
+b. If this were to be an issue, it would be medium to high impact, because it would mean unauthorized actors could hypothetically gain access to listening information of users. Which would be a massive issue for us in terms of delivering a safe project.\
+c. We have already implemented the secure authorization code recommended by the Spotify API documentation (https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow). Our flow includes a code verifier and code challenge. With this high standard of security, we ensure that user data is not compromised.\
+d. Moving forward, we are also ensuring to not store any user data. We don’t have any sort of database in which we will store user data. All fetched user data will only exist locally and temporarily when the user is looking at it. This ensures we won’t have to deal with implementing security measures for a database, since we are not storing the data.\
+e. Monitor the our Spotify API dashboard, if we notice suspicious or unexpected API calls, that will be our sign that something is wrong.\
+f. In the unlikely event a security breach somehow does occur, we will immediately shut down the app on the Spotify API dashboard and revoke all user access while we have time to diagnose the source of the issue and implement fixes. We will then use a “dummy” spotify account to test out our fixes before giving everyone access again.\
+4. Issues with integrating all of the tools necessary to build.\
+a. There is a low risk of this being an issue.\
+b. If this becomes an issue, the severity of it will depend on the conflicting tools and the timeframe of when it becomes an issue. The spotify API is central to our project, and not being able to use it would likely necessitate an entire redirection of our project.\
+c. We followed a tutorial for the Spotify API and have ensured that it does work. From working with Vite, we found that it provides templates for different web apps. One of these templates is for react, but it seems that adapting a different template for react would be difficult.\
+d. We do not anticipate needing to integrate any new tools throughout the development process, so we will focus the beginning of the development process on integrating the tools we know we will need.\
+e. Given the short development cycle for this project, we do not anticipate any integration requirements changing dramatically. We will know if integration of any tools fails if we receive error messages that cannot be resolved within the confines of those tools.\
+f. If we have integration issues early in the development cycle, we will discuss routes forward and possible alternatives.\
+5. Unable to provide a UI that is user friendly.\
+a. There is medium risk of this being an issue.\
+b. If this risk occurs, it will have a medium impact. This would not be detrimental to our application, as it would still work properly, but it may steer users away from the website or create a confusing user experience.\
+c. I base my estimates upon my experience as a user of other applications. Lots of web applications are useful, but have poor UX design, which dims the performance and makes me less eager to use the application. My estimation for the likelihood of this risk occurring is based on common modern design principles. Our application aims to look cool and modern, but this may get in the way of user experience.\
+d. We will follow usability heuristics to mitigate these risks. This includes Nielson’s 10 Inclusivity Heuristics. We can also refer to Web Content Accessibility Guidelines (WCAG) when making design decisions.\
+e. The front-end designers will refer to other teammates to get feedback on design. We can also consult external users who fall within our target audience to get their feedback. Doing this frequently will help us detect problems before they become significant.\
+f. Our mitigation plan is to identify the aspects of the design that are causing an unfriendly user experience, and change them to a more effective and aesthetic design.\
 
 
 
