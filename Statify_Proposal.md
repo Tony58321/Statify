@@ -164,6 +164,46 @@ Furthermore, this will be additionally challenging because we are going to be fe
 
 Additionally, our team will be using certain tools, including Vite, Javascript, Spotify API, and potentially others, such as React, as we find necessary. This poses the risk that for most of these tools, only a subset of our team has experience with the given tools. This means that most of us will be learning to use these tools throughout this process, which could potentially add stress to the development timeframe or create complications due to inconsistent practices as we are learning to use the tools.
 
+## Risks
+We have identified our top five risks to be the following:
+1. Using the Spotify API for our project.
+a. There is a medium likelihood of our team not being able to use the Spotify API for our project because it requires us to Vite to integrate the API into our project, which is a new tool for all team members.
+b. If this risk happens, it will highly impact our project because we would have to find another API to use and our project would no longer be Spotify based.
+c. We have already begun to integrate the API - it has posed some challenges already, in terms of connecting the API to a Developers account, but our team is working through these challenges.
+d. To reduce the likelihood of this risk happening, we are testing the API usage early and often. We also proactively read the documentation to ensure that our goals are reasonable based on the info.
+e. To detect this problem and hopefully prevent it from happening, we will be testing the API consistently on different devices to ensure that it is able to fetch data for any user.
+f. We will consult the Spotify API as much as possible to learn the API, but if that fails we will consult the wider knowledge community, by looking for youtube videos or asking people on forums such as substack.
+2. Fetching individual user data from the API.
+a. There is a medium likelihood of this being an issue
+b. The impact if this occurs would be high!!!
+c. The likelihood of this was estimated to be medium for a few reasons. One of the reasons would be certain permissions needing to be granted. Our group has whitelisted each member’s Spotify account, but this will need to be done for each user wanting to use our app. As for the impact, it would be high because if fetching data from the API fails, the user wouldn’t be able to see any of their desired statistics!
+d. To reduce the likelihood of this being an issue, we will ensure that authorization keys are given to the TA and professor. To reduce the impact, we can provide error messages to the user if the API fails.
+e. In order to detect the problem, we will each log in with our individual credentials for Spotify to ensure our app is fetching the right information.
+f. Our mitigation plan will be to display a message to the user and retry after a set time. If for some reason the API format changes, we will update the logic to accept the new format.
+3. Privacy issues with using the API within a website.
+a. Very low risk of this being an issue
+b. If this were to be an issue, it would be medium to high impact, because it would mean unauthorized actors could hypothetically gain access to listening information of users. Which would be a massive issue for us in terms of delivering a safe project.
+c. We have already implemented the secure authorization code recommended by the Spotify API documentation (https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow). Our flow includes a code verifier and code challenge. With this high standard of security, we ensure that user data is not compromised.
+d. Moving forward, we are also ensuring to not store any user data. We don’t have any sort of database in which we will store user data. All fetched user data will only exist locally and temporarily when the user is looking at it. This ensures we won’t have to deal with implementing security measures for a database, since we are not storing the data.
+e. Monitor the our Spotify API dashboard, if we notice suspicious or unexpected API calls, that will be our sign that something is wrong.
+f. In the unlikely event a security breach somehow does occur, we will immediately shut down the app on the Spotify API dashboard and revoke all user access while we have time to diagnose the source of the issue and implement fixes. We will then use a “dummy” spotify account to test out our fixes before giving everyone access again.
+4. Issues with integrating all of the tools necessary to build.
+a. There is a low risk of this being an issue.
+b. If this becomes an issue, the severity of it will depend on the conflicting tools and the timeframe of when it becomes an issue. The spotify API is central to our project, and not being able to use it would likely necessitate an entire redirection of our project.
+c. We followed a tutorial for the Spotify API and have ensured that it does work. From working with Vite, we found that it provides templates for different web apps. One of these templates is for react, but it seems that adapting a different template for react would be difficult.
+d. We do not anticipate needing to integrate any new tools throughout the development process, so we will focus the beginning of the development process on integrating the tools we know we will need.
+e. Given the short development cycle for this project, we do not anticipate any integration requirements changing dramatically. We will know if integration of any tools fails if we receive error messages that cannot be resolved within the confines of those tools.
+f. If we have integration issues early in the development cycle, we will discuss routes forward and possible alternatives.
+5. Unable to provide a UI that is user friendly.
+a. There is medium risk of this being an issue.
+b. If this risk occurs, it will have a medium impact. This would not be detrimental to our application, as it would still work properly, but it may steer users away from the website or create a confusing user experience.
+c. I base my estimates upon my experience as a user of other applications. Lots of web applications are useful, but have poor UX design, which dims the performance and makes me less eager to use the application. My estimation for the likelihood of this risk occurring is based on common modern design principles. Our application aims to look cool and modern, but this may get in the way of user experience.
+d. We will follow usability heuristics to mitigate these risks. This includes Nielson’s 10 Inclusivity Heuristics. We can also refer to Web Content Accessibility Guidelines (WCAG) when making design decisions.
+e. The front-end designers will refer to other teammates to get feedback on design. We can also consult external users who fall within our target audience to get their feedback. Doing this frequently will help us detect problems before they become significant.
+f. Our mitigation plan is to identify the aspects of the design that are causing an unfriendly user experience, and change them to a more effective and aesthetic design.
+
+
+
 ## Features of Our Project
 ### Major Features/Use Cases:
 - Users can enter their Spotify username and password to login and access their information.
@@ -182,6 +222,38 @@ Additionally, our team will be using certain tools, including Vite, Javascript, 
 - User’s should be able to view their top recent genre.
 - User’s can get recommended new artists/tracks based on their listening habits.
 - User habits can be compared against data from different countries, either by the user selecting a country or by it matching the user’s own country.
+
+### Test Plan & Bugs
+Testing Strategy: Most of our testing will be done manually where we focus on making sure that our application is retrieving and displaying user statistics correctly. We don’t have much control on checking whether the API is giving us accurate information about the user, so our main goal in the testing stage would be to make sure that we are connecting to the right account and properly displaying user information in a way that is user friendly. 
+
+Unit Testing: We will write basic test cases to validate
+- Login and Authentication: To ensure that users are authenticated correctly and redirected to our statistics page.
+- Data Accuracy: Validating that the information that is displayed matches the same output that we received from the API.
+- Logging out: Confirming that the user data is cleared when they log out and that the most recent statistics are displayed upon logging back in.
+- Error Messages: Display clear error messages to the user when the session has expired or if the API fails.
+
+System (Integration) Testing: 
+- Spotify API Integration: Ensuring that the application correctly gets and processes user data.
+- Session Management: Making sure that the login and logout functions work correctly across different sessions.
+- UI and Data Consistency: Confirming that the displayed data reflects the API responses in real-time accurately.
+
+Usability Testing
+- User Interface and Navigation: We will manually test and make sure that users are able to easily navigate between tabs in our application and are able to find all the features they need.
+- Performance: Making sure that the application doesn’t have a lag or delays in data retrieval or while updating the user interface.
+- Accessibility: Checking that the interface is accessible for a wide range of users, including proper color contrasts for visibility.
+
+Bug Tracking: Issues that we identify will be documented and recorded, including things like:
+- API Issues: Incorrect or missing data, authentication failures or crossing rate limits.
+- UI Bugs: Elements that are not in the right place, or are formatted incorrectly. 
+- Performance Issues: Slow loading times for the application or excessive API calls.  
+
+
+### Documentation Plan
+Our team will provide a help page for users of our website. It will be accessible from the homepage of our website. The help page will offer instructions for how to use different features of our website, how to create a Spotify account, and how to report issues. Users can utilize this page whenever they have questions about how to use our website.
+
+We will also provide a form on the website that will allow users to report errors, bugs, and provide feedback about the website. We will then be able to better our website based on user feedback and further develop it to meet our users needs.
+
+
 
 # Team Information
 
@@ -236,4 +308,59 @@ Trinity Paulson - UX Expert & Frontend Developer
 |Week 9|Make last minute improvements based on user feedback.|Backend developers will ensure loading times are within decided guidelines.|Any additional formatting will be completed. Front end developers will ask for feedback on design from 3 other people.|
 |Week 10|Complete the project - ready to present.|All members will collaborate on final presentation and submission materials.|All members will collaborate on final presentation and submission materials.|
 
-Feedback will be most important after design and before development.
+###Project Schedule
+|Project Milestones|Specific Tasks|Dependencies|
+|------------------|--------------|------------|
+|Connect all developers to the Spotify API.| Clone the repository for each developer.- Set up Node modules to run the website. - Whitelist developer’s Spotify accounts.-  Run the website.|Completing this milestone is critical to continue on developing our project. We will not be able to complete the login page until it is finished. |
+|Completing the login page for individual users & pulling up profile information. |- Design the frontend login functionality (enter username, password, submit button).- Design the backend login functionality (connecting Spotify account with information entered).| Completing this milestone will allow us to then present statistics for each Spotify user.|
+|Present statistics for each Spotify account - get top tracks and top artists. | - Fetch specific data from the Spotify API for each user. - Present the data in a user-friendly way.| Completing this milestone will allow us to then further play with the API and add more interesting statistics to our website.|
+|Design a UI that is easy to use and easily understandable for all users.| - Create CSS to style and design the web pages. |Completing this milestone will move us closer to having a finished project that is user friendly.|
+
+### Software Architecture
+Our app will have two major components: the web app, and the Spotify API. The Spotify API is an existing API that we will be using to source data for our web app. Our web app will interface with the user (except for logging in to Spotify), and make any API calls to retrieve needed data.
+
+BACK END: 
+Spotify API:
+- Our app uses the Spotify API. The app will interface with Spotify directly from the user’s browser.
+
+Data Storage: 
+- Our system does not store any data, meaning that we do not need a database or similar system. Instead, our system will exclusively use data accessed from the Spotify API.
+
+Assumptions: 
+- Our system is built on top of the Spotify API. This means that its functioning is dependent upon the availability of the Spotify API.
+- We also assume that the user has internet access and an up to date browser.
+
+Using the Spotify API:
+- While there are many music streaming services, Spotify has both a wide user base and an easily accessible and well documented API. This makes it ideal for building an app upon.
+
+FRONT END: 
+
+Using React: 
+- While the alternatives to react (eg, plain HTML and javascript) are viable, react also provides benefits that make producing a dynamic web app easier. Since our web app will be providing user based content and lists, we decided that using react would make development easier.
+
+
+### Software Design
+Spotify API:
+- Spotify Web API interacts with Spotify database allowing simple retrieval of user data.
+- The responsibility of this component is to provide timely and accurate listening data for the current user of the application.
+
+Front End:
+- We will use React for the front-end of the application. React uses JSX (JavaScript XML), which is basically an HTML-JavaScript hybrid. This will allow us to easily parse data retrieved from the Spotify API into a user-friendly format. CSS is also a big part of our front end and will contribute a lot to the user experience.
+- The responsibility of the front-end is to present a user’s data in a visually appealing and easy to understand format.
+
+Back End:
+- Our back-end application is not very robust. Thankfully, the Spotify API contains the only database that we need, so no database will be required on our end. The majority of our backend application will involve making calls to the Spotify API and retrieving that information in the proper format to be sent to the frontend.
+
+
+### Coding Guidelines
+HTML - https://developer.mozilla.org/en-US/docs/Web/HTML 
+We will be utilizing these guidelines for HTML because all team members are familiar with the style that the guideline uses. It has information for all functionality we may need including forms, text, and images. We will enforce the utilization of these guidelines by making sure they are the first place team members go, if they are struggling with HTML syntax/functionality/etc.
+
+CSS - https://devdocs.io/css/ 
+We will be using these guidelines for CSS because they layout syntax and rules in a simple way that will make information easy to find, when looking for specific things. We will enforce the utilization of these guidelines by making sure they are the first place team members go, if they are struggling with CSS syntax/functionality/etc.
+
+JavaScript - https://developer.mozilla.org/en-US/docs/Web/JavaScript 
+We will be using these guidelines for Javascript because these guidelines are very detailed and contain information on a lot of functionality that we will be using in our project, especially the API section. We will enforce the utilization of these guidelines by making sure they are the first place team members go, if they are struggling with Javascript syntax/functionality/etc.
+
+
+
