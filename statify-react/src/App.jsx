@@ -3,11 +3,14 @@ import redirectToAuthCodeFlow from './LoginRedirect';
 import getAccessToken from './getToken';
 import fetchProfile from './GetProfile';
 import './App.css'
-import getTopTracks from './getTopTracks';
+//import getTopTracks from './getTopTracks';
+import { Track, getTopTracks } from './getTopTracks';
+
 
 const clientId = import.meta.env.VITE_CLIENT_ID;  // this is from the spotify account used for the app
 const params = new URLSearchParams(window.location.search);  // this is data contained within the url
 const code = params.get("code");  // exctract "code" from the url parameters. This is how Spotify will communicate on login
+
 
 function App() {
 
@@ -76,7 +79,7 @@ function App() {
               {profile.images[0] ? profile.images[0].url : " no profile image"}
             </li>
           </ul>
-          <button onClick={() => getTopTracks(setTopTracks)}>Get Top Tracks Test</button>
+          <button onClick={() => getTopTracks(setTopTracks, token )}>Get Top Tracks Test</button>
         
         </>
         :  // else, display log in button
