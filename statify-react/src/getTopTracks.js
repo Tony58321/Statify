@@ -15,7 +15,7 @@ function getTopTracks(handler, token){
 
 
 
-export async function getTopTracks(handler, token, quantity = 5, time_range =  "medium_term"){
+export async function getTopTracks(token, quantity = 5, time_range =  "medium_term"){
 
 
     /*This block of code customizes the api call so we get exactly the stuff we want */
@@ -39,16 +39,25 @@ export async function getTopTracks(handler, token, quantity = 5, time_range =  "
 
 
     //just a lil view of all the things
-    console.log(tracksJson)
-    console.log(tracksJson.items)
+    //console.log(tracksJson)
+    //console.log(tracksJson.items)
 
 
     let tracksArray = []
     for( let i = 0 ;i<tracksJson.limit; i++){
 
         //console.log(tracksJson.items[i].name)
+        let currTrackJson = tracksJson.items[i]
 
-        let trackToInsert = new Track(tracksJson.items[i].name)
+
+        //console.log(currTrackJson.artists)
+        let artistArr = []
+        for(let j = 0; j < currTrackJson.artists.length; j++){
+            artistArr.push(currTrackJson.artists[j].name)
+        }
+
+
+        let trackToInsert = new Track(currTrackJson.name, artistArr)
 
         tracksArray.push(trackToInsert)
 
@@ -63,7 +72,7 @@ export async function getTopTracks(handler, token, quantity = 5, time_range =  "
     
 
     //It may the case that we don't n
-    handler({"total": 2 })
+    //handler({"total": 2 })
 
 }
 
@@ -71,8 +80,9 @@ export async function getTopTracks(handler, token, quantity = 5, time_range =  "
 //WIP class
 
 export class Track{
-    constructor(name) {
+    constructor(name, artists) {
         this.name = name;
+        this.artists = artists;
     }
 
 }
