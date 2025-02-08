@@ -1,19 +1,25 @@
+/*
+getTopTracks() usage tutorial:
+The getTopTracks() function takes care of all the work of returning the user's most listened to tracks!
+Upon calling this function it will return a array of Track objects (I made a track class) that contains all the essential information, including
+the track name, the artists, a link to the track on spotify, and the track cover art in the form of a url.
 
-/* 
-function getTopTracks(handler, token){
-    console.log("hi!");
+Call this function in App.jsx (or elsewhere if you find it useful)
 
-    handler({"total": 2 })
+The simplest call over in App.jsx will look something like this: topTracks = await getTopTracks(token)
+where "topTracks" is just a variable that will hold the aformentioned Track array that getTopTracks returned.
+Here is a format for a button as well:           <button onClick={async () =>{ topTracks = await getTopTracks(token)}  }>Get Top Tracks Test</button>
 
-}
+IMPORTANT NOTE: Only calling getTopTracks with "getTopTracks(token)" will grab the top tracks with the default arguments, which is return 20 tracks over the medium time term (past 6 months)
+To get more specific, you will want to call it with a "quanity" and "time_range" argument in this format: getTopTracks(token, integer_quantity, time_range_string)
+The integer quantity can be a integer value from 0 to 50.
+And the time_range can be any of these three strings: 
+- "short_term" , which is the past 4 weeks
+- "medium_term", which is the past 6 months
+- "long_term" , which is the past 1 year
+
+When designing the frontend you'll probably want to implement some sort of input validation for these values because getTopTracks() does not validate input.
 */
-
-
-
-//goals for now: return essential details
-//for the future, make it so can be more specific in what is being fetched
-
-
 
 export async function getTopTracks(token, quantity = 20, time_range =  "medium_term"){
 
@@ -106,3 +112,15 @@ export class Track{
 
 
 export default getTopTracks
+
+
+
+//Old stuff:
+/* 
+function getTopTracks(handler, token){
+    console.log("hi!");
+
+    handler({"total": 2 })
+
+}
+*/
