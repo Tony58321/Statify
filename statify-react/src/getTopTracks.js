@@ -15,7 +15,7 @@ function getTopTracks(handler, token){
 
 
 
-export async function getTopTracks(token, quantity = 5, time_range =  "medium_term"){
+export async function getTopTracks(token, quantity = 20, time_range =  "medium_term"){
 
 
     /*This block of code customizes the api call so we get exactly the stuff we want */
@@ -46,8 +46,9 @@ export async function getTopTracks(token, quantity = 5, time_range =  "medium_te
     for( let i = 0 ;i<tracksJson.limit; i++){
 
         //currTrackJson holds the particular track we are extracting data for each iteration. In other words currTrackJson represents 1 track at any given moment
+        
         let currTrackJson = tracksJson.items[i]
-
+        console.log(currTrackJson);
 
         //console.log(currTrackJson.artists)
         //This block extracts the artist names from the current track, This is needed as each track may have more than one artist 
@@ -57,7 +58,7 @@ export async function getTopTracks(token, quantity = 5, time_range =  "medium_te
         }
 
         //Finally, we can create our Track object for this particular track
-        let trackToInsert = new Track(currTrackJson.name, artistArr)
+        let trackToInsert = new Track(currTrackJson.name, currTrackJson.album.images[0].url , currTrackJson.external_urls.spotify ,   artistArr)
         //and insert the track object into the track array
         tracksArray.push(trackToInsert)
 
@@ -78,8 +79,10 @@ export async function getTopTracks(token, quantity = 5, time_range =  "medium_te
 
 //WIP class, more fields need to be added still
 export class Track{
-    constructor(name, artists) {
+    constructor(name,coverArtURL, trackUrl , artists) {
         this.name = name;
+        this.coverArtURL = coverArtURL;
+        this.url = trackUrl;
         this.artists = artists;
     }
 
