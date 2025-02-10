@@ -11,13 +11,14 @@ Our ultimate goal is to enrich users' music streaming experience by providing pe
 - Correlations with national listening trends
 
 ## Layout of Repository:
-Our GitHub repository currently has 3 main sections: README.md (what you are reading now), Project_Proposal.md, and a Reports folder.
+Our GitHub repository currently has 4 main sections: README.md (what you are reading now), Project_Proposal.md, Reports folder, and statify-react folder(where the actual code for our app is located)
 The structure is as follows:
 
 /Statify\
 │\
 ├── README.md\
 ├── Project_Proposal.md\
+├── statify-react\
 ├── Reports\
 │   └── 2025-01-15.md\
 │   └── any future reports!
