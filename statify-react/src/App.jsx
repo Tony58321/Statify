@@ -7,7 +7,7 @@ import './App.css'
 import { Track, getTopTracks } from './getTopTracks';
 
 
-const clientId = import.meta.env.VITE_CLIENT_ID;  // this is from the spotify account used for the app
+const clientId = "77afaa29d8e94991bf69f7fdf41f6f69";  // this is from the spotify account used for the app
 const params = new URLSearchParams(window.location.search);  // this is data contained within the url
 const code = params.get("code");  // exctract "code" from the url parameters. This is how Spotify will communicate on login
 
