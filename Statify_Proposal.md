@@ -253,7 +253,7 @@ Our team will provide a help page for users of our website. It will be accessibl
 
 We will also provide a form on the website that will allow users to report errors, bugs, and provide feedback about the website. We will then be able to better our website based on user feedback and further develop it to meet our users needs.
 
-
+For developers, we will include a README file to describe how to install the codebase and set up a server for the web app. We will also provide descriptions of all modules within our web app, within the individual .js/.jsx files. We will facilitate this by using react and splitting functions and components into their own modules whenever reasonable, to increase readability.
 
 # Team Information
 
@@ -363,5 +363,10 @@ We will be using these guidelines for CSS because they layout syntax and rules i
 JavaScript - https://developer.mozilla.org/en-US/docs/Web/JavaScript 
 We will be using these guidelines for Javascript because these guidelines are very detailed and contain information on a lot of functionality that we will be using in our project, especially the API section. We will enforce the utilization of these guidelines by making sure they are the first place team members go, if they are struggling with Javascript syntax/functionality/etc.
 
+Vite - https://vite.dev/guide/ 
+We will be using these guidelines for Vite to standardize how we use Vite for this project. Since Vite was used mostly for the set-up of the program, team members will be able to reference this documentation if they have questions about the project structure. We will enforce the utilization of these guidelines by making sure team members use this documentation to understand Vite. 
+
+React - https://react.dev/learn 
+We will be using these guidelines for React because these guidelines are detailed with the syntax for React. Since only a few team members have used React previously, we will reference these documents. We will enforce the utilization of these guidelines by encouraging team members to reference the documentation whenever questions arise about React.
 
 
