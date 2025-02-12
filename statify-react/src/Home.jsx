@@ -9,16 +9,17 @@ export default function Home({profile}){
         null  // don't display anything if no profile image
         }
         <ul>
-        <li>User ID: {profile.id}</li>
+        {/* <li>User ID: {profile.id}</li> */}
         <li>Email: {profile.email}</li>
-        <li>Spotify URI: <a href={profile.external_urls.spotify}>{profile.uri}</a></li>
-        <li>Link: <a id="url" href={profile.href}>{profile.href}</a></li>
-        <li>Profile Image URL: 
+        <li><a href={profile.external_urls.spotify}>Your Spotify</a></li>
+        {/* <li>Link: <a id="url" href={profile.href}>{profile.href}</a></li> */}
+        {/* <li>Profile Image URL: 
             {profile.images[0] ? profile.images[0].url : " no profile image"}
-        </li>
+        </li> */}
         </ul>
         <button onClick={async () =>{ topTracks = await getTopTracks(token)}  }>Get Top Tracks Test</button>
         <button onClick={() =>{console.log(topTracks)}  }>view top tracks test button</button>
     </>
+    // delete the top track test buttons eventually
     )
 }
