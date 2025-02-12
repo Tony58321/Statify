@@ -8,6 +8,7 @@ import { Track, getTopTracks } from './getTopTracks';
 import Tracks from './Tracks.jsx';
 import Artists from './Artists.jsx';
 import Home from './Home.jsx';
+import Help from './Help.jsx';
 
 
 const clientId = "77afaa29d8e94991bf69f7fdf41f6f69";  // this is from the spotify account used for the app
