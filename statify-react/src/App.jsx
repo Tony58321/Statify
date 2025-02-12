@@ -5,6 +5,9 @@ import fetchProfile from './GetProfile';
 import './App.css'
 //import getTopTracks from './getTopTracks';
 import { Track, getTopTracks } from './getTopTracks';
+import Tracks from './Tracks.jsx';
+import Artists from './Artists.jsx';
+import Home from './Home.jsx';
 
 
 const clientId = "77afaa29d8e94991bf69f7fdf41f6f69";  // this is from the spotify account used for the app
@@ -17,6 +20,7 @@ function App() {
   var [profile, setProfile] = useState(null);  // default profile to none (logged out)
   var [token, setToken] = useState(null);  // the access token for communicating with the spotify API
   let [topTracks, setTopTracks] = useState(null);  // the access token for communicating with the spotify API
+  let [page, setPage] = useState("Home"); // which page we are on
   
   if (code && !token) {  // this is called after the user logs in, and before this app fetches and sets profile
     getAccessToken(clientId, code).then((accessToken) => {
@@ -60,31 +64,30 @@ function App() {
   */
   return (
     <>
-      <h1>Display your Spotify profile data:</h1>
+      <h1>Statify</h1>
 
+    
       {profile ?  // This checks if the profile variable is truthy, ie, is an object, before trying to access properties
         <>
-          <p>Welcome, {profile.display_name}</p>
-          {profile.images[0] ?
-            <img src={profile.images[0].url} alt={`${profile.display_name}'s profile image`}></img>
+        <nav>
+        <button onClick={() => setPage("Home")}>Home</button>
+        <button onClick={() => setPage("Tracks")}>Tracks</button>
+        <button onClick={() => setPage("Artist")}>Artists</button>
+        </nav>
+
+        {page == "Home"?
+          <Home profile={profile}/>
           :
-            null  // don't display anything if no profile image
-          }
-          <ul>
-            <li>User ID: {profile.id}</li>
-            <li>Email: {profile.email}</li>
-            <li>Spotify URI: <a href={profile.external_urls.spotify}>{profile.uri}</a></li>
-            <li>Link: <a id="url" href={profile.href}>{profile.href}</a></li>
-            <li>Profile Image URL: 
-              {profile.images[0] ? profile.images[0].url : " no profile image"}
-            </li>
-          </ul>
-          <button onClick={async () =>{ topTracks = await getTopTracks(token)}  }>Get Top Tracks Test</button>
-          <button onClick={() =>{console.log(topTracks)}  }>view top tracks test button</button>
-        
+        page == "Tracks"?
+          <Tracks/>
+          :
+          <Artists/>
+        }
         </>
         :  // else, display log in button
         <button onClick={onButtonPress}>Log in</button>
+        
+        
       }
     </>
   )
