@@ -2,12 +2,13 @@ import { useState } from 'react';
 import redirectToAuthCodeFlow from './LoginRedirect';
 import getAccessToken from './getToken';
 import fetchProfile from './GetProfile';
-import './App.css'
+//import './App.css'
 //import getTopTracks from './getTopTracks';
 import { Track, getTopTracks } from './getTopTracks';
 import Tracks from './Tracks.jsx';
 import Artists from './Artists.jsx';
 import Home from './Home.jsx';
+import Login from './Login.jsx';
 
 
 const clientId = "77afaa29d8e94991bf69f7fdf41f6f69";  // this is from the spotify account used for the app
@@ -64,8 +65,6 @@ function App() {
   */
   return (
     <>
-      <h1>Statify</h1>
-
     
       {profile ?  // This checks if the profile variable is truthy, ie, is an object, before trying to access properties
         <>
@@ -85,9 +84,7 @@ function App() {
         }
         </>
         :  // else, display log in button
-        <button onClick={onButtonPress}>Log in</button>
-        
-        
+        <Login/>
       }
     </>
   )
