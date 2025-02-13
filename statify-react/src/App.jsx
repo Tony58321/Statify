@@ -44,7 +44,7 @@ function App() {
     This function is called when the user presses the log in button
     It generates a code verifier and then redirects the user to Spotify's login
   */
-  async function onButtonPress() {
+  async function login() {
     if (profile) {  // user is logged in if profile is not null
       console.log("already Logged in!")
       return;

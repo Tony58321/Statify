@@ -1,4 +1,5 @@
 import './Login.css'
+import login from './App.jsx';
 
 export default function Login() {
     return(
@@ -10,7 +11,7 @@ export default function Login() {
             <li>Adjust the date range for your statistics</li>
             <li>Compare your data with national listening trends</li>
         </ul>
-        <button id="login">Log in with Spotify</button>
+        <button id="login" onClick={() => login()}>Log in with Spotify</button>
         </>
     )
 }
