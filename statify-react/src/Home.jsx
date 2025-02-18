@@ -1,5 +1,10 @@
-export default function Home({profile}){
+import { Track, getTopTracks } from './getTopTracks';
+
+export default function Home({ profile, token }){
     console.log(profile);
+
+    let topTracks
+
     return(
     <>
         <p>Welcome, {profile.display_name}</p>
@@ -17,7 +22,7 @@ export default function Home({profile}){
             {profile.images[0] ? profile.images[0].url : " no profile image"}
         </li> */}
         </ul>
-        <button onClick={async () =>{ topTracks = await getTopTracks(token)}  }>Get Top Tracks Test</button>
+        <button onClick={async () =>{topTracks = await getTopTracks(token)}  }>Get Top Tracks Test</button>
         <button onClick={() =>{console.log(topTracks)}  }>view top tracks test button</button>
     </>
     // delete the top track test buttons eventually
