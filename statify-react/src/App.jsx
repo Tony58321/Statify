@@ -2,12 +2,13 @@ import { useState } from 'react';
 import redirectToAuthCodeFlow from './LoginRedirect';
 import getAccessToken from './getToken';
 import fetchProfile from './GetProfile';
-import './App.css'
+//import './App.css'
 //import getTopTracks from './getTopTracks';
 import { Track, getTopTracks } from './getTopTracks';
 import Tracks from './Tracks.jsx';
 import Artists from './Artists.jsx';
 import Home from './Home.jsx';
+import Login from './Login.jsx';
 import Help from './Help.jsx';
 
 
@@ -43,7 +44,7 @@ function App() {
     This function is called when the user presses the log in button
     It generates a code verifier and then redirects the user to Spotify's login
   */
-  async function onButtonPress() {
+  async function login() {
     if (profile) {  // user is logged in if profile is not null
       console.log("already Logged in!")
       return;
@@ -65,8 +66,6 @@ function App() {
   */
   return (
     <>
-      <h1>Statify</h1>
-
     
       {profile ?  // This checks if the profile variable is truthy, ie, is an object, before trying to access properties
         <>
@@ -77,7 +76,7 @@ function App() {
         </nav>
 
         {page == "Home"?
-          <Home profile={profile}/>
+          <Home profile={profile} token={token}/>
           :
         page == "Tracks"?
           <Tracks token={token} topTracks={topTracks} setTopTracks={setTopTracks}/>
@@ -86,9 +85,7 @@ function App() {
         }
         </>
         :  // else, display log in button
-        <button onClick={onButtonPress}>Log in</button>
-        
-        
+        <Login login={login} />
       }
     </>
   )

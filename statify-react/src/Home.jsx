@@ -1,5 +1,10 @@
-export default function Home({profile}){
+import { Track, getTopTracks } from './getTopTracks';
+
+export default function Home({ profile, token }){
     console.log(profile);
+
+    let topTracks
+
     return(
     <>
         <p>Welcome, {profile.display_name}</p>
