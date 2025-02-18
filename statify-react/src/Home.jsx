@@ -22,7 +22,6 @@ export default function Home({ profile, token }){
             {profile.images[0] ? profile.images[0].url : " no profile image"}
         </li> */}
         </ul>
-        <button onClick={async () =>{topTracks = await getTopTracks(token)}  }>Get Top Tracks Test</button>
         <button onClick={() =>{console.log(topTracks)}  }>view top tracks test button</button>
     </>
     // delete the top track test buttons eventually

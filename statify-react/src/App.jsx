@@ -79,7 +79,7 @@ function App() {
           <Home profile={profile} token={token}/>
           :
         page == "Tracks"?
-          <Tracks/>
+          <Tracks token={token} topTracks={topTracks} setTopTracks={setTopTracks}/>
           :
           <Artists/>
         }

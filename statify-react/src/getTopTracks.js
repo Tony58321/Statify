@@ -21,7 +21,7 @@ And the time_range can be any of these three strings:
 When designing the frontend you'll probably want to implement some sort of input validation for these values because getTopTracks() does not validate input.
 */
 
-export async function getTopTracks(token, quantity = 20, time_range =  "medium_term"){
+export async function getTopTracks(token, onLoad, quantity = 20, time_range =  "medium_term"){
 
 
     /*This block of code customizes the api call so we get exactly the stuff we want */
@@ -72,8 +72,8 @@ export async function getTopTracks(token, quantity = 20, time_range =  "medium_t
 
     console.log(tracksArray)
 
-    //return the tracksArray.
-    return tracksArray;
+    // call handler function with tracks array
+    onLoad(tracksArray);
 
     
     
