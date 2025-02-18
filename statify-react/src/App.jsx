@@ -76,7 +76,7 @@ function App() {
         </nav>
 
         {page == "Home"?
-          <Home profile={profile}/>
+          <Home profile={profile} token={token}/>
           :
         page == "Tracks"?
           <Tracks/>
@@ -85,7 +85,7 @@ function App() {
         }
         </>
         :  // else, display log in button
-        <Login/>
+        <Login login={login} />
       }
     </>
   )

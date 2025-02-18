@@ -1,7 +1,7 @@
 import './Login.css'
-import login from './App.jsx';
+//import login from './App.jsx'; not a valid thing to do
 
-export default function Login() {
+export default function Login({ login })  {
     return(
         <>
         <h1 class="title">Welcome to Statify</h1>
