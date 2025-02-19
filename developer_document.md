@@ -3,6 +3,7 @@
 To obtain Statify’s source code, navigate to the “statify-react” folder within the repository. A majority of the project's source code is in the “src” folder within the “statify-react” folder.
 
 ## Layout of Directory Structure:
+```
 /Statify
 │
 ├── README.md
@@ -13,6 +14,7 @@ To obtain Statify’s source code, navigate to the “statify-react” folder wi
 │ └── 2025-01-15.md
 │ └── …
 │ └── most recent report
+```
 
 ## How to Build the Software:
 1. Install NodeJS if you have not already. Instructions can be found at:
@@ -27,9 +29,10 @@ https://nodejs.org/en/download
 - Data Handling: Verify accurate data retrieval from Spotify and make sure user statistics are accurate.
 
 2. Follow these steps to perform end-to-end testing:
-a. Visit Statify page. You should see a friendly UI prompting for login with Spotify.
-b. Login. You should be redirected to a page where you can provide your Spotify credentials and allow Statify to have access to your Spotify data.
-c. User data. Once logged in, you should be able to navigate the page and view your top tracks and artists. You should also be able to select the time frame and number of tracks/artists displayed. Attempt the following and make sure data appears reasonably accurate with the Spotify account currently logged in:
+- Visit Statify page. You should see a friendly UI prompting for login with Spotify.
+- Login. You should be redirected to a page where you can provide your Spotify credentials and allow Statify to have access to your Spotify data.
+- User data. Once logged in, you should be able to navigate the page and view your top tracks and artists. You should also be able to select the time frame and number of tracks/artists displayed. Attempt the following and make sure data appears reasonably accurate with the Spotify account currently logged in:
+```
     -Top tracks, past month, 10 tracks
     -Top tracks, past month, 50 tracks
     -Top tracks, past 6 months, 10 tracks
@@ -42,7 +45,9 @@ c. User data. Once logged in, you should be able to navigate the page and view y
     -Top artists, past 6 months, 50 tracks
     -Top artists, all time, 10 tracks
     -Top artists, all time, 50 tracks
-d. Change the theme. Open the settings menu and attempt to change the theme. The entire page should update accordingly.
+```
+
+- Change the theme. Open the settings menu and attempt to change the theme. The entire page should update accordingly.
 
 3. Unit Testing: 
 - Validate login and authentication.
@@ -60,4 +65,4 @@ Check that the displayed statistics match with the API responses.
 
 ## How to Build A Release of the Software:
 - If you have not already, run the command “npm i” from the “statify-react” folder. This will install all of the necessary dependencies.
-- Again from the satisfy-react folder, run the command “npm run build”.
+- Again from the statify-react folder, run the command “npm run build”.
