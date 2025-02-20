@@ -63,3 +63,9 @@ li {
     align-self: flex-end;
     box-shadow: 0px 0px 15px #1AC357;
 }
+
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

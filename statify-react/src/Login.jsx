@@ -11,7 +11,10 @@ export default function Login({ login })  {
             <li>Adjust the date range for your statistics</li>
             <li>Compare your data with national listening trends</li>
         </ul>
-        <button id="login" onClick={() => login()}>Log in with Spotify</button>
+        <div className = "login-container"> 
+            <button id="login" onClick={() => login()}>Log in with Spotify</button>
+        </div>
+        
         </>
-    )
+    );
 }
