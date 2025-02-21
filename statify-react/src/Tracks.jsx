@@ -82,7 +82,7 @@ export default function Tracks({token, topTracks, setTopTracks}){
                 event => isValidCount(event.target.value) ? setTrackCount(event.target.value) : null}>
             </input>
             Tracks from the last
-            <select value={trackTimeFrame} onChange={event => setTrackTimeFrame(event.target.value)}>
+            <select value={trackTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setTrackTimeFrame(event.target.value)}>
                 {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame}>{timeFrame}</option>)}
             </select>
         </p>

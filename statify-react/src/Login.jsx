@@ -4,8 +4,8 @@ import './Login.css'
 export default function Login({ login })  {
     return(
         <>
-        <h1 class="title">Welcome to Statify</h1>
-        <h3 class="subtitle">Know your music, know yourself. Tune into your trends.</h3>
+        <h1 className="title">Welcome to Statify</h1>
+        <h3 className="subtitle">Know your music, know yourself. Tune into your trends.</h3>
         <ul id="features">
             <li>View your top tracks, artists, and genres</li>
             <li>Adjust the date range for your statistics</li>
