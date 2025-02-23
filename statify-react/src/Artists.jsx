@@ -1,7 +1,90 @@
-export default function Artists(){
-    return(
-        <>
+import { useState } from 'react';
+import getTopArtists from './getTopArtists';
+
+const TIMEFRAMES = {
+    "4 weeks": "short_term",
+    "6 months": "medium_term",
+    "12 months": "long_term"
+};
+
+const MIN_ARTISTS = 1;
+const MAX_ARTISTS = 50;
+const DEFAULT_ARTIST_COUNT = 20;
+
+function ArtistItem({number, artist}) {
+    /*
+        Artist Item - function to return react component to display a track object
+    */
+    return <>
+        <p>{number}. {artist.name}</p>
+    </>
+}
+
+function isValidCount(countString) {
+    /*
+        Returns true if the string countString is "" or represents a valid number bwetween MIN_ARTISTS and MAX_ARTISTS
+    */
+    if (Number.isNaN(countString)) {  // check variety of invalid cases, eg, letters, multiple decimals, etc
+        return false;
+    } else if (countString == "") {  // special case, if empty string, return true so user can clear field
+        return true;
+    } else if (MIN_ARTISTS <= Number(countString) && Number(countString) <= MAX_ARTIST) {  // if in bounds, return true
+        return true;
+    } else {  // must be valid number, but out of bounds
+        return false;
+    }
+}
+
+function refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setArtistCount) {
+    /*
+        
+    */
+    let count = artistCount;  // the number of artists to get. Make a new variable so that it can be changed
+    if (artistCount == "") {  // if the entry is blank, set to default value
+        count = DEFAULT_ARTIST_COUNT;
+    } else if (!Number.isInteger(Number(count))) {  // if entry is not integer, round to nearest
+        count = Math.round(Number(count));
+    }
+    // check bounds
+    if (count < MIN_ARTISTS) {  // if entry is below minimum, set to minimum
+        count = MIN_ARTISTS;
+    } else if (count > MAX_ARTISTS) {  // if entry is above maximum, set to maximum
+        count = MAX_ARTISTS;
+    }
+    setArtistCount(count);  // set the entry field to be the validated value, in case it changed
+    getTopArtists(token, setTopArtists(artists), count, TIMEFRAMES[artistTimeFrame]);  // call function to fetch artists
+}
+
+
+export default function Artists({token, topArtists, setTopArtists}){
+    let [artistCount, setArtistCount] = useState(DEFAULT_ARTIST_COUNT);  // How many top artists should be returned
+let [artistTimeFrame, setArtistTimeFrame] = useState("medium_term");  // the timeframe to get artists from
+return (
+    <>
         <h1>Artists</h1>
-        </>
-    )
+
+        <p>Get top
+            <input type='number' value={artistCount} onChange={
+                event => isValidCount(event.target.value) ? setArtistCount(event.target.value) : null}>
+            </input>
+            Artists from the last
+            <select value={artistTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setArtistTimeFrame(event.target.value)}>
+                {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame}>{timeFrame}</option>)}
+            </select>
+        </p>
+        
+        <button onClick={() => refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setArtistCount)}>Get Top Artists Test</button>
+
+        {
+        topArtists ?  // if the top artists have been retrieved already, display them
+            <>
+                <p>Artists found</p>
+                {topArtists.map((artist, i) => <ArtistItem number={i + 1} artist={artist}/>)}
+            </>
+        :  // otherwise display a placeholder
+            <p>Press button to load artists</p>
+        }
+    </>
+);
+
 }

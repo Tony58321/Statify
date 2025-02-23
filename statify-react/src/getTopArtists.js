@@ -3,7 +3,7 @@
    it makes a call to the api using information input from users. if no information is given,
    it will return the default inputs.
 */
-export async function getTopArtists(token, quantity=10, time_range="medium_term"){
+export async function getTopArtists(token, onLoad, quantity=10, time_range="medium_term"){
 
     // this is api endpoint given by spotify
     let apiCallString = "https://api.spotify.com/v1/me/top/artists"
@@ -19,6 +19,7 @@ export async function getTopArtists(token, quantity=10, time_range="medium_term"
     // error handling the reponse
     if (!response.ok) {
         console.error("Error fetching top artists:", response.status, response.statusText);
+        //onLoad([])
         return null;
     }
 
@@ -34,7 +35,7 @@ export async function getTopArtists(token, quantity=10, time_range="medium_term"
         let currArtJson = artistsJson.items[i]
         
         // create new artist object with information from json
-        let artists = new Artist(currArtJson.name, currArtJson.popularity, currArtJson.artUrl)
+        let artists = new Artist(currArtJson.name, currArtJson.popularity)
 
         // push the new artist onto the array of artists
         artistsArray.push(artists)
@@ -42,6 +43,9 @@ export async function getTopArtists(token, quantity=10, time_range="medium_term"
 
     // output the artist array to the console
     console.log(artistsArray)
+
+    // Trinity added this, it doesnt work
+    onLoad(artistsArray);
 }
 
 /*this class stores information about a users top artists*/
@@ -49,6 +53,7 @@ export class Artist{
     constructor(name, popularity) {
         this.name = name;
         this.popularity = popularity;
+        //this.imageUrl = imageUrl; // Trinity got rid of the image handeling for now because it was giving an error
     }
 }
 
