@@ -30,6 +30,7 @@ function App() {
     getAccessToken(clientId, code).then((accessToken) => {
       if (!accessToken) {
         console.log("recieved an invalid access token");  // this might be a good place to redirect to our log in/home page
+        setToken("None");
         return;
       }
       setToken(accessToken);  // save the access token
@@ -52,7 +53,7 @@ function App() {
       return;
     }
 
-    if (!code) {
+    if (!code || token == "None") {
       redirectToAuthCodeFlow(clientId, "user-read-private user-read-email user-top-read");
     } else {
       return;  // this should only be reached if this function is called betweenthe user loggin in and the profile being fetched
@@ -86,7 +87,7 @@ function App() {
           <Artists/>
         }
         </>
-        : token ?  // if profile is false but token is true, show loading screen
+        : token == "Loading" ?  // if profile is false but token is true, show loading screen
         <Load/>
         :  // otherwise, show login
         <Login login={login} />
