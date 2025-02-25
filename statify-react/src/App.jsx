@@ -9,6 +9,7 @@ import Tracks from './Tracks.jsx';
 import Artists from './Artists.jsx';
 import Home from './Home.jsx';
 import Login from './Login.jsx';
+import Load from './Load.jsx';
 import Help from './Help.jsx';
 
 
@@ -25,6 +26,7 @@ function App() {
   let [page, setPage] = useState("Home"); // which page we are on
   
   if (code && !token) {  // this is called after the user logs in, and before this app fetches and sets profile
+    setToken("loading");
     getAccessToken(clientId, code).then((accessToken) => {
       if (!accessToken) {
         console.log("recieved an invalid access token");  // this might be a good place to redirect to our log in/home page
@@ -84,7 +86,9 @@ function App() {
           <Artists/>
         }
         </>
-        :  // else, display log in button
+        : token ?  // if profile is false but token is true, show loading screen
+        <Load/>
+        :  // otherwise, show login
         <Login login={login} />
       }
     </>
