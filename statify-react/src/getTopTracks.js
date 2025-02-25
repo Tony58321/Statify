@@ -75,6 +75,10 @@ export async function getTopTracks(token, onLoad, quantity = 20, time_range =  "
     // call handler function with tracks array
     onLoad(tracksArray);
 
+
+    //also have return
+    return tracksArray;
+
     
     
 
