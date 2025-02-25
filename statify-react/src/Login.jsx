@@ -5,14 +5,14 @@ export default function Login({ login })  {
     return(
         <>
         <marquee scrollamount="4" direction="down">
-            <img class="marqueeElement" src="../public/assets/taylor.jpg" width="150px" height="150px" alt="taylor"></img>
-            <img class="marqueeElement" src="../public/assets/weeknd.jpg" width="150px" height="150px" alt="the weeknd"></img>
-            <img class="marqueeElement" src="../public/assets/bruno.jpg" width="150px" height="150px" alt="bruno"></img>
-            <img class="marqueeElement" src="../public/assets/laufey.jpg" width="150px" height="150px" alt="laufey"></img>
-            <img class="marqueeElement" src="../public/assets/ariana.jpg" width="150px" height="150px" alt="ariana"></img>
-            <img class="marqueeElement" src="../public/assets/billie.jpg" width="150px" height="150px" alt="billie"></img>
-            <img class="marqueeElement" src="../public/assets/kendrick.jpg" width="150px" height="150px" alt="kendrick"></img>
-            <img class="marqueeElement" src="../public/assets/rihanna.jpg" width="150px" height="150px" alt="rihanna"></img>
+            <img className="marqueeElement" src="../public/assets/taylor.jpg" width="150px" height="150px" alt="taylor"></img>
+            <img className="marqueeElement" src="../public/assets/weeknd.jpg" width="150px" height="150px" alt="the weeknd"></img>
+            <img className="marqueeElement" src="../public/assets/bruno.jpg" width="150px" height="150px" alt="bruno"></img>
+            <img className="marqueeElement" src="../public/assets/laufey.jpg" width="150px" height="150px" alt="laufey"></img>
+            <img className="marqueeElement" src="../public/assets/ariana.jpg" width="150px" height="150px" alt="ariana"></img>
+            <img className="marqueeElement" src="../public/assets/billie.jpg" width="150px" height="150px" alt="billie"></img>
+            <img className="marqueeElement" src="../public/assets/kendrick.jpg" width="150px" height="150px" alt="kendrick"></img>
+            <img className="marqueeElement" src="../public/assets/rihanna.jpg" width="150px" height="150px" alt="rihanna"></img>
         </marquee>
         <h1 className="title">Welcome to Statify</h1>
         <h3 className="subtitle">Know your music, know yourself. Tune into your trends.</h3>
