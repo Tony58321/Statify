@@ -22,12 +22,13 @@ export async function TasteComparator(token){
 
     //console.log(nationalTracksJson);
 
-    let tracksArray = playlistTrackExtractor(nationalTracksJson);
+    let NationalTracksArray = playlistTrackExtractor(nationalTracksJson);
+
+    let UserTracksArray = await getTopTracks(token, nothing)
 
 
-
-
-
+    console.log(NationalTracksArray);
+    console.log(UserTracksArray);
 }
 
 
@@ -35,6 +36,10 @@ export async function TasteComparator(token){
 This function is very similar to getTopTracks() in that it returns a array of tracks, rather than doing it based off a user top tracks, this is done by extracting the data from a playlist
 
 */
+
+function nothing(){
+
+}
 function playlistTrackExtractor(playlistJSON){
 
 
