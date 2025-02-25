@@ -72,7 +72,7 @@ function refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrack
 
 export default function Tracks({token, topTracks, setTopTracks}){
     let [trackCount, setTrackCount] = useState(DEFAULT_TRACK_COUNT);  // How many top tracks should be returned
-    let [trackTimeFrame, setTrackTimeFrame] = useState("medium_term");  // the timeframe to get tracks from
+    let [trackTimeFrame, setTrackTimeFrame] = useState("4 weeks");  // the timeframe to get tracks from
     return(
         <>
         <h1>Tracks</h1>
