@@ -258,6 +258,21 @@ Statify relies on user input on a web page for the application to work properly,
 **How to add a new test to Playwright:**  
 To add a new test to Playwright, the tester must create a testing file in JavaScript within the “tests” directory in “statify-react”. Each file should run separately so that we can test the source of an error. Ensure that npm run dev is running on localhost:7513. Testers can run a test in two ways, either using npx playwright test --ui or npx playwright test -- header in the terminal. To see the webpage appear and see how each step looks to a user, we recommend running npx playwright test --ui. Here you can click through each test file and simulate a user’s experience.
 
+**Continuous Integration:**
+We will facilitate CI through the use of Github Actions. We chose Github actions because of its ingrained connection to github, where our repository for this project resides. We will configure Github Actions to run our test suite for every new commit to the repository. Since we are primarily using NPM for this project, we will likely use the Node.js workflow by Github Actions for testing. We will, to the best of our ability, add all unit and integration tests in the test suite we create with Playwright to Github Actions.
+
+**Other CI platforms**
+Several other CI platforms that we could have selected are:
+Jenkins:
+  Pro: Customizable build pipeline.
+  Cons: Requires additional plugin for Github integration, requires local download.
+Azure Pipelines:
+  Pro: Allows integration with Github.
+  Con: Only a 30-day free trial.
+Gitlab:
+  Pro: Built on top of git.
+  Con: Maximum of 5 users on free plan.
+
 ### Documentation Plan
 Our team will provide a help page for users of our website. It will be accessible from the homepage of our website. The help page will offer instructions for how to use different features of our website, how to create a Spotify account, and how to report issues. Users can utilize this page whenever they have questions about how to use our website.
 
