@@ -4,8 +4,10 @@
 */
 export default function Footer(setPage) {
     return (
-    <>
+    <footer style={{marginTop: "auto"}}>
+        <hr/>
         <button onClick={() => setPage("Help")}>Help</button>
-        <p>&copy; Statify 2025</p>
-    </>)
+        <p style={{color: "white"}}>&copy; Statify 2025</p>
+    </footer>
+    );
 }

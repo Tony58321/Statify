@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import getTopTracks from './getTopTracks';
+import Footer from './Footer';
+import "./Tracks.css";
 
 
 // a list of time frames accepted by the spotify API formatted as:
@@ -100,6 +102,7 @@ export default function Tracks({token, topTracks, setTopTracks}){
         :  // otherwise display a placeholder
             <p>Press button to load tracks</p>
         }
+        <Footer/>
         </>
     )
 }
