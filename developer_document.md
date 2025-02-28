@@ -1,6 +1,7 @@
 ## How to Obtain Source Code:
 
-To obtain Statify’s source code, navigate to the “statify-react” folder within the repository. A majority of the project's source code is in the “src” folder within the “statify-react” folder.
+The code can be downloaded via github. From this repository's code page, select code -> download zip. Unzip the file once it has dowloaded.
+To obtain Statify’s source code, navigate to the "statify-react" folder within the repository. All of the project's source code is in the "statify-react" folder, and a majority of it is in the "src" folder within the "statify-react" folder.
 
 ## Layout of Directory Structure:
 ```
@@ -17,10 +18,12 @@ To obtain Statify’s source code, navigate to the “statify-react” folder wi
 ```
 
 ## How to Build the Software:
-1. Install NodeJS if you have not already. Instructions can be found at:
+1. Download the source code (See the "How to Obtain Source Code" section above).
+2. Install NodeJS if you have not already. Instructions can be found at:
 https://nodejs.org/en/download
-2. Once in the “statify-react” folder run “npm i” to install the dependencies for this application.
-3. Then run “npm run dev”, also from the “statify-react” folder at which point the terminal will give you a link to open the web application. 
+3. Open a terminal and navigate to the "statify-react" folder.
+4. Once in the "statify-react" folder run "npm i" to install the dependencies for this application.
+3. Then run "npm run dev", also from the "statify-react" folder. A link to open the web application will be printed to the terminal. 
 
 ## How to Test the Software:
 1. Manual Testing: 
