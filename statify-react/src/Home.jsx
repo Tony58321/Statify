@@ -1,6 +1,7 @@
 import { Track, getTopTracks } from './getTopTracks';
 import { Artist, getTopArtists } from './getTopArtists';
 import { TasteComparator } from './TasteComparator' ;
+import Footer from './Footer';
 
 export default function Home({ profile, token }){
     console.log(profile);
@@ -30,6 +31,7 @@ export default function Home({ profile, token }){
         <button onClick={async () =>{await TasteComparator(token)}}>Comparison Test Button</button>
 
         <button onClick={async () =>{topArtists = await getTopArtists(token)}}>Get Top Artists Test</button>
+        <Footer/>
     </>
     // delete the top track test buttons eventually
     )

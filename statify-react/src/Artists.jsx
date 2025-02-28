@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import getTopArtists from './getTopArtists';
+import Footer from './Footer';
 
 const TIMEFRAMES = {
     "4 weeks": "short_term",
@@ -84,6 +85,8 @@ return (
         :  // otherwise display a placeholder
             <p>Press button to load artists</p>
         }
+
+        <Footer/>
     </>
 );
 
