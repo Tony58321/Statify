@@ -1,0 +1,13 @@
+footer {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+}
+
+.link-button {
+    border: 2px solid white;
+    padding: 5px;
+    margin: auto 10px auto 0px;
+}
