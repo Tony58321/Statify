@@ -2,7 +2,7 @@ import { useState } from 'react';
 import redirectToAuthCodeFlow from './LoginRedirect';
 import getAccessToken from './getToken';
 import fetchProfile from './GetProfile';
-//import './App.css'
+import './App.css'
 //import getTopTracks from './getTopTracks';
 import { Track, getTopTracks } from './getTopTracks';
 import Tracks from './Tracks.jsx';
@@ -72,11 +72,14 @@ function App() {
     
       {profile ?  // This checks if the profile variable is truthy, ie, is an object, before trying to access properties
         <>
-        <nav>
-        <button onClick={() => setPage("Home")}>Home</button>
-        <button onClick={() => setPage("Tracks")}>Tracks</button>
-        <button onClick={() => setPage("Artist")}>Artists</button>
-        </nav>
+        <div id="header">
+          <h1 id="headerTitle">Statify</h1>
+          <nav id="mainNavMenu">
+            <button className="navElement" onClick={() => setPage("Home")}>Home</button>
+            <button className="navElement" onClick={() => setPage("Tracks")}>Tracks</button>
+            <button className="navElement" onClick={() => setPage("Artist")}>Artists</button>
+          </nav>
+        </div>  
 
         {page == "Home"?
           <Home profile={profile} token={token}/>
