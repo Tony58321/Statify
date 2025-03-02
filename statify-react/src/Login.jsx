@@ -4,7 +4,7 @@ import './Login.css'
 export default function Login({ login })  {
     return(
         <>
-        <marquee scrollamount="4" direction="down">
+        <marquee id="marqueeLeft" behavior="scroll" direction="up" scrollamount="4">
             <img className="marqueeElement" src="/assets/taylor.jpg" width="150px" height="150px" alt="taylor"></img>
             <img className="marqueeElement" src="/assets/weeknd.jpg" width="150px" height="150px" alt="the weeknd"></img>
             <img className="marqueeElement" src="/assets/bruno.jpg" width="150px" height="150px" alt="bruno"></img>
