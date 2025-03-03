@@ -52,7 +52,7 @@ function refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setA
         count = MAX_ARTISTS;
     }
     setArtistCount(count);  // set the entry field to be the validated value, in case it changed
-    getTopArtists(token, setTopArtists(artists), count, TIMEFRAMES[artistTimeFrame]);  // call function to fetch artists
+    getTopArtists(token, setTopArtists, count, TIMEFRAMES[artistTimeFrame]);  // call function to fetch artists
 }
 
 

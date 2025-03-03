@@ -5,6 +5,7 @@ import fetchProfile from './GetProfile';
 import './App.css'
 //import getTopTracks from './getTopTracks';
 import { Track, getTopTracks } from './getTopTracks';
+import { Artist, getTopArtists } from './getTopArtists';
 import Tracks from './Tracks.jsx';
 import Artists from './Artists.jsx';
 import Home from './Home.jsx';
@@ -23,6 +24,7 @@ function App() {
   var [profile, setProfile] = useState(null);  // default profile to none (logged out)
   var [token, setToken] = useState(null);  // the access token for communicating with the spotify API
   let [topTracks, setTopTracks] = useState(null);  // the access token for communicating with the spotify API
+  let [topArtists, setTopArtists] = useState(null);
   let [page, setPage] = useState("Home"); // which page we are on
   
   if (code && !token) {  // this is called after the user logs in, and before this app fetches and sets profile
@@ -87,7 +89,7 @@ function App() {
         page == "Tracks"?
           <Tracks token={token} topTracks={topTracks} setTopTracks={setTopTracks}/>
           :
-          <Artists/>
+          <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
         }
         </>
         : token == "Loading" ?  // if profile is false but token is true, show loading screen
