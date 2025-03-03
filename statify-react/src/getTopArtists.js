@@ -33,9 +33,14 @@ export async function getTopArtists(token, onLoad, quantity=10, time_range="medi
     for(let i = 0; i < artistsJson.limit; i++){    
         // the current artist from the json   
         let currArtJson = artistsJson.items[i]
+
+        // gets image url
+        let imageUrl = (currArtJson.images && currArtJson.images.length > 0) 
+        ? currArtJson.images[0].url 
+        : null;
         
         // create new artist object with information from json
-        let artists = new Artist(currArtJson.name, currArtJson.popularity)
+        let artists = new Artist(currArtJson.name, currArtJson.popularity, imageUrl)
 
         // push the new artist onto the array of artists
         artistsArray.push(artists)
@@ -50,10 +55,10 @@ export async function getTopArtists(token, onLoad, quantity=10, time_range="medi
 
 /*this class stores information about a users top artists*/
 export class Artist{
-    constructor(name, popularity) {
+    constructor(name, popularity, imageUrl) {
         this.name = name;
         this.popularity = popularity;
-        //this.imageUrl = imageUrl; // Trinity got rid of the image handeling for now because it was giving an error
+        this.imageUrl = imageUrl; 
     }
 }
 

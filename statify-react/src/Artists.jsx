@@ -17,7 +17,12 @@ function ArtistItem({number, artist}) {
         Artist Item - function to return react component to display a track object
     */
     return <>
-        <p>{number}. {artist.name}</p>
+        <div>
+            <p>{number}. {artist.name}</p>
+            {artist.imageUrl && (
+                <img id="spotify-image" src={artist.imageUrl} alt={artist.name} width="100" height="100" />
+            )}
+        </div>
     </>
 }
 

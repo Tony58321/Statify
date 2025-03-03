@@ -53,3 +53,8 @@ body {
   margin-left: 40px;
   margin-right: 40px;
 }
+
+#spotify-image{
+  height: 150px;
+  width: 150px;
+}
