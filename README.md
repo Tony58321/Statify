@@ -21,6 +21,10 @@ Our ultimate goal is to enrich users' music streaming experience by providing pe
 - Top genres
 - Correlations with national listening trends
 
+## Current Operational Use Cases
+- Viewing top tracks with options for displaying different number of tracks and different timeranges (past 4-weeks, 6 months, and year)
+- Viewing top artists with options for displaying different number of tracks and different timeranges (past 4-weeks, 6 months, and year)
+
 ## Layout of Repository:
 Our GitHub repository currently has 4 main sections: README.md (what you are reading now), Project_Proposal.md, Reports folder, and statify-react folder(where the actual code for our app is located)
 The structure is as follows:
