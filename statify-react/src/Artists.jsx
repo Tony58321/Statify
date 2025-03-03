@@ -64,7 +64,7 @@ function refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setA
 
 export default function Artists({token, topArtists, setTopArtists}){
     let [artistCount, setArtistCount] = useState(DEFAULT_ARTIST_COUNT);  // How many top artists should be returned
-let [artistTimeFrame, setArtistTimeFrame] = useState("medium_term");  // the timeframe to get artists from
+let [artistTimeFrame, setArtistTimeFrame] = useState("4 weeks");  // the timeframe to get artists from
 return (
     <>
         <h1>Artists</h1>
