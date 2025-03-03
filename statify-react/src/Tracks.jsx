@@ -20,8 +20,11 @@ function TrackItem({number, track}) {
         TrackItem - function to return react component to display a track object
     */
     return <>
-        <img href={track.coverArtURL} alt="image"></img>
-        <p>{number}. {track.name}</p>
+        <div>
+            <img id="spotify-image" src={track.coverArtUrl} alt={track.name}/>
+            {/* <img href={track.coverArtURL} alt="image"></img> */}
+            <p>{number}. {track.name}</p>
+        </div>
     </>
 }
 
@@ -88,7 +91,7 @@ export default function Tracks({token, topTracks, setTopTracks}){
             </select>
         </p>
         
-        <button onClick={() => refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount)}>Get Top Tracks Test</button>
+        <button onClick={() => refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount)}>Get Top Tracks</button>
 
 
         {

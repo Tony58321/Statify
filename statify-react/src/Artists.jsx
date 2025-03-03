@@ -20,7 +20,7 @@ function ArtistItem({number, artist}) {
         <div>
             <p>{number}. {artist.name}</p>
             {artist.imageUrl && (
-                <img id="spotify-image" src={artist.imageUrl} alt={artist.name} width="100" height="100" />
+                <img id="spotify-image" src={artist.imageUrl} alt={artist.name}/>
             )}
         </div>
     </>
@@ -79,7 +79,7 @@ return (
             </select>
         </p>
         
-        <button onClick={() => refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setArtistCount)}>Get Top Artists Test</button>
+        <button onClick={() => refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setArtistCount)}>Get Top Artists</button>
 
         {
         topArtists ?  // if the top artists have been retrieved already, display them

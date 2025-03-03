@@ -34,10 +34,10 @@ export async function getTopArtists(token, onLoad, quantity=10, time_range="medi
         // the current artist from the json   
         let currArtJson = artistsJson.items[i]
 
-        // gets image url
-        let imageUrl = (currArtJson.images && currArtJson.images.length > 0) 
-        ? currArtJson.images[0].url 
-        : null;
+        // gets image url with error handeling that is probably not necissarry
+        let imageUrl = (currArtJson.images && currArtJson.images.length > 0) // if
+        ? currArtJson.images[0].url // true
+        : null; // false
         
         // create new artist object with information from json
         let artists = new Artist(currArtJson.name, currArtJson.popularity, imageUrl)
