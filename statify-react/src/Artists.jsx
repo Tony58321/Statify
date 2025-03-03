@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import getTopArtists from './getTopArtists';
+// import './App.css'
 
 const TIMEFRAMES = {
     "4 weeks": "short_term",
@@ -28,7 +29,7 @@ function isValidCount(countString) {
         return false;
     } else if (countString == "") {  // special case, if empty string, return true so user can clear field
         return true;
-    } else if (MIN_ARTISTS <= Number(countString) && Number(countString) <= MAX_ARTIST) {  // if in bounds, return true
+    } else if (MIN_ARTISTS <= Number(countString) && Number(countString) <= MAX_ARTISTS) {  // if in bounds, return true
         return true;
     } else {  // must be valid number, but out of bounds
         return false;
@@ -64,11 +65,11 @@ return (
         <h1>Artists</h1>
 
         <p>Get top
-            <input type='number' value={artistCount} onChange={
+            <input id="input-amount" type='number' value={artistCount} onChange={
                 event => isValidCount(event.target.value) ? setArtistCount(event.target.value) : null}>
             </input>
             Artists from the last
-            <select value={artistTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setArtistTimeFrame(event.target.value)}>
+            <select id="select-time" value={artistTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setArtistTimeFrame(event.target.value)}>
                 {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame}>{timeFrame}</option>)}
             </select>
         </p>

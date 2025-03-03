@@ -82,15 +82,16 @@ function App() {
             <button className="navElement" onClick={() => setPage("Artist")}>Artists</button>
           </nav>
         </div>  
-
-        {page == "Home"?
-          <Home profile={profile} token={token}/>
-          :
-        page == "Tracks"?
-          <Tracks token={token} topTracks={topTracks} setTopTracks={setTopTracks}/>
-          :
-          <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
-        }
+        <div className="pages">
+          {page == "Home"?
+            <Home profile={profile} token={token}/>
+            :
+          page == "Tracks"?
+            <Tracks token={token} topTracks={topTracks} setTopTracks={setTopTracks}/>
+            :
+            <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
+          }
+        </div>
         </>
         : token == "Loading" ?  // if profile is false but token is true, show loading screen
         <Load/>

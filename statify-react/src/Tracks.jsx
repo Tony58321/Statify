@@ -79,11 +79,11 @@ export default function Tracks({token, topTracks, setTopTracks}){
         <h1>Tracks</h1>
 
         <p>Get top
-            <input type='number' value={trackCount} onChange={
+            <input id="input-amount" type='number' value={trackCount} onChange={
                 event => isValidCount(event.target.value) ? setTrackCount(event.target.value) : null}>
             </input>
             Tracks from the last
-            <select value={trackTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setTrackTimeFrame(event.target.value)}>
+            <select id="select-time" value={trackTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setTrackTimeFrame(event.target.value)}>
                 {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame}>{timeFrame}</option>)}
             </select>
         </p>
