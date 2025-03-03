@@ -22,7 +22,11 @@ Open the page:
 - Navigate to the given url that will take you to the Statify website (If you are running the app on your own computer, this link will be printed to the terminal after step 2 of the "How to Run" section above).
 
 Login:
-- Press the login button on the main page and follow the prompts to enter your Spotify account information.
+- Press the login button on the main page and follow the prompts to enter your Spotify account information. The account you log in with must be whitelisted. If you are not able to request that your Spotify account be whitelisted from one of the developers of this project, there are two possibilities:
+  - Use an already existing Spotify account that has been whitelisted for demos. The login for this account is:
+    Username:
+    Password:
+  - If you are running your own server instance, you can create your own Spotify developer account to link to your server instance. This will allow you to whitelist accounts of your choosing. See the "Linking a New Developer Account" section above.
 - You should now be viewing the home page.
 
 Home page:
