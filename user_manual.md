@@ -50,7 +50,7 @@ Get top artists:
 
 ## How to Report Bugs:
 
-There is a link to a bug reporting form on our website. As well as here.
+There is a link to a bug reporting form on our website. As well as here: https://forms.gle/ZW5Lt2wJpGDPtdRA7.
 
 ## Known Bugs:
 
