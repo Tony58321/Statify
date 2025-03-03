@@ -20,7 +20,7 @@ function TrackItem({number, track}) {
         TrackItem - function to return react component to display a track object
     */
     return <>
-        <img href={track.coverArtURL} alt="image"></img>
+        <img href={track.coverArtURL} alt={track.name} width="100" height="100"></img>
         <p>{number}. {track.name}</p>
     </>
 }

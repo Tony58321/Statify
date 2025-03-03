@@ -58,3 +58,43 @@ body {
   height: 150px;
   width: 150px;
 }
+
+#settings {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #1AC357;
+  position: absolute;
+  right: 2vw;
+  top: 2vh;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#settings img {
+  background-color: #1AC357 !important;
+  width: 30px;
+  height: 30px;
+}
+
+#settings:hover {
+  background-color: #3BE477;
+}
+
+#settings:hover img {
+  background-color: #3BE477 !important;
+}
+
+#settingsModal {
+  width: 200px;
+  height: 200px;
+  background-color: #1AC357;
+}
+
+.hidden {
+  display: none;
+}
