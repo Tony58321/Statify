@@ -42,14 +42,17 @@ export async function getTopTracks(token, onLoad, quantity = 20, time_range =  "
 
     //The fetched user top tracks stored in the "response" variable are put in an interpretable JSON format and put inside the tracksJson variable
     let tracksJson = await response.json();
+    console.log(tracksJson);
 
     //The goal is to store all the top tracks the tracksArray. The array will be filled with Track objects, which contain all the key info about each of the tracks
     //See below for the Track class definition
     let tracksArray = []
 
 
-    //For() loop iterates through each track returned in the API call. tracksJson.limit holds the integer value of how many tracks were retruened
-    for( let i = 0 ;i<tracksJson.limit; i++){
+    //For() loop iterates through each track returned in the API call. tracksJson.items.length ensures we only go through up to the amount of tracks that were returned
+    // tracksJson.limit USED to be the number used, but it causes an issue where if the user requests more tracks then they have listened to, say in the case of a new or rarely used account 
+    // it creates an error as it tries to scan for track array items that are not there.
+    for( let i = 0 ;i<tracksJson.items.length; i++){
 
         //currTrackJson holds the particular track we are extracting data for each iteration. In other words currTrackJson represents 1 track at any given moment
         
@@ -63,8 +66,10 @@ export async function getTopTracks(token, onLoad, quantity = 20, time_range =  "
             artistArr.push(currTrackJson.artists[j].name)
         }
 
+        let imageUrl = currTrackJson.album.images[0].url
+
         //Finally, we can create our Track object for this particular track
-        let trackToInsert = new Track(currTrackJson.name,artistArr , currTrackJson.album.images[0].url , currTrackJson.external_urls.spotify,currTrackJson.id )
+        let trackToInsert = new Track(currTrackJson.name,artistArr , imageUrl , currTrackJson.external_urls.spotify,currTrackJson.id )
         //and insert the track object into the track array
         tracksArray.push(trackToInsert)
 
@@ -89,10 +94,10 @@ export async function getTopTracks(token, onLoad, quantity = 20, time_range =  "
 
 //WIP class, more fields need to be added still
 export class Track{
-    constructor(name, artists ,coverArtURL, trackUrl, id ) {
+    constructor(name, artists ,coverArtUrl, trackUrl, id ) {
         this.name = name;
         this.artists = artists;
-        this.coverArtURL = coverArtURL;
+        this.coverArtUrl = coverArtUrl;
         this.url = trackUrl;
         this.id = id;
     }
