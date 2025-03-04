@@ -82,9 +82,9 @@ function App() {
             <button className="navElement" onClick={() => setPage("Tracks")}>Tracks</button>
             <button className="navElement" onClick={() => setPage("Artist")}>Artists</button>
           </nav>
-          <button id="settings" onClick={() => toggleModal()}>
+          {/* <button id="settings" onClick={() => toggleModal}>
             <img src="/assets/settings.png" alt="Settings"></img>
-          </button>
+          </button> */}
         </div>  
         <div className="pages">
           {page == "Home"?
@@ -96,7 +96,7 @@ function App() {
             <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
           }
         </div>
-        <div class="hidden" id="settingsModal">
+        <div className="hidden" id="settingsModal">
           <h2 id="settingsHeader">Settings</h2>
         </div>
         </>
