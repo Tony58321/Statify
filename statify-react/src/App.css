@@ -169,3 +169,11 @@ body {
   gap: 16px; 
   justify-items: center;
 }
+
+#loading-message {
+  text-align: center;
+  font-size: 18px;
+  color: #1AC357;
+  margin-top: 20px;
+  padding: 10px;
+}

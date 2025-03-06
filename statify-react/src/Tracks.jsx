@@ -96,15 +96,15 @@ export default function Tracks({token, topTracks, setTopTracks}){
         </div>
 
         {
-        topTracks ?  // if the top tracks have been retrieved already, display them
-            <>
+            topTracks ?  // if the top tracks have been retrieved already, display them
+                <>
                 <div id="grid">
                     {topTracks.map((track, i) => <TrackItem number={i + 1} track={track}/>)}
                 </div>
-            </>
-        :  // otherwise display a placeholder
-            <p>Press button to load tracks</p>
-        }
+                </>
+            :  // otherwise display a placeholder
+                <p id="loading-message">Press button to load tracks</p>
+            }
         </>
     )
 }
