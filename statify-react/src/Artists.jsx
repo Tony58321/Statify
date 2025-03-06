@@ -17,7 +17,7 @@ function ArtistItem({number, artist}) {
         Artist Item - function to return react component to display a track object
     */
     return <>
-        <div>
+        <div id="spotify-item">
             <p>{number}. {artist.name}</p>
             {artist.imageUrl && (
                 <img id="spotify-image" src={artist.imageUrl} alt={artist.name}/>
@@ -67,25 +67,28 @@ export default function Artists({token, topArtists, setTopArtists}){
 let [artistTimeFrame, setArtistTimeFrame] = useState("4 weeks");  // the timeframe to get artists from
 return (
     <>
-        <h1>Artists</h1>
+        <h1 id="title">Artists</h1>
 
-        <p>Get top
+        <p id="selection_menu">Get top  
             <input id="input-amount" type='number' value={artistCount} onChange={
                 event => isValidCount(event.target.value) ? setArtistCount(event.target.value) : null}>
             </input>
-            Artists from the last
+            Artists from the last  
             <select id="select-time" value={artistTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setArtistTimeFrame(event.target.value)}>
                 {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame}>{timeFrame}</option>)}
             </select>
         </p>
         
-        <button onClick={() => refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setArtistCount)}>Get Top Artists</button>
-
+        <div id="button_box">
+            <button id="get_button" onClick={() => refreshArtists(token, setTopArtists, artistCount, artistTimeFrame, setArtistCount)}>Get Top Artists</button>
+        </div>
         {
         topArtists ?  // if the top artists have been retrieved already, display them
             <>
-                <p>Artists found</p>
-                {topArtists.map((artist, i) => <ArtistItem number={i + 1} artist={artist}/>)}
+                
+                <div id="grid">                    
+                    {topArtists.map((artist, i) => <ArtistItem number={i + 1} artist={artist}/>)}
+                </div>
             </>
         :  // otherwise display a placeholder
             <p>Press button to load artists</p>

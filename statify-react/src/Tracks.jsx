@@ -20,10 +20,10 @@ function TrackItem({number, track}) {
         TrackItem - function to return react component to display a track object
     */
     return <>
-        <div>
-            <img id="spotify-image" src={track.coverArtUrl} alt={track.name}/>
-            {/* <img href={track.coverArtURL} alt="image"></img> */}
+        <div id="spotify-item">
             <p>{number}. {track.name}</p>
+            <img id="spotify-image" src={track.coverArtUrl} alt={track.name}/>
+            {/* <img href={track.coverArtURL} alt="image"></img> */}         
         </div>
     </>
 }
@@ -79,9 +79,9 @@ export default function Tracks({token, topTracks, setTopTracks}){
     let [trackTimeFrame, setTrackTimeFrame] = useState("4 weeks");  // the timeframe to get tracks from
     return(
         <>
-        <h1>Tracks</h1>
+        <h1 id="title">Tracks</h1>
 
-        <p>Get top
+        <p id="selection_menu">Get top
             <input id="input-amount" type='number' value={trackCount} onChange={
                 event => isValidCount(event.target.value) ? setTrackCount(event.target.value) : null}>
             </input>
@@ -91,14 +91,16 @@ export default function Tracks({token, topTracks, setTopTracks}){
             </select>
         </p>
         
-        <button onClick={() => refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount)}>Get Top Tracks</button>
-
+        <div id="button_box">
+            <button id="get_button" onClick={() => refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount)}>Get Top Tracks</button>
+        </div>
 
         {
         topTracks ?  // if the top tracks have been retrieved already, display them
             <>
-                <p>Tracks found</p>
-                {topTracks.map((track, i) => <TrackItem number={i + 1} track={track}/>)}
+                <div id="grid">
+                    {topTracks.map((track, i) => <TrackItem number={i + 1} track={track}/>)}
+                </div>
             </>
         :  // otherwise display a placeholder
             <p>Press button to load tracks</p>
