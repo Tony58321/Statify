@@ -113,6 +113,8 @@ body {
   height: auto;     
   display: block;
   margin: 0 auto; 
+  aspect-ratio: 1 / 1; /*forces images to be square without compressing */
+  object-fit: cover;
 }
 
 #spotify-item{
