@@ -91,7 +91,7 @@ return (
                 </div>
             </>
         :  // otherwise display a placeholder
-            <p>Press button to load artists</p>
+                <p id="loading-message">Press button to load artists</p>
         }
     </>
 );
