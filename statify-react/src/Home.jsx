@@ -28,7 +28,7 @@ export default function Home({ profile, token }){
                 </li> */}
             </ul>
             {/* <button onClick={() =>{topTracks = getTopTracks(token)}  }>view top tracks test button</button> */}
-            <button onClick={async () =>{await TasteComparator(token)}}>Comparison Test Button</button>
+            {/* <button onClick={async () =>{await TasteComparator(token)}}>Comparison Test Button</button>*/}
             {/* <button onClick={async () =>{topArtists = await getTopArtists(token)}}>Get Top Artists Test</button> */}
         </div>
     </>
