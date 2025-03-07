@@ -29,6 +29,9 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
+    /* Load the saved Spotify session */
+    storageState: 'spotify-session.json', // This ensures Playwright reuses the authenticated session
+    
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
