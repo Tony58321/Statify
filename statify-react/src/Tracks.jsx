@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import getTopTracks from './getTopTracks';
 import { generatePlaylist } from './generatePlaylist';
+import './Tracks.css'
 
 // a list of time frames accepted by the spotify API formatted as:
 // {"Value to display to user": "Value to pass to the API"}

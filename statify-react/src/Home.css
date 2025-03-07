@@ -8,20 +8,28 @@
 }
 
 #welcome {
+    margin: 0;
+    padding: 0;
     color: white;
     font-size: 30px;
 }
 
 #profileImage {
+    margin: 30px;
     border-radius: 50%;
-    height: 30%;
-    width: 30%;
+    height: 250px;
+    width: 250px;
     object-fit: cover;
 }
 
 #spotifyLink {
-    margin: 15px;
+    margin: 0;
+    padding: 0;
     color: #1AC357;
+}
+
+#spotifyLink:hover {
+    color: #3BE477;
 }
 
 button {

@@ -84,9 +84,9 @@ function App() {
             <button className="navElement" onClick={() => setPage("Artists")}>Artists</button>
             <button className="navElement" onClick={() => setPage("Trends")}>Trends</button>
           </nav>
-          {/* <button id="settings" onClick={() => toggleModal}>
+          <button id="settings" onClick={() => toggleModal()}>
             <img src="/assets/settings.png" alt="Settings"></img>
-          </button> */}
+          </button>
         </div>  
         <div className="pages">
           {page == "Home"?
