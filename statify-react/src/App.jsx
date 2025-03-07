@@ -80,7 +80,8 @@ function App() {
           <nav id="mainNavMenu">
             <button className="navElement" onClick={() => setPage("Home")}>Home</button>
             <button className="navElement" onClick={() => setPage("Tracks")}>Tracks</button>
-            <button className="navElement" onClick={() => setPage("Artist")}>Artists</button>
+            <button className="navElement" onClick={() => setPage("Artists")}>Artists</button>
+            <button className="navElement" onClick={() => setPage("Trends")}>Trends</button>
           </nav>
           {/* <button id="settings" onClick={() => toggleModal}>
             <img src="/assets/settings.png" alt="Settings"></img>
@@ -92,6 +93,9 @@ function App() {
             :
           page == "Tracks"?
             <Tracks token={token} topTracks={topTracks} setTopTracks={setTopTracks}/>
+            :
+          page == "Artists" ?
+            <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
             :
             <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
           }
