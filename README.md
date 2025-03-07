@@ -22,8 +22,10 @@ Our ultimate goal is to enrich users' music streaming experience by providing pe
 - Correlations with national listening trends
 
 ## Current Operational Use Cases
+- Login Feature: Users can enter their Spotify username and password to login and access their information.
 - Viewing top tracks with options for displaying different number of tracks and different timeranges (past 4-weeks, 6 months, and year)
 - Viewing top artists with options for displaying different number of tracks and different timeranges (past 4-weeks, 6 months, and year)
+- Generating a playlist based on the top artists over the time period that the user has selected. The user must get the top tracks prior to generating the playlist.
 
 ## Layout of Repository:
 Our GitHub repository currently has 4 main sections: README.md (what you are reading now), Project_Proposal.md, Reports folder, and statify-react folder(where the actual code for our app is located)
