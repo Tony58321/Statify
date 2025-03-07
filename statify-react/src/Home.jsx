@@ -18,7 +18,7 @@ export default function Home({ profile, token }){
                 :
                 null  // don't display anything if no profile image
             }
-            <a id="spotifyLink" href={profile.external_urls.spotify}>Your Spotify</a>
+            <a id="spotifyLink" href={profile.external_urls.spotify} target="_blank">Your Spotify</a>
             <ul>
                 {/* <li>User ID: {profile.id}</li>*/}
                 {/*<li>Email: {profile.email}</li>*/}
