@@ -57,7 +57,7 @@ function App() {
     }
 
     if (!code || token == "None") {
-      redirectToAuthCodeFlow(clientId, "user-read-private user-read-email user-top-read");
+      redirectToAuthCodeFlow(clientId, "user-read-private user-read-email user-top-read playlist-modify-private playlist-modify-public");
     } else {
       return;  // this should only be reached if this function is called betweenthe user loggin in and the profile being fetched
     }
