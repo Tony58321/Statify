@@ -20,8 +20,7 @@ export default async function TasteComparator(token, userTracks, setUserTracks){
     //The fetched user top tracks stored in the "response" variable are put in an interpretable JSON format and put inside the tracksJson variable
     let nationalTracksJson = await response.json();
 
-    //console.log(nationalTracksJson);
-
+    // convert the national tracks to a list of Track objects
     let NationalTracksArray = playlistTrackExtractor(nationalTracksJson);
 
     // get the user's top tracks
@@ -64,8 +63,6 @@ function playlistTrackExtractor(playlistJSON){
         tracksArray.push(trackToInsert)
     }
 
-    console.log("Tracks array:")
-    console.log(tracksArray)
 
     return tracksArray;
 
