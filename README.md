@@ -1,26 +1,24 @@
 # Statify Web Application
-## Abstract:
+## Abstract
 Statify is a statistics web application that connects to the popular music streaming platform Spotify. It allows users to view statistics related to their listening habits on Spotify. Users can log into the web-app interface with their Spotify account and view listening statistics, including their most listened to artists and songs. There will be various options for users to choose what data within what timeframe they want to view. The web-app will be implemented using the free API that Spotify provides (https://developer.spotify.com/documentation/web-api).
 
-## How to Build and Test Statify
-Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
-
-## How to Run:
-Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
-
-## Goals:
-Our system will make statistics available to Spotify users, so that users can enjoy seeing information about their top music choices throughout a year. This is information that is not available with typical usage of the Spotify App, so it will give Spotify user’s a fun way to interact with their own statistics.
-Our ultimate goal is to enrich users' music streaming experience by providing personalized statistics on:
-- Top artists
-- Top songs
-- Top genres
-- Correlations with national listening trends
-
-## Current Operational Use Cases
+## Goals
+Our system will make statistics available to Spotify users, so that users can enjoy seeing information about their top music choices throughout a year. This is information that is not available with typical usage of the Spotify App, so it will give Spotify user’s a fun way to interact with their own statistics. Our ultimate goal is to enrich users' music streaming experience by providing personalized statistics on. 
+Here are our current operational use cases:
 - Login Feature: Users can enter their Spotify username and password to login and access their information.
 - Viewing top tracks with options for displaying different number of tracks and different timeranges (past 4-weeks, 6 months, and year).
 - Viewing top artists with options for displaying different number of tracks and different timeranges (past 4-weeks, 6 months, and year).
 - Generating a playlist based on the top artists over the time period that the user has selected. The user must get the top tracks prior to generating the playlist.
+
+## Dependencies
+- A Spotify account
+- Node.js
+
+## How to Build and Test Statify:
+Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
+
+## How to Run:
+Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
 
 ## Layout of Repository:
 Our GitHub repository currently has 4 main sections: README.md (what you are reading now), Project_Proposal.md, Reports folder, and statify-react folder (where the actual code for our app is located)
@@ -30,6 +28,8 @@ The structure is as follows:
 │\
 ├── README.md\
 ├── Project_Proposal.md\
+├── user_manual.md\
+├── developer_document.md\
 ├── statify-react\
 ├── Reports\
 │   └── 2025-01-15.md\
