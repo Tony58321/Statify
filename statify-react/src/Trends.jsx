@@ -4,11 +4,11 @@ import TasteComparator from './TasteComparator';
 
 
 
-export default function Trends({ token }) {
+export default function Trends({ token, tracks, setTracks }) {
     let [trends, setTrends] = useState(null);
 
     if (!trends) {
-        TasteComparator(token);
+        TasteComparator(token, tracks, setTracks);
     }
 
     return (

@@ -1,6 +1,6 @@
 import { Track, getTopTracks } from './getTopTracks';
 
-export default async function TasteComparator(token){
+export default async function TasteComparator(token, userTracks, setUserTracks){
 
     console.log("test");
     let apiCallString = "https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ?market=US"
