@@ -75,7 +75,7 @@ return (
             </input>
             Artists from the last  
             <select id="select-time" value={artistTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setArtistTimeFrame(event.target.value)}>
-                {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame}>{timeFrame}</option>)}
+                {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame} key={timeFrame}>{timeFrame}</option>)}
             </select>
         </p>
         
@@ -87,7 +87,7 @@ return (
             <>
                 
                 <div id="grid">                    
-                    {topArtists.map((artist, i) => <ArtistItem number={i + 1} artist={artist}/>)}
+                    {topArtists.map((artist, i) => <ArtistItem number={i + 1} artist={artist} key={i}/>)}
                 </div>
             </>
         :  // otherwise display a placeholder
