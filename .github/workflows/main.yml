@@ -24,7 +24,7 @@ jobs:
         working-directory: statify-react  
 
       - name: Start the Server
-        run: npm run dev
+        run: npm run dev &
         working-directory: statify-react  
 
       - name: Wait for Server to be Ready
