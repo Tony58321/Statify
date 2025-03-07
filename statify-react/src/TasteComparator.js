@@ -34,7 +34,13 @@ export default async function TasteComparator(token, userTracks, setUserTracks){
     console.log(NationalTracksArray);
     console.log("User Tracks:")
     console.log(userTracks);
+
+
+    return;  // what ever is returned here will be sent to the trends page and stored in the trends variable
 }
+
+
+
 
 
 /* 
@@ -65,7 +71,4 @@ function playlistTrackExtractor(playlistJSON){
 
 
     return tracksArray;
-
-
-    
 }
