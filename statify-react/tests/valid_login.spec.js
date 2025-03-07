@@ -1,4 +1,5 @@
-// // Test written by Antonio Rodriguez
+// Test written by Antonio Rodriguez
+
 import { test, expect } from '@playwright/test';
 
 test('authorization redirect test', async ({ page }) => {
@@ -7,13 +8,19 @@ test('authorization redirect test', async ({ page }) => {
   // Click "Log in with Spotify"
   await page.getByRole('button', { name: /Log in with Spotify/i }).click();
 
-  // Force Playwright to pause before continuing
-  console.log("PAUSE - Manually enter login details");
-  await page.pause(); // Playwright will stop here and let you manually enter credentials
+  // Wait for the Spotify authorization page to load
+  await page.waitForURL(/accounts\.spotify\.com\/en\/authorize/);
 
-  // Resume test execution after manual login by pressing play
+  // Click the "Agree" button automatically
+  await page.getByRole('button', { name: /Agree/i }).click();
+
+  // Wait for redirect back to the app
+  await page.waitForURL(/localhost:5173\/callback/);
+
+  // Ensure the login was successful
   await expect(page.locator('text=Welcome, statify')).toBeVisible();
 });
+
 
 // import { test } from '@playwright/test';
 // import fs from 'fs';
