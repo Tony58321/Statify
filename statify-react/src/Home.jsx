@@ -1,7 +1,7 @@
 import './Home.css'
 import { Track, getTopTracks } from './getTopTracks';
 import { Artist, getTopArtists } from './getTopArtists';
-import { TasteComparator } from './TasteComparator';
+//import { TasteComparator } from './TasteComparator';
 
 export default function Home({ profile, token }){
     console.log(profile);

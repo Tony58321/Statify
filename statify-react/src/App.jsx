@@ -12,6 +12,7 @@ import Artists from './Artists.jsx';
 import Home from './Home.jsx';
 import Login from './Login.jsx';
 import Load from './Load.jsx';
+import Trends from './Trends.jsx';
 import Help from './Help.jsx';
 
 
@@ -97,7 +98,7 @@ function App() {
           page == "Artists" ?
             <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
             :
-            <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
+            <Trends token={token} tracks={topTracks} setTracks={setTopTracks}/>
           }
         </div>
         <div className="hidden" id="settingsModal">
