@@ -1,8 +1,8 @@
 import { Track, getTopTracks } from './getTopTracks';
 
-export default async function TasteComparator(token){
+export default async function TasteComparator(token, userTracks, setUserTracks){
 
-    console.log("test");
+    console.log("Fetching trends:");
     let apiCallString = "https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ?market=US"
 
     let response = await fetch(apiCallString , {
@@ -20,28 +20,33 @@ export default async function TasteComparator(token){
     //The fetched user top tracks stored in the "response" variable are put in an interpretable JSON format and put inside the tracksJson variable
     let nationalTracksJson = await response.json();
 
-    //console.log(nationalTracksJson);
-
+    // convert the national tracks to a list of Track objects
     let NationalTracksArray = playlistTrackExtractor(nationalTracksJson);
 
-    let UserTracksArray = await getTopTracks(token, nothing)
+    // get the user's top tracks
+    //let UserTracksArray = await getTopTracks(token, nothing)
+    if (!userTracks || userTracks.length < 20) {  // if the tracks have not been fetched yet
+        await getTopTracks(token, setUserTracks);  // fetches tracks, stores so that they can be re-used later
+    }
 
 
     console.log("National Tracks:")
     console.log(NationalTracksArray);
     console.log("User Tracks:")
-    console.log(UserTracksArray);
+    console.log(userTracks);
+
+
+    return;  // what ever is returned here will be sent to the trends page and stored in the trends variable
 }
+
+
+
 
 
 /* 
 This function is very similar to getTopTracks() in that it returns a array of tracks, rather than doing it based off a user top tracks, this is done by extracting the data from a playlist
 
 */
-
-function nothing(){
-
-}
 function playlistTrackExtractor(playlistJSON){
 
 
@@ -64,11 +69,6 @@ function playlistTrackExtractor(playlistJSON){
         tracksArray.push(trackToInsert)
     }
 
-    console.log("Tracks array:")
-    console.log(tracksArray)
 
     return tracksArray;
-
-
-    
 }

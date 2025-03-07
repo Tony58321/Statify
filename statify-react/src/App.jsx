@@ -98,7 +98,7 @@ function App() {
           page == "Artists" ?
             <Artists token={token} topArtists={topArtists} setTopArtists={setTopArtists}/>
             :
-            <Trends token={token}/>
+            <Trends token={token} tracks={topTracks} setTracks={setTopTracks}/>
           }
         </div>
         <div className="hidden" id="settingsModal">

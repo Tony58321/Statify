@@ -4,11 +4,13 @@ import TasteComparator from './TasteComparator';
 
 
 
-export default function Trends({ token }) {
+export default function Trends({ token, tracks, setTracks }) {
     let [trends, setTrends] = useState(null);
 
     if (!trends) {
-        TasteComparator(token);
+        setTrends("loading");  // indicate that trends are loading, not to be displayed yet
+        TasteComparator(token, tracks, setTracks).
+            then((trends) => setTrends(trends));  // when trends are fetched, store them
     }
 
     return (
