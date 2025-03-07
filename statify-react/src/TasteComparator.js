@@ -1,6 +1,6 @@
 import { Track, getTopTracks } from './getTopTracks';
 
-export async function TasteComparator(token){
+export default async function TasteComparator(token){
 
     console.log("test");
     let apiCallString = "https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ?market=US"
@@ -27,7 +27,9 @@ export async function TasteComparator(token){
     let UserTracksArray = await getTopTracks(token, nothing)
 
 
+    console.log("National Tracks:")
     console.log(NationalTracksArray);
+    console.log("User Tracks:")
     console.log(UserTracksArray);
 }
 
@@ -62,6 +64,7 @@ function playlistTrackExtractor(playlistJSON){
         tracksArray.push(trackToInsert)
     }
 
+    console.log("Tracks array:")
     console.log(tracksArray)
 
     return tracksArray;
@@ -69,7 +72,3 @@ function playlistTrackExtractor(playlistJSON){
 
     
 }
-
-
-
-export default TasteComparator
