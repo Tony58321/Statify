@@ -36,7 +36,7 @@ export default async function TasteComparator(token, userTracks, setUserTracks){
     console.log(userTracks);
 
 
-    return;  // what ever is returned here will be sent to the trends page and stored in the trends variable
+    return NationalTracksArray;  // what ever is returned here will be sent to the trends page and stored in the trends variable
 }
 
 
