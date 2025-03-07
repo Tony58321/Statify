@@ -106,11 +106,19 @@ export default function Artists({ token, topArtists, setTopArtists }) {
             {message && <p id="playlist-message">{message}</p>}
 
             {topArtists ? (
-                <div id="grid">
-                    {topArtists.map((artist, i) => (
-                        <ArtistItem number={i + 1} artist={artist} key={i} />
-                    ))}
-                </div>
+                <>
+                    {topArtists.length < artistCount && (
+                        <p id="warning-message">
+                            Please listen to more artists to reach {artistCount} in this time frame. But here are the {topArtists.length} artists we found:
+                        </p>
+                    )}
+
+                    <div id="grid">
+                        {topArtists.map((artist, i) => (
+                            <ArtistItem number={i + 1} artist={artist} key={i} />
+                        ))}
+                    </div>
+                </>
             ) : (
                 <p id="loading-message">Press button to load artists</p>
             )}

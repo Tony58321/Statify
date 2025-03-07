@@ -193,3 +193,8 @@ body {
 .hidden {
   display: none;
 }
+
+#warning-message {
+  text-align: center;
+  font-size: 18px;
+}
