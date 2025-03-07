@@ -126,6 +126,14 @@ body {
   background-color: #444544; 
 }
 
+#playlist-message {
+  text-align: center;
+  font-size: 18px;
+  color: #1AC357;
+  margin-top: 20px;
+  padding: 10px;
+}
+
 
 #spotify-image{
   max-width: 85%;  

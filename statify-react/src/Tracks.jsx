@@ -125,6 +125,8 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
                 )}
             </div>
 
+            {message && <p id="playlist-message">{message}</p>}
+
             {
                 topTracks ?
                     <div id="grid">
