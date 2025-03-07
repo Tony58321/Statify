@@ -24,16 +24,21 @@ function TrackItem({ number, track }) {
     );
 }
 
+// function isValidCount(countString) {
+//     if (Number.isNaN(countString)) {
+//         return false;
+//     } else if (countString === "") {
+//         return true;
+//     } else if (MIN_TRACKS <= Number(countString) && Number(countString) <= MAX_TRACKS) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
 function isValidCount(countString) {
-    if (Number.isNaN(countString)) {
-        return false;
-    } else if (countString === "") {
-        return true;
-    } else if (MIN_TRACKS <= Number(countString) && Number(countString) <= MAX_TRACKS) {
-        return true;
-    } else {
-        return false;
-    }
+    const count = Number (countString);
+    return /^[1-9]$|^[1-4][0-9]$|^50$/.test(countString) && Number.isInteger(count);
 }
 
 function refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount) {
@@ -60,6 +65,18 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
     const [topTracksFetched, setTopTracksFetched] = useState(false); 
+
+    const handleTrackCountChange = (event) => {
+        const value = event.target.value;
+        setTrackCount (value);
+
+        if (!isValidCount(value)){
+            setTopTracks(null);
+            setMessage ("Please enter a number between 1 and 50.");
+        } else {
+            setMessage ("");
+        }
+    };
 
     const handleGeneratePlaylist = async () => {
         if (!topTracks || topTracks.length === 0) {
@@ -91,7 +108,7 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
                     id="input-amount"
                     type='number'
                     value={trackCount}
-                    onChange={event => isValidCount(event.target.value) ? setTrackCount(event.target.value) : null}
+                    onChange={handleTrackCountChange}
                 />
                 Tracks from the last
                 <select
@@ -104,15 +121,20 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
             </p>
 
             <div id="button_box">
-                <button
-                    id="get_button"
-                    onClick={() => {
-                        refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount);
-                        setTopTracksFetched(true); // to check whether get top tracks is clicked or not
-                    }}
-                >
-                    Get Top Tracks
-                </button>
+            <button
+                id="get_button"
+                onClick={() => {
+                    if (!isValidCount(trackCount)) {
+                        setMessage("Please enter a number between 1 and 50.");
+                        return;
+                    }
+
+                    refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount);
+                    setTopTracksFetched(true); // Mark that the button was clicked
+                }}
+            >
+                Get Top Tracks
+            </button>
 
                 {/* Conditionally render the "Generate Playlist" button */}
                 {topTracksFetched && (
