@@ -1,14 +1,12 @@
 ## High Level Description:
-
-Our web application supplies you with data about your Spotify listening habits. This includes a list of your top artists and songs. You can select the time frames you want this data to be calculated from (4 weeks, 6 months, 1 year). You can also select how many songs/artists you want to be displayed. You will also be able to compare your data with national listing statistics. 
+Our web application provides data about users Spotify listening habits. This includes a list of top artists and tracks. You can select the time frames you want this data to be calculated from (4 weeks, 6 months, 12 months). You can also select how many tracks/artists you want to be displayed. You will also be able to compare your data with national listing statistics. 
 
 ## How to Install:
-
 1. Downloaded the code via github. From this repository's code page, select code -> download zip. Unzip the file once it has dowloaded.
-2. Install NodeJS if you have not already. Instructions can be found at:
-https://nodejs.org/en/download
-3. Open a terminal and navigate to the "statify-react" folder.
-4. Once in the "statify-react" folder run "npm i" to install the dependencies for this application.
+   Note - it's best to do this locally, not on the flip server.
+3. Install NodeJS if you have not already. Instructions can be found at: https://nodejs.org/en/download
+4. Open a terminal and navigate to the "statify-react" folder.
+5. Once in the "statify-react" folder run "npm i" to install the dependencies for this application.
 
 ## How to Link a New Developer Account:
 The source code currently comes pre-linked to a demo Spotify developer account. This means that only people with whitelisted Spotify accounts can log into Statify. However, you are able to create and link a new Spotify developer account, which will allow you to whitelist accounts of your choosing. To do this:
@@ -18,12 +16,10 @@ The source code currently comes pre-linked to a demo Spotify developer account. 
 4. Copy the client id of the new app. Paste this new client id to replace the existing client id in the source code. It is currently located at the first constant declaration (line ~16) in ./statify-react/src/app.jsx.
 
 ## How to Run:
-
 1. Open a terminal and navigate to the "statify-react" folder.
 2. Once in the "statify-react" folder run "npm run dev". This will start open a port to host the website on your local machine. The link to the website will be printed to the terminal.
 
 ## How to Use:
-
 Open the page:
 - Ensure the app is running on your computer (See "How to Run" section above) or that you have a valid link to an instance of the app running on another computer/server.
 - Navigate to the given url that will take you to the Statify website (If you are running the app on your own computer, this link will be printed to the terminal after step 2 of the "How to Run" section above).
@@ -49,9 +45,7 @@ Get top artists:
 - After choosing from the given options, a list of top artists from your Spotify listening habits should be displayed in list format.
 
 ## How to Report Bugs:
-
 There is a link to a bug reporting form on our website. As well as here: https://forms.gle/ZW5Lt2wJpGDPtdRA7.
 
 ## Known Bugs:
-
 Currently no known bugs. Our bugs have been updated and resolved on GitHub issues.
