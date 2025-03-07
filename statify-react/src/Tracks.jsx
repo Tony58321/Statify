@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import getTopTracks from './getTopTracks';
 
+import { generatePlaylist } from './generatePlaylist';
 
 // a list of time frames accepted by the spotify API formatted as:
 // {"Value to display to user": "Value to pass to the API"}
@@ -77,6 +78,32 @@ function refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrack
 export default function Tracks({token, topTracks, setTopTracks}){
     let [trackCount, setTrackCount] = useState(DEFAULT_TRACK_COUNT);  // How many top tracks should be returned
     let [trackTimeFrame, setTrackTimeFrame] = useState("4 weeks");  // the timeframe to get tracks from
+
+    let [message, setMessage] = useState(""); // Message state to show playlist status
+    let [loading, setLoading] = useState(false); // Loading state for button
+
+    // Generate a playlist with top tracks
+    const handleGeneratePlaylist = async () => {
+        if (!topTracks || topTracks.length === 0) {
+            setMessage("No tracks available. Get top tracks first.");
+            return;
+        }
+
+        setLoading(true);
+        setMessage("Generating playlist...");
+
+        try {
+            await generatePlaylist(token, () => {
+                setMessage("Playlist successfully created! Check your Spotify.");
+            }, trackCount, TIMEFRAMES[trackTimeFrame]);
+        } catch (error) {
+            console.error("Error generating playlist:", error);
+            setMessage("An error occurred while generating the playlist.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return(
         <>
         <h1 id="title">Tracks</h1>
@@ -93,6 +120,11 @@ export default function Tracks({token, topTracks, setTopTracks}){
         
         <div id="button_box">
             <button id="get_button" onClick={() => refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount)}>Get Top Tracks</button>
+
+            {/* button for generating playlisy */}
+            <button id="generate_button" onClick={handleGeneratePlaylist} disabled={loading}>
+                {loading ? "Loading..." : "Generate Playlist"}
+            </button>
         </div>
 
         {
