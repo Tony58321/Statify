@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import getTopTracks from './getTopTracks';
 import { generatePlaylist } from './generatePlaylist';
-import './Tracks.css'
+import './Tracks.css';
 
 // a list of time frames accepted by the spotify API formatted as:
 // {"Value to display to user": "Value to pass to the API"}
@@ -40,7 +40,7 @@ function TrackItem({ number, track }) {
 // }
 
 function isValidCount(countString) {
-    const count = Number (countString);
+    const count = Number(countString);
     return /^[1-9]$|^[1-4][0-9]$|^50$/.test(countString) && Number.isInteger(count);
 }
 
@@ -71,13 +71,13 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
 
     const handleTrackCountChange = (event) => {
         const value = event.target.value;
-        setTrackCount (value);
+        setTrackCount(value);
 
-        if (!isValidCount(value)){
+        if (!isValidCount(value)) {
             setTopTracks(null);
-            setMessage ("Please enter a number between 1 and 50.");
+            setMessage("Please enter a number between 1 and 50.");
         } else {
-            setMessage ("");
+            setMessage("");
         }
     };
 
@@ -109,7 +109,7 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
             <p id="selection_menu">Get top
                 <input
                     id="input-amount"
-                    type='number'
+                    type="number"
                     value={trackCount}
                     onChange={handleTrackCountChange}
                 />
@@ -119,25 +119,27 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
                     value={trackTimeFrame}
                     onChange={event => setTrackTimeFrame(event.target.value)}
                 >
-                    {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame} key={timeFrame}>{timeFrame}</option>)}
+                    {Object.keys(TIMEFRAMES).map((timeFrame) => (
+                        <option value={timeFrame} key={timeFrame}>{timeFrame}</option>
+                    ))}
                 </select>
             </p>
 
             <div id="button_box">
-            <button
-                id="get_button"
-                onClick={() => {
-                    if (!isValidCount(trackCount)) {
-                        setMessage("Please enter a number between 1 and 50.");
-                        return;
-                    }
+                <button
+                    id="get_button"
+                    onClick={() => {
+                        if (!isValidCount(trackCount)) {
+                            setMessage("Please enter a number between 1 and 50.");
+                            return;
+                        }
 
-                    refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount);
-                    setTopTracksFetched(true); // Mark that the button was clicked
-                }}
-            >
-                Get Top Tracks
-            </button>
+                        refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount);
+                        setTopTracksFetched(true); // Mark that the button was clicked
+                    }}
+                >
+                    Get Top Tracks
+                </button>
 
                 {/* Conditionally render the "Generate Playlist" button */}
                 {topTracksFetched && (
@@ -156,7 +158,9 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
             {
                 topTracks ?
                     <div id="grid">
-                        {topTracks.map((track, i) => <TrackItem number={i + 1} track={track} key={i} />)}
+                        {topTracks.map((track, i) => (
+                            <TrackItem number={i + 1} track={track} key={i} />
+                        ))}
                     </div>
                     :
                     <p id="loading-message">Press button to load tracks</p>

@@ -183,6 +183,11 @@ body {
   display: none;
 }
 
+#warning-message {
+  text-align: center;
+  font-size: 18px;
+}
+
 #loadingMessage {
   text-align: center;
   font-size: 18px;
