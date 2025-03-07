@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import getTopTracks from './getTopTracks';
-
 import { generatePlaylist } from './generatePlaylist';
 
 // a list of time frames accepted by the spotify API formatted as:
@@ -15,74 +14,52 @@ const MIN_TRACKS = 1;
 const MAX_TRACKS = 50;
 const DEFAULT_TRACK_COUNT = 20;
 
-
-function TrackItem({number, track}) {
-    /*
-        TrackItem - function to return react component to display a track object
-    */
-    return <>
+function TrackItem({ number, track }) {
+    return (
         <div id="spotify-item">
             <p>{number}. {track.name}</p>
-            <img id="spotify-image" src={track.coverArtUrl} alt={track.name}/>
-            {/* <img href={track.coverArtURL} alt="image"></img> */}         
+            <img id="spotify-image" src={track.coverArtUrl} alt={track.name} />
         </div>
-    </>
+    );
 }
-
 
 function isValidCount(countString) {
-    /*
-        Returns true if the string countString is "" or represents a valid number bwetween MIN_TRACKS and MAX_TRACKS
-    */
-    if (Number.isNaN(countString)) {  // check variety of invalid cases, eg, letters, multiple decimals, etc
+    if (Number.isNaN(countString)) {
         return false;
-    } else if (countString == "") {  // special case, if empty string, return true so user can clear field
+    } else if (countString === "") {
         return true;
-    } else if (MIN_TRACKS <= Number(countString) && Number(countString) <= MAX_TRACKS) {  // if in bounds, return true
+    } else if (MIN_TRACKS <= Number(countString) && Number(countString) <= MAX_TRACKS) {
         return true;
-    } else {  // must be valid number, but out of bounds
+    } else {
         return false;
     }
 }
-
 
 function refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount) {
-    /*
-        This function validates that trackCount is within the bounds of MIN_TRACKS and MAX_TRACKS.
-        It then calls setTrackCount with the validated value obtained from trackCount.
-        It finally calls getTopTracks with the parameters: token, setTopTracks, validatedTrackCount, trackTimeFrame
-        Parameters.
-            token - the token to send to the spotify API
-            setTopTracks(any) - a success handler function to pass to getTopTracks
-            trackCount - the number of tracks to return. Cannot be NaN. Will be validated other than that
-            trackTimeFrame - a key in TIMEFRAMES, where the relative value is the timeframe to pass to getTopTracks/the spotify API
-            setTrackCount(any) - function to call with the validated version of trackCount
-    */
-    let count = trackCount;  // the number of tracks to get. Make a new variable so that it can be changed
-    if (trackCount == "") {  // if the entry is blank, set to default value
+    let count = trackCount;
+    if (trackCount === "") {
         count = DEFAULT_TRACK_COUNT;
-    } else if (!Number.isInteger(Number(count))) {  // if entry is not integer, round to nearest
+    } else if (!Number.isInteger(Number(count))) {
         count = Math.round(Number(count));
     }
-    // check bounds
-    if (count < MIN_TRACKS) {  // if entry is below minimum, set to minimum
+
+    if (count < MIN_TRACKS) {
         count = MIN_TRACKS;
-    } else if (count > MAX_TRACKS) {  // if entry is above maximum, set to maximum
+    } else if (count > MAX_TRACKS) {
         count = MAX_TRACKS;
     }
-    setTrackCount(count);  // set the entry field to be the validated value, in case it changed
-    getTopTracks(token, setTopTracks, count, TIMEFRAMES[trackTimeFrame]);  // call function to fetch tracks
+
+    setTrackCount(count);
+    getTopTracks(token, setTopTracks, count, TIMEFRAMES[trackTimeFrame]);
 }
 
+export default function Tracks({ token, topTracks, setTopTracks }) {
+    const [trackCount, setTrackCount] = useState(DEFAULT_TRACK_COUNT);
+    const [trackTimeFrame, setTrackTimeFrame] = useState("4 weeks");
+    const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [topTracksFetched, setTopTracksFetched] = useState(false); 
 
-export default function Tracks({token, topTracks, setTopTracks}){
-    let [trackCount, setTrackCount] = useState(DEFAULT_TRACK_COUNT);  // How many top tracks should be returned
-    let [trackTimeFrame, setTrackTimeFrame] = useState("4 weeks");  // the timeframe to get tracks from
-
-    let [message, setMessage] = useState(""); // Message state to show playlist status
-    let [loading, setLoading] = useState(false); // Loading state for button
-
-    // Generate a playlist with top tracks
     const handleGeneratePlaylist = async () => {
         if (!topTracks || topTracks.length === 0) {
             setMessage("No tracks available. Get top tracks first.");
@@ -104,39 +81,58 @@ export default function Tracks({token, topTracks, setTopTracks}){
         }
     };
 
-    return(
+    return (
         <>
-        <h1 id="title">Tracks</h1>
+            <h1 id="title">Tracks</h1>
 
-        <p id="selection_menu">Get top
-            <input id="input-amount" type='number' value={trackCount} onChange={
-                event => isValidCount(event.target.value) ? setTrackCount(event.target.value) : null}>
-            </input>
-            Tracks from the last
-            <select id="select-time" value={trackTimeFrame} key={TIMEFRAMES['4 weeks']} onChange={event => setTrackTimeFrame(event.target.value)}>
-                {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame}>{timeFrame}</option>)}
-            </select>
-        </p>
-        
-        <div id="button_box">
-            <button id="get_button" onClick={() => refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount)}>Get Top Tracks</button>
+            <p id="selection_menu">Get top
+                <input
+                    id="input-amount"
+                    type='number'
+                    value={trackCount}
+                    onChange={event => isValidCount(event.target.value) ? setTrackCount(event.target.value) : null}
+                />
+                Tracks from the last
+                <select
+                    id="select-time"
+                    value={trackTimeFrame}
+                    onChange={event => setTrackTimeFrame(event.target.value)}
+                >
+                    {Object.keys(TIMEFRAMES).map((timeFrame) => <option value={timeFrame} key={timeFrame}>{timeFrame}</option>)}
+                </select>
+            </p>
 
-            {/* button for generating playlisy */}
-            <button id="generate_button" onClick={handleGeneratePlaylist} disabled={loading}>
-                {loading ? "Loading..." : "Generate Playlist"}
-            </button>
-        </div>
+            <div id="button_box">
+                <button
+                    id="get_button"
+                    onClick={() => {
+                        refreshTracks(token, setTopTracks, trackCount, trackTimeFrame, setTrackCount);
+                        setTopTracksFetched(true); // to check whether get top tracks is clicked or not
+                    }}
+                >
+                    Get Top Tracks
+                </button>
 
-        {
-            topTracks ?  // if the top tracks have been retrieved already, display them
-                <>
-                <div id="grid">
-                    {topTracks.map((track, i) => <TrackItem number={i + 1} track={track}/>)}
-                </div>
-                </>
-            :  // otherwise display a placeholder
-                <p id="loading-message">Press button to load tracks</p>
+                {/* Conditionally render the "Generate Playlist" button */}
+                {topTracksFetched && (
+                    <button
+                        id="generate_button"
+                        onClick={handleGeneratePlaylist}
+                        disabled={loading}
+                    >
+                        {loading ? "Loading..." : "Generate Playlist"}
+                    </button>
+                )}
+            </div>
+
+            {
+                topTracks ?
+                    <div id="grid">
+                        {topTracks.map((track, i) => <TrackItem number={i + 1} track={track} key={i} />)}
+                    </div>
+                    :
+                    <p id="loading-message">Press button to load tracks</p>
             }
         </>
-    )
+    );
 }
