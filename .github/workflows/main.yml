@@ -1,6 +1,6 @@
 name: Playwright Tests
 
-on: [push, pull_request] # Run tests on every push and PR
+on: [push, pull_request] # Triggers on every push or PR
 
 jobs:
   test:
@@ -23,10 +23,3 @@ jobs:
 
       - name: Run Playwright Tests
         run: npx playwright test
-
-      - name: Upload Playwright Test Report (if tests fail)
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: playwright-report
-          path: playwright-report/
