@@ -78,9 +78,7 @@ body {
 }
 
 .pages{
-  width: 75%;       
-  margin: 0 auto;
-  
+  width: 100%;
 }
 
 #title{
@@ -134,15 +132,6 @@ body {
   padding: 10px;
 }
 
-
-#spotify-image {
-  width: 200px;
-  height: 200px;
-  margin: 0;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
 #spotify-item{
   display: flex;
   flex-direction: column;
@@ -192,4 +181,12 @@ body {
 
 .hidden {
   display: none;
+}
+
+#loadingMessage {
+  text-align: center;
+  font-size: 18px;
+  color: #1AC357;
+  margin-top: 20px;
+  padding: 10px;
 }

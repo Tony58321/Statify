@@ -17,9 +17,12 @@ const DEFAULT_TRACK_COUNT = 20;
 
 function TrackItem({ number, track }) {
     return (
-        <div id="spotify-item">
-            <p>{number}. {track.name}</p>
-            <img id="spotify-image" src={track.coverArtUrl} alt={track.name} />
+        <div id="spotifyItem">
+            <div id="titleAndRank">
+                <p id="trackRank">{number}.</p>
+                <p id="trackTitle">{track.name}</p>
+            </div>
+            <img id="spotifyImage" src={track.coverArtUrl} alt={track.name} />
         </div>
     );
 }
