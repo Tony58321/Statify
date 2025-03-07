@@ -3,7 +3,7 @@
 Statify is a statistics web application that connects to the popular music streaming platform Spotify. It allows users to view statistics related to their listening habits on Spotify. Users can log into the web-app interface with their Spotify account and view listening statistics, including their most listened to artists and songs. There will be various options for users to choose what data within what timeframe they want to view. The web-app will be implemented using the free API that Spotify provides (https://developer.spotify.com/documentation/web-api).
 
 ## How to Build and Test Statify
-Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
+Detailed instructions for building/testing the application can be found in the (user_manual.md) and (developer_document.md) documents. Follow whichever document meets your needs.
 
 ## How to Run:
 Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
