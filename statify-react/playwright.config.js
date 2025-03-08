@@ -32,6 +32,9 @@ export default defineConfig({
     /* Load the saved Spotify session */
     storageState: 'spotify-session.json', // This ensures Playwright reuses the authenticated session
     
+    headless: true,  // Forces headless mode (faster)
+    timeout: 30000,  // Ensures tests don't get stuck forever
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
