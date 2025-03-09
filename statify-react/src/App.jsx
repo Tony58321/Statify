@@ -65,7 +65,7 @@ function App() {
 
   }
 
-
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
 
   /*
@@ -84,8 +84,8 @@ function App() {
             <button className="navElement" onClick={() => setPage("Artists")}>Artists</button>
             <button className="navElement" onClick={() => setPage("Trends")}>Trends</button>
           </nav>
-          <button id="settings" onClick={() => toggleModal()}>
-            <img src="/assets/settings.png" alt="Settings"></img>
+          <button id="settings" onClick={() => setIsSettingsOpen(!isSettingsOpen)}>
+            <img src="/assets/settings.png" alt="Settings" />
           </button>
         </div>  
         <div className="pages">
@@ -101,7 +101,7 @@ function App() {
             <Trends token={token} tracks={topTracks} setTracks={setTopTracks}/>
           }
         </div>
-        <div className="hidden" id="settingsModal">
+        <div className={isSettingsOpen ? "visible" : "hidden"} id="settingsModal">
           <h2 id="settingsHeader">Settings</h2>
         </div>
         </>
