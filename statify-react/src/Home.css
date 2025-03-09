@@ -17,8 +17,7 @@
 #profileImage {
     margin: 30px;
     border-radius: 50%;
-    height: 250px;
-    width: 250px;
+    max-width: 40%;
     object-fit: cover;
 }
 
