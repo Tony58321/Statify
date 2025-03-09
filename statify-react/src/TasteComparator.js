@@ -1,6 +1,6 @@
 import { Track, getTopTracks } from './getTopTracks';
 
-export default async function TasteComparator(token, userTracks, setUserTracks){
+export default async function TasteComparator(token){
 
     console.log("Fetching trends:");
     let apiCallString = "https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ?market=US"
@@ -25,15 +25,15 @@ export default async function TasteComparator(token, userTracks, setUserTracks){
 
     // get the user's top tracks
     //let UserTracksArray = await getTopTracks(token, nothing)
-    if (!userTracks || userTracks.length < 20) {  // if the tracks have not been fetched yet
-        await getTopTracks(token, setUserTracks);  // fetches tracks, stores so that they can be re-used later
-    }
+    //if (!userTracks || userTracks.length < 20) {  // if the tracks have not been fetched yet
+      //  await getTopTracks(token, setUserTracks);  // fetches tracks, stores so that they can be re-used later
+    //}
 
 
     console.log("National Tracks:")
     console.log(NationalTracksArray);
-    console.log("User Tracks:")
-    console.log(userTracks);
+    //console.log("User Tracks:")
+    //console.log(userTracks);
 
 
     return NationalTracksArray;  // what ever is returned here will be sent to the trends page and stored in the trends variable
