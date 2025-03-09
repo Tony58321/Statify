@@ -49,10 +49,9 @@
 }
 
 #spotifyImage {
-    width: 200px;
-    height: 200px;
+    max-width: 80%;
     margin: 0;
-    border-radius: 8%;
+    border-radius: 4%;
 }
 
 #titleAndRank {

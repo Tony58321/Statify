@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import getTopArtists from './getTopArtists';
+import './Artists.css';
 
 const TIMEFRAMES = {
     "4 weeks": "short_term",
@@ -13,10 +14,13 @@ const DEFAULT_ARTIST_COUNT = 20;
 
 function ArtistItem({ number, artist }) {
     return (
-        <div id="spotify-item">
-            <p>{number}. {artist.name}</p>
+        <div id="spotifyItem">
+            <div id="titleAndRank">
+                <p id="trackRank">{number}.</p>
+                <p id="trackTitle">{artist.name}</p>
+            </div>
             {artist.imageUrl && (
-                <img id="spotify-image" src={artist.imageUrl} alt={artist.name} />
+                <img id="spotifyImage" src={artist.imageUrl} alt={artist.name} />
             )}
         </div>
     );
