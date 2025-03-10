@@ -82,7 +82,7 @@ function App() {
             <button className="navElement" onClick={() => setPage("Home")}>Home</button>
             <button className="navElement" onClick={() => setPage("Tracks")}>Tracks</button>
             <button className="navElement" onClick={() => setPage("Artists")}>Artists</button>
-            <button className="navElement" onClick={() => setPage("Trends")}>Trends</button>
+            <button className="navElement" onClick={() => setPage("Trends")}>National Listening Trends</button>
           </nav>
           <button id="settings" onClick={() => setIsSettingsOpen(!isSettingsOpen)}>
             <img src="/assets/settings.png" alt="Settings" />
