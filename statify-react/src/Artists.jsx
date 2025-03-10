@@ -78,7 +78,7 @@ export default function Artists({ token, topArtists, setTopArtists }) {
                     value={artistCount}
                     onChange={handleArtistCountChange}
                 />
-                Artists from the last
+                artists from the last
                 <select
                     id="select-time"
                     value={artistTimeFrame}

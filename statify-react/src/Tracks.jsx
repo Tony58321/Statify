@@ -113,7 +113,7 @@ export default function Tracks({ token, topTracks, setTopTracks }) {
                     value={trackCount}
                     onChange={handleTrackCountChange}
                 />
-                Tracks from the last
+                tracks from the last
                 <select
                     id="select-time"
                     value={trackTimeFrame}

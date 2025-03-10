@@ -1,51 +1,67 @@
 #grid {
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-    width: 80vw;       
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 16px; 
-    justify-items: center;
-    margin-top: 40px;
-    align-items: start;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  width: 80vw;       
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 16px; 
+  justify-items: center;
+  margin-top: 40px;
+  align-items: start;
 }
   
-  #selection_menu {
-    margin: 20px 0;
-    font-size: 18px;
-  }
+#selection_menu {
+  margin: 20px 0;
+  font-size: 18px;
+  color: white;
+}
   
-  #input-amount, #select-time {
-    padding: 8px;
-    font-size: 16px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+#input-amount, #select-time {
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
   
-  #button_box {
-    text-align: center;
-    margin-top: 20px;
-  }
+#button_box {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
   
-  #input-amount {
-    text-align: center;
-  }
+#input-amount {
+  text-align: center;
+}
   
-  #select-time {
-    margin-left: 10px;
-  }
+#select-time {
+  margin-left: 10px;
+}
+
+#loading-message {
+  color: white;
+  margin: 0;
+  font-weight: 300;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#get_button {
+  color: white;
+}
 
 #spotifyItem {
-    margin: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #spotifyImage {
