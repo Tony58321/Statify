@@ -46,6 +46,17 @@ function App() {
     });
   }
 
+  async function changeTheme(bg, b1, b1h, b2, b2h, pt, st, ib) {
+    const root = document.documentElement;
+    root.style.setProperty("--bg-color", bg)
+    root.style.setProperty("--button-1-color", b1)
+    root.style.setProperty("--button-1-hover", b1h)
+    root.style.setProperty("--button-2-color", b2)
+    root.style.setProperty("--button-2-hover", b2h)
+    root.style.setProperty("--primary-text", pt)
+    root.style.setProperty("--secondary-text", st)
+    root.style.setProperty("--input-border", ib)
+  }
 
   /*
     This function is called when the user presses the log in button
@@ -73,7 +84,6 @@ function App() {
   */
   return (
     <>
-    
       {profile ?  // This checks if the profile variable is truthy, ie, is an object, before trying to access properties
         <>
         <div id="header">
@@ -103,6 +113,15 @@ function App() {
         </div>
         <div className={isSettingsOpen ? "visible" : "hidden"} id="settingsModal">
           <h2 id="settingsHeader">Settings</h2>
+          <button id="closeSettings" onClick={() => setIsSettingsOpen(!isSettingsOpen)}>X</button>
+          <h3 id="themesHeader">Theme</h3>
+          <div id="themeOptions">
+            <button className="theme" id="ogDark" onClick={() => changeTheme("#121212", "#1AC357", "#3BE477", "#292a29", "#444544", "#1AC357", "#FFFFFF", "#292a29")}></button>
+            <button className="theme" id="light" onClick={() => changeTheme("#F5F5F5", "#1AC357", "#3BE477", "#E0E0E0", "#CFCFCF", "#1AC357", "#121212", "#C0C0C0")}></button>
+            <button className="theme" id="pastel" onClick={() => changeTheme("#FAF3E0", "#FF9A8B", "#FFB3A7", "#A7D7C5", "#C3E8D5", "#FF7F72", "#3E3E3E", "#D1C1A7")}></button>
+            <button className="theme" id="calm" onClick={() => changeTheme("#E1F7F3", "#A3C9D7", "#86A6B0", "#F4D1D1", "#F2B6B6", "#3C5A65", "#6A7C80", "#A2B6B3")}></button>
+            <button className="theme" id="electric" onClick={() => changeTheme("#F2F5D9", "#F27D42", "#F29C65", "#64B3F4", "#88C8F7", "#3C3C3C", "#6C6C6C", "#F0A6A3")}></button>
+          </div>
         </div>
         </>
         : token == "Loading" ?  // if profile is false but token is true, show loading screen

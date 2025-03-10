@@ -58,7 +58,7 @@
 
 #titleAndRank {
   font-size: 20px;
-  color: white;
+  color: var(--secondary-text);
   width: 100%;
   display: flex;
   align-items: center;

@@ -14,11 +14,11 @@
 #selection_menu {
   margin: 20px 0;
   font-size: 18px;
-  color: white;
+  color: var(--secondary-text);
 }
   
 #input-amount, #select-time {
-  color: white;
+  color: var(--secondary-text);
   padding: 8px;
   font-size: 16px;
   margin-left: 10px;
@@ -40,7 +40,7 @@
 }
 
 #loading-message {
-  color: white;
+  color: var(--secondary-text);
   margin: 0;
   font-weight: 300;
   position: absolute;
@@ -49,7 +49,7 @@
 }
 
 #get_button {
-  color: white;
+  color: var(--secondary-text);
 }
 
 #spotifyItem {
@@ -72,7 +72,7 @@
 
 #titleAndRank {
     font-size: 20px;
-    color: white;
+    color: var(--secondary-text);
     width: 100%;
     display: flex;
     align-items: center;
