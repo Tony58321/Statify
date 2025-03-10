@@ -1,11 +1,12 @@
 import React, { useState} from 'react';
 import TasteComparator from './TasteComparator';
 import getTopTracks from './getTopTracks';
+import './Trends.css';
 
 
 function TrackDisplay({ track, index, userTrackNames }) {
     return <>
-        <ul>{index + ". " + track.name + (userTrackNames.includes(track.name) ? "   ***" : "" )}</ul>
+        <li>{index + ". " + track.name + (userTrackNames.includes(track.name) ? "   ⭐" : "" )}</li>
     </>;
 }
 
@@ -21,6 +22,10 @@ export default function Trends({ token}) {
 
 
     let matchCount = 0;
+
+    let [matchCountToDisplay, setMatchCountToDisplay] = useState(0);
+
+
     let [matchPercentage, setMatchPercentage] = useState(0); // Track match percentage
 
 /*
@@ -70,6 +75,8 @@ export default function Trends({ token}) {
                         let a = (matchCount / 100) * 100;
                         setMatchPercentage(a);
 
+                        setMatchCountToDisplay(matchCount);
+
 
                         //matchCount = trends.filter((track) => userTrackNames.includes(track.name)).length;
                         console.log("Tracks in common: " + matchCount)
@@ -90,20 +97,29 @@ export default function Trends({ token}) {
 
     return (
         <>
-            <h1 id="title">Trends</h1>
+            <h1 id="title">National Trends</h1>
 
 
-            <p>Your listening of the past month is {matchPercentage}% similar to U.S. national listening trends</p>
+            <p className="headline">Ready to see how your listening habits stack up to what the rest of the U.S. is listening to?</p>
+
+            <div id ="scoreCard">
+                <p>Your similarity scorecard:</p>
+                <p>Your listening over the past month is {matchPercentage}% similar to U.S. national listening trends</p>
+                <p>With a total of {matchCountToDisplay} tracks in common.</p>
+
+                <p>Scroll below to see what everyone else is listening to. A '⭐' indicates that it is also one if your top tracks.</p>
+                <p id ="disclaimer">*information based on comparing your top 50 tracks with the weekly Billboard Hot 100</p>
+            </div>
 
 
-            <p>Billboard top 100:</p>
+            <p id='top100TitleStyle'>Billboard top 100:</p>
 
             {!trends || trends == "loading" ?
             <p>Loading trends...</p>
             : trends == "failed to load trends" ?
             <p>Failed to load trends</p>
             :
-            <ul>
+            <ul className="content">
                 {trends.map((track, index) => <TrackDisplay key={index} track={track} index={index + 1} userTrackNames={userTrackNames}/>)}
             </ul>
             }

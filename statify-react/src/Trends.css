@@ -1,0 +1,62 @@
+.content {
+    color: white;
+    font-size: 18px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+
+ul {
+    list-style-type: none;
+    padding-left: 0; /* Ensures no extra indentation */
+}
+
+.headline{
+
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-style: italic;
+}
+
+#scoreCard{
+
+    color: white;
+    font-size: 18px;
+
+
+    width: 1000px; /* Adjust width as needed */
+    max-width: 80%; /* Ensures it doesn't stretch too much on larger screens */
+
+    border: 3px solid #333; /* Border around the scorecard */
+    border-radius: 10px; /* Rounded corners for a softer look */
+
+    display: inline-block; /* Ensures it wraps around its content */
+
+    margin: 20px auto; /* Centers it horizontally */
+    text-align: center; /* Centers text inside */
+
+    display: block; /*this has to go here for some reason, if it goes before the width it breaks strangly enough */
+
+    background-color: #868686;
+}
+
+#scoreCard p {
+    background: none; /* Remove any background */
+}
+
+
+#top100TitleStyle{
+
+    
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#disclaimer{
+    font-size: 10px;
+}
