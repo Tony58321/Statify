@@ -113,14 +113,13 @@ function App() {
         </div>
         <div className={isSettingsOpen ? "visible" : "hidden"} id="settingsModal">
           <h2 id="settingsHeader">Settings</h2>
-          <button id="closeSettings" onClick={() => setIsSettingsOpen(!isSettingsOpen)}>X</button>
           <h3 id="themesHeader">Theme</h3>
           <div id="themeOptions">
             <button className="theme" id="ogDark" onClick={() => changeTheme("#121212", "#1AC357", "#3BE477", "#292a29", "#444544", "#1AC357", "#FFFFFF", "#292a29")}></button>
             <button className="theme" id="light" onClick={() => changeTheme("#F5F5F5", "#1AC357", "#3BE477", "#E0E0E0", "#CFCFCF", "#1AC357", "#121212", "#C0C0C0")}></button>
-            <button className="theme" id="pastel" onClick={() => changeTheme("#FAF3E0", "#FF9A8B", "#FFB3A7", "#A7D7C5", "#C3E8D5", "#FF7F72", "#3E3E3E", "#D1C1A7")}></button>
-            <button className="theme" id="calm" onClick={() => changeTheme("#E1F7F3", "#A3C9D7", "#86A6B0", "#F4D1D1", "#F2B6B6", "#3C5A65", "#6A7C80", "#A2B6B3")}></button>
-            <button className="theme" id="electric" onClick={() => changeTheme("#F2F5D9", "#F27D42", "#F29C65", "#64B3F4", "#88C8F7", "#3C3C3C", "#6C6C6C", "#F0A6A3")}></button>
+            <button className="theme" id="candy" onClick={() => changeTheme("#ffe6f2", "#ff99cc", "#ff66b2", "#e6f2ff", "#d4eaff", "#ff66b2", "#cc99ff", "#cc99ff")}></button>
+            <button className="theme" id="calm" onClick={() => changeTheme("#EBE8DB", "#E4B5B9", "#F0C7C9", "#DDE5DD", "#C5D4C5", "#B03052", "#3D0301", "#D76C82")}></button>
+            <button className="theme" id="rainforest" onClick={() => changeTheme("#EAF8F0", "#A0E8B0", "#B8F0C0", "#D2DCD2", "#BECABC", "#3D9F66", "#2B2B2B", "#BECABC")}></button>
           </div>
         </div>
         </>

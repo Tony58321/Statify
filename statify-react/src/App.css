@@ -152,6 +152,7 @@ body {
 }
 
 #settings {
+  z-index: 100;
   margin: 0;
   padding: 0;
   border: none;
@@ -183,14 +184,11 @@ body {
 
 #settingsModal {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70vw;
-  height: 70vh;
-  background-color: var(--button-2-hover) !important;
-  border-style: solid;
-  border-color: var(--button-2-color);
+  top: 30px;
+  right: 30px;
+  width: 35vw;
+  height: 45vh;
+  background-color: var(--button-2-color) !important;
   border-radius: 20px;
 }
 
@@ -202,29 +200,9 @@ body {
   margin: 0;
   margin-top: 15px;
   padding: 0;
-  background-color: var(--button-2-hover);
+  background-color: var(--button-2-color);
   font-size: 30px;
   font-weight: 600;
-}
-
-#closeSettings {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  top: 5%;
-  right: 3%;
-  border-style: none;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
-  color: var(--secondary-text);
-  background-color: var(--button-1-color);
-}
-
-#closeSettings:hover {
-  background-color: var(--button-1-hover);
 }
 
 .hidden {
@@ -251,7 +229,7 @@ body {
   transform: translate(-50%);
   color: var(--secondary-text);
   font-weight: 400;
-  background-color: var(--button-2-hover);
+  background-color: var(--button-2-color);
 }
 
 #themeOptions {
@@ -259,11 +237,11 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 50vw;
+  width: 100%;
   top: 150px;
   left: 50%;
   transform: translate(-50%);
-  background-color: var(--button-2-hover);
+  background-color: var(--button-2-color);
 }
 
 .theme {
@@ -289,14 +267,14 @@ body {
   background-color: #121212;
 }
 
-#pastel {
-  background-color: #FAF3E0;
+#candy {
+  background-color: #ffe6f2;
 }
 
 #calm {
-  background-color: #E1F7F3;
+  background-color: #FFF7F3;
 }
 
-#electric {
-  background-color: #F2F5D9;
+#rainforest {
+  background-color: #EAF8F0;
 }
