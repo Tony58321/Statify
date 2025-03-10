@@ -108,22 +108,22 @@ a. User cannot locate settings menu\
 b. User cannot locate theme customization\
 c. User cannot get a ‘good idea’ of the theme they are applying before they apply, and end up applying a theme that they don’t like
 
-**Use Case 6:** Compare user listening habits of top artists to that of national listening habits
+**Use Case 6:** Compare user listening habits to that of national listening habits
 1. Name: Aaron Pina-Ramirez
 2. Actors: Spotify User, Spotify
-3. Triggers: When a user looks at their top songs, they have a button option called “compare to national trends” which will trigger this use-case.
-4. Preconditions: User should have listened to at least one song. Users should also already be logged into our web app, Statify.
-5. Postconditions (success scenario): Users will be able to see how their selected top song compares to the most popular songs of that artist on the national level (U.S.)
+3. Triggers: There is a tab at the top of the webapp called "National Listening Trends" clicking this tab will trigger this use case.
+4. Preconditions: Users should also already be logged into our web app, Statify.
+5. Postconditions (success scenario): Users will be able to see the top 100 national (U.S. )songs, and see how similar their own listening habits over the past month is to these top 100 songs.
 6. List of steps (success scenario):\
-a. User will go to view their top tracks (see use case 2 for details on this)\
-b. Users will then have a button for each track called “compare to national listening”.\
-c. Upon clicking this button, user will see how other people in the USA listen to this artist; is this song uniquely liked by the user? Or is this one of this artist's top hits?Upon other lil factoids.
+a. User will click the "National Listening Trends" tab, this will load in a new page\
+b. Upon loading in this page, the user will get a "scorecard" that explains how similar their listening habits over the past month are with the listening habits of the rest of the U.S. A similarity percentage will be displayed.\
+c. The user will also be able to directly see the national trends in the form of a list that shows the billboard hot 100 songs.
 7. Extensions/variations of the success scenario:\
-a. User chooses to check statistics for one of their top songs that is also one of the top songs for that artist in the US, the app points out that they are in line with other’s listening habits\
-b. Users choose to check statistics for one of their top songs that also happens to be one of that artist’s least popular songs in the United States, the app points out that they have quite unique music tastes.
+a. User listens to a lot of popular music, to the point where their listening habits are 40% similar. App shows that 40% similarity, and prints out a special message pointing out how they listen to a lot of mainstream music.\
+b. User listens to almost no popular music, resulting in 0% similarity. App displays that 0% similarity, and prints out a special message pointing out how they listen to almost no mainstream music.
 8. Exceptions: failure conditions and scenarios:\
-a. If for some reason Spotify fails to fetch the national data for the track, then an error message will be displayed and the user will be returned to the top tracks page.\
-b. User has listened to no songs. Then the button to be able to enter this user-case will simply not be present, since there will be no songs to view either.
+a. If for some reason Spotify fails to fetch the national data for the track, then an error message will be displayed.\
+b. User has listened to no songs. User will still be able to view the top national tracks, but there will be 0 similarity since they have listened to no tracks yet.
 
 **Use Case 7:** Users should be able to create a playlist based on their top tracks
 1. Name: Antonio Rodriguez
