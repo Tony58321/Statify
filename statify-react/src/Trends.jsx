@@ -13,6 +13,32 @@ function TrackDisplay({ track, index, userTrackNames }) {
 function nothing(){}
 
 
+function generateSpecialMessage(matchPercent){
+
+
+    if(matchPercent === 0){
+        return "wow 😮, not a single song in common. Ever consider trying something more mainstream?";
+    }
+    else if(matchPercent <= 20){
+        return "A respectable amount of similarity 😎";
+    }
+    else if (matchPercent <= 40){
+        return "We can tell you are tapped in with the mainstream";
+    }
+    else if (matchPercent > 40){
+        return "Ever consider being more original? 🤔"
+    }
+    else{
+        return " "
+    }
+
+
+    return " ";
+
+
+}
+
+
 
 export default function Trends({ token}) {
     let [trends, setTrends] = useState(null);
@@ -27,6 +53,8 @@ export default function Trends({ token}) {
 
 
     let [matchPercentage, setMatchPercentage] = useState(0); // Track match percentage
+
+    let [specialMessagetoDisplay, setSpecialMessagetoDisplay] = useState(null);
 
 /*
     if (!trends) {
@@ -74,6 +102,9 @@ export default function Trends({ token}) {
 
                         let a = (matchCount / 100) * 100;
                         setMatchPercentage(a);
+                        
+                        let msg = generateSpecialMessage(a);
+                        setSpecialMessagetoDisplay(msg);
 
                         setMatchCountToDisplay(matchCount);
 
@@ -105,10 +136,12 @@ export default function Trends({ token}) {
             <div id ="scoreCard">
                 <p>Your similarity scorecard:</p>
                 <p>Your listening over the past month is {matchPercentage}% similar to U.S. national listening trends</p>
-                <p>With a total of {matchCountToDisplay} tracks in common.</p>
+                <p>With a total of {matchCountToDisplay} tracks in common</p>
 
-                <p>Scroll below to see what everyone else is listening to. A '⭐' indicates that it is also one if your top tracks.</p>
-                <p id ="disclaimer">*information based on comparing your top 50 tracks with the weekly Billboard Hot 100</p>
+                <p>{specialMessagetoDisplay}</p>
+                
+                <p>Scroll below to see what everyone else is listening to.<br></br> A '⭐' indicates that it is also one if your top tracks.</p>
+                <p id ="disclaimer">*similarity stats based on comparing your top 50 tracks with the weekly Billboard Hot 100</p>
             </div>
 
 
