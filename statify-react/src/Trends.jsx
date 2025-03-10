@@ -90,7 +90,7 @@ export default function Trends({ token}) {
 
                             let matchFound = false;
 
-                            matchFound = trends.some(aNationalTrack =>aNationalTrack.id === aUserTrack.id );
+                            matchFound = trends.some(aNationalTrack =>aNationalTrack.name === aUserTrack.name );
 
                             if(matchFound === true){
                                 matchCount++;
