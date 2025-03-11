@@ -51,7 +51,7 @@
 #spotifyImage {
   max-width: 80%;
   margin: 0;
-  border-radius: 4%;
+  border-radius: 4px;
   aspect-ratio: 1 / 1;   /* Forces the image to be square */
   object-fit: cover;
 }
