@@ -8,14 +8,19 @@ To test if the display artists button works.
 ### Acceptance Criteria:
 The user can easily find the artist page and view their top artists.
 ### Preconditions:
-The user must be whitelisted properly so that they can log in.
+The user must have a spotify account and be logged in.
 ### Test steps:
-1. Login in with your spotify account
-2. Use the navigation bars at the top to navigate to the artists page.
-3. Select the “Get Top Artists” button.
-4. Observe that the default setting of 20 artists from your last 4 weeks have been displayed.
+1. Use the navigation bars at the top to navigate to the artists page.
+2. Select the “Get Top Artists” button.
+3. Observe that the default setting of 20 artists from your last 4 weeks have been displayed.
 ### Expected result:
 The users top 20 most listened to artists for the last 4 weeks will be displayed neatly
+### Actual result:
+The users top 20 tracks were displayed in order for the last 4 weeks.
+### Status:
+Passed
+### Date of Execution:
+3/10/2025
 
 # Test Case ID: UAT-02
 ### Title:
@@ -37,6 +42,13 @@ The user must be whitelisted properly in the spotify developer account.
 6. Observe the home page where your username and profile should be displayed, along with a link to your spotify account. 
 ### Expected result:
 The users will see their correct profile photo and username on the home page upon logging in.
+### Actual result:
+The user was able to login and view their profile photo and username on the home page
+### Status:
+Passed
+### Date of Execution:
+3/10/2025
+
 
 
 
