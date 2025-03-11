@@ -1,5 +1,4 @@
-# Test Case ID:
-UAT-01
+# Test Case ID UAT-01
 ### Title:
 Display Top Artists
 ### Test Designer:
