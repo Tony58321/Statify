@@ -1,27 +1,27 @@
 # Project Description
 
 ## Abstract 
-Our project will be a statistics web application that connects with the popular music streaming platform Spotify. It will allow users to view key statistics related to their listening habits on Spotify. Users will log into the web-app interface with their Spotify account and then be able to view listening statistics, including their most listened to artists and songs. There will be various options for users to choose what data within what timeframe they want to view. The web-app will be implemented using the free API that Spotify provides (https://developer.spotify.com/documentation/web-api). It will allow the application to authorize and fetch user data.
+Statify is a statistics web application that connects to the popular music streaming platform Spotify . It allows users to view statistics related to their listening habits on Spotify. Users can log into the web-app interface with their Spotify account and view listening statistics, including their most listened to artists and songs. There will be various options for users to choose what data within what timeframe they want to view.
 
 ## Goal
-Our system will make statistics available to Spotify users, so that users can enjoy seeing information about their top music choices throughout a year. This is information that is not available with typical usage of the Spotify App, so it will give Spotify user’s a fun way to interact with their own statistics.
+Spotify currently does not have any features that allow users to view statistics about their listening habits. Current statistical applications for music apps lack detail, customizability, and individuality. Our software will change this by enabling Spotify users to view statistics, such as top songs and artists, along with customizable themes for the website.
 
 ## Current Practice
-Most people who use Spotify simply use the features provided in the app. Spotify uses algorithms to periodically generate playlists of music relevant to users interests. Besides the annual Spotify Wrapped, there is no direct way to view top tracks or artists frequently.
+Currently, individuals who use Spotify simply use the app for music listening and playlist generation. Spotify uses algorithms to periodically generate playlists of music relevant to users interests, but this gives little insight to users about their listening habits. Besides the annual Spotify Wrapped, there is no direct way to view top tracks or artists frequently, which Statify is here to change.
 
 ## Novelty
-Statify will allow users to view information about their listening habits beyond those provided by Spotify alone. This will be similar to existing applications such as stats.fm, however, we are aiming to include more comprehensive and detailed information, depending on the user’s desires. We are also creating our project in the form of a website, which can be accessible to more users since it won’t require them to download an app.
+Statify will allow users to view information about their listening habits beyond those provided by Spotify alone. This will be similar to existing applications such as stats.fm, however, we are aiming to include more detailed information and customizability, depending on the user’s needs. The biggest difference between our app and other music statistic apps are the options to customize the user interface. Statify is also a web application, which can be accessible to more users since it won’t require any download process.
 
 ## Effects
-We believe that all Spotify users will appreciate this system and enjoy using it. If we are successful, it will provide Spotify users a way to share their taste in music with friends, family, and social media.
+We believe that all Spotify users will appreciate this system and enjoy using it. If we are successful, it will provide Spotify users a way to view cool insights about their own music listening habits and a way to compare their own listening to other Spotify users.
 
 ## Use Cases (Functional Requirements)
 **Use Case 1**: Users can enter their Spotify username and password to login and access their information.
 1. Name: Trinity 
 2. Actors: The user, Spotify 
-3. Triggers: when the user opens the website they will be prompted to login, or if they log out.
+3. Triggers: When the user opens the website they will be prompted to login, or if they log out.
 4. Preconditions: The user has to have a Spotify account and know their username and password.
-5. Postconditions: once the user enters their username and password, it will take them to the website's initial page which will show them stats of their listening habits based on their Spotify account.
+5. Postconditions: Once the user enters their username and password, it will take them to the website's initial page which will show them stats of their listening habits based on their Spotify account.
 6. List of steps:\
 a. Type in user name\
 b. Type in password\
@@ -143,10 +143,10 @@ a. The user has not listened to at least 10 songs, display a message recommendin
 b. The user decides they don’t want to make a playlist and clicks “cancel” before generating the playlist, return the user to the previous page
 
 ## Non-Functional Requirements
-- When a user logs in to the website, the website will connect to the correct account 100% of the time. 
-- When a user selects a theme to use within the website, the theme selected will present correctly 100% of the time.
+- When a user logs in to the website, the website will load the user profile within 3 seconds on average under normal network conditions. 
+- When a user selects a theme to use within the website, the theme selected should follow intuitive UI/UX principles for easy navigation.
 - When a user selects a theme to use within the website, the new theme will load within 1 second.
-- When a user selects a timeframe or amount of tracks/artists to view at a time, the results will be displayed with the correct input 100% of the time.
+- When a user selects a timeframe or amount of tracks/artists to view at a time, the results will be displayed within 3 seconds on average.
 
 ## External Requirements
 - The website should prevent invalid user input and handle any errors that the Spotify API may give.
@@ -155,19 +155,22 @@ b. The user decides they don’t want to make a playlist and clicks “cancel”
 - We will develop our website with full effort and contribution from all team members.
 
 ## Technical Approach
-Since we are building a web application, we will be using HTML, CSS, and JavaScript to code the application. We may use frameworks such as React to build the user interface. A tool like Tailwind CSS may be helpful as well when it comes to designing the site. We can use Handlebars to templatize the pages, since lots of the information will be unique to each user. Node.js will be used as a server for the backend with Vite. The Spotify API will be used to connect the user accounts with the website and grab user data from. Any database functionality needed should be automatically handled by the Spotify API, so we likely will not need our own database.
+**High-level Solution**
+Statify can display the following statistics: x number of top tracks for 4-weeks, 6 months, and 12 months and x number of top artists for 4-weeks, 6 months, and 12 months. Once a user views their top x number of tracks, they could then create a playlist containing the top tracks. The Spotify API will assist us in completing the above functionality. The application will also provide different choices of themes for users to choose from that will change the presentation of the user interface.
+**Low-level Solution**
+Since we are building a web application, we will be using HTML, CSS, and JavaScript to code the application. We are also using the framework, React, to help build the user interface. Node.js will be used as a server for the backend with Vite. The Spotify API will be used to connect the user accounts with the website and grab user data from. Any database functionality needed should be automatically handled by the Spotify API, so we do not need our own database.
 
 ## Risks
-The largest risk will be in figuring out how to write code that can use the Spotify API to fetch user data, so we can then process it for our functionality. On one level, this is challenging because it requires us to set up a system that can successfully interact with the Spotify API, which we haven’t used before, and use the API calls.
+The largest risk will be integrating our software to be able to use the Spotify API to fetch data, so we can then process it for our functionality. On one level, this is challenging because it requires us to set up a system that can successfully interact with the Spotify API, which we haven’t used before, and use the API calls. The Spotify API also has rate limits, which could potentially lead to failed requests or even delays in fetching data.
 
 Furthermore, this will be additionally challenging because we are going to be fetching individual user music listening data. This requires implementing additional authorization code so that the user can login to their account to provide authorization for our app to fetch their data. Luckily these risks should appear very early on in our development process, as there isn’t much to be done if we don’t have any data to use. It should become apparent quite quickly if we took on more than we could effectively manage, in which case we could either adjust the scope of our project or work together to create a solution. If we do overcome this challenge though, the rest of the development process will be quite manageable.
 
 Additionally, our team will be using certain tools, including Vite, Javascript, Spotify API, and potentially others, such as React, as we find necessary. This poses the risk that for most of these tools, only a subset of our team has experience with the given tools. This means that most of us will be learning to use these tools throughout this process, which could potentially add stress to the development timeframe or create complications due to inconsistent practices as we are learning to use the tools.
 
-## Risks
+## Risk Assessment
 We have identified our top five risks to be the following:
-1. Using the Spotify API for our project.\
-a. There is a medium likelihood of our team not being able to use the Spotify API for our project because it requires us to Vite to integrate the API into our project, which is a new tool for all team members.\
+1. Integration of the Spotify API.\
+a. There is a medium likelihood of our team not being able to use the Spotify API for our project because it requires us to Vite to integrate the API into our project, which is a new tool for all team members. The challenges would come from authentication, API request handling, and properly linking the API to a developer account.\
 b. If this risk happens, it will highly impact our project because we would have to find another API to use and our project would no longer be Spotify based.\
 c. We have already begun to integrate the API - it has posed some challenges already, in terms of connecting the API to a Developers account, but our team is working through these challenges.\
 d. To reduce the likelihood of this risk happening, we are testing the API usage early and often. We also proactively read the documentation to ensure that our goals are reasonable based on the info.\
@@ -180,9 +183,9 @@ c. The likelihood of this was estimated to be medium for a few reasons. One of t
 d. To reduce the likelihood of this being an issue, we will ensure that authorization keys are given to the TA and professor. To reduce the impact, we can provide error messages to the user if the API fails.\
 e. In order to detect the problem, we will each log in with our individual credentials for Spotify to ensure our app is fetching the right information.\
 f. Our mitigation plan will be to display a message to the user and retry after a set time. If for some reason the API format changes, we will update the logic to accept the new format.\
-3. Privacy issues with using the API within a website.\
+3. User Privacy and OAuth Authentication.\
 a. Very low risk of this being an issue\
-b. If this were to be an issue, it would be medium to high impact, because it would mean unauthorized actors could hypothetically gain access to listening information of users. Which would be a massive issue for us in terms of delivering a safe project.\
+b. If this were to be an issue, it would be medium to high impact, because it would mean unauthorized actors could hypothetically gain access to listening information of users. Which would be a massive issue for us in terms of delivering a safe project. It could also pose risks such as token leaks or improper permissions.\
 c. We have already implemented the secure authorization code recommended by the Spotify API documentation (https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow). Our flow includes a code verifier and code challenge. With this high standard of security, we ensure that user data is not compromised.\
 d. Moving forward, we are also ensuring to not store any user data. We don’t have any sort of database in which we will store user data. All fetched user data will only exist locally and temporarily when the user is looking at it. This ensures we won’t have to deal with implementing security measures for a database, since we are not storing the data.\
 e. Monitor the our Spotify API dashboard, if we notice suspicious or unexpected API calls, that will be our sign that something is wrong.\
@@ -194,9 +197,9 @@ c. We followed a tutorial for the Spotify API and have ensured that it does work
 d. We do not anticipate needing to integrate any new tools throughout the development process, so we will focus the beginning of the development process on integrating the tools we know we will need.\
 e. Given the short development cycle for this project, we do not anticipate any integration requirements changing dramatically. We will know if integration of any tools fails if we receive error messages that cannot be resolved within the confines of those tools.\
 f. If we have integration issues early in the development cycle, we will discuss routes forward and possible alternatives.\
-5. Unable to provide a UI that is user friendly.\
+5. User Interface Usability.\
 a. There is medium risk of this being an issue.\
-b. If this risk occurs, it will have a medium impact. This would not be detrimental to our application, as it would still work properly, but it may steer users away from the website or create a confusing user experience.\
+b. If this risk occurs, it will have a medium impact. A poorly designed UI could make it hard for users to navigate and understand how to interact with their data. This would not be detrimental to our application functionality, as it would still work properly, but it may steer users away from the website or create a confusing user experience.\
 c. I base my estimates upon my experience as a user of other applications. Lots of web applications are useful, but have poor UX design, which dims the performance and makes me less eager to use the application. My estimation for the likelihood of this risk occurring is based on common modern design principles. Our application aims to look cool and modern, but this may get in the way of user experience.\
 d. We will follow usability heuristics to mitigate these risks. This includes Nielson’s 10 Inclusivity Heuristics. We can also refer to Web Content Accessibility Guidelines (WCAG) when making design decisions.\
 e. The front-end designers will refer to other teammates to get feedback on design. We can also consult external users who fall within our target audience to get their feedback. Doing this frequently will help us detect problems before they become significant.\
@@ -215,11 +218,11 @@ f. Our mitigation plan is to identify the aspects of the design that are causing
 - Users should be able to create a playlist based on their top tracks. 
 
 ### Stretch Goals
-- Users should be able to view all of their recently listened to tracks by listen count.
-- Users can view top albums.
-- Users should be able to share their statistics with other Spotify users.
+- Users can view all of their recently listened to tracks, organized by listen count.
+- Users can view their top albums listened to.
+- Users can share their statistics with other Spotify users.
 - Graph feature: Users will be able to see a line-graph interface that visualizes their most listened to artists month-to-month. It will show increases and decreases as their habits change month-to-month.
-- User’s should be able to view their top recent genre.
+- User’s can view their top recent genres.
 - User’s can get recommended new artists/tracks based on their listening habits.
 - User habits can be compared against data from different countries, either by the user selecting a country or by it matching the user’s own country.
 
@@ -237,7 +240,7 @@ System (Integration) Testing:
 - Session Management: Making sure that the login and logout functions work correctly across different sessions.
 - UI and Data Consistency: Confirming that the displayed data reflects the API responses in real-time accurately.
 
-Usability Testing
+Usability Testing: In addition to automate testing, we will manually test -
 - User Interface and Navigation: We will manually test and make sure that users are able to easily navigate between tabs in our application and are able to find all the features they need.
 - Performance: Making sure that the application doesn’t have a lag or delays in data retrieval or while updating the user interface.
 - Accessibility: Checking that the interface is accessible for a wide range of users, including proper color contrasts for visibility.
@@ -246,6 +249,7 @@ Bug Tracking: Issues that we identify will be documented and recorded, including
 - API Issues: Incorrect or missing data, authentication failures or crossing rate limits.
 - UI Bugs: Elements that are not in the right place, or are formatted incorrectly. 
 - Performance Issues: Slow loading times for the application or excessive API calls.  
+By using both Playwright and manual testing, we aim to catch bugs early, report them and fix them in a timely manner to make sure that the app is reliable and user-friendly. 
 
 ### Test Automation & CI
 
@@ -272,6 +276,9 @@ Azure Pipelines:
 Gitlab:
   Pro: Built on top of git.
   Con: Maximum of 5 users on free plan.
+
+**Development Actions that Trigger a CI Build:**
+A CI build is triggered whenever a commit is pushed to any branch. A CI build is also triggered whenever a pull request is opened or updated.
 
 ### Documentation Plan
 Our team will provide a help page for users of our website. It will be accessible from the homepage of our website. The help page will offer instructions for how to use different features of our website, how to create a Spotify account, and how to report issues. Users can utilize this page whenever they have questions about how to use our website.
@@ -342,41 +349,44 @@ Trinity Paulson - UX Expert & Frontend Developer
 |Design a UI that is easy to use and easily understandable for all users.| - Create CSS to style and design the web pages. |Completing this milestone will move us closer to having a finished project that is user friendly.|
 
 ### Software Architecture
-Our app will have two major components: the web app, and the Spotify API. The Spotify API is an existing API that we will be using to source data for our web app. Our web app will interface with the user (except for logging in to Spotify), and make any API calls to retrieve needed data.
-
-BACK END: 
-
-Spotify API:
-- Our app uses the Spotify API. The app will interface with Spotify directly from the user’s browser.
-
-Data Storage: 
-- Our system does not store any data, meaning that we do not need a database or similar system. Instead, our system will exclusively use data accessed from the Spotify API.
-
-Assumptions: 
-- Our system is built on top of the Spotify API. This means that its functioning is dependent upon the availability of the Spotify API.
-- We also assume that the user has internet access and an up to date browser.
-
-Using the Spotify API:
-- While there are many music streaming services, Spotify has both a wide user base and an easily accessible and well documented API. This makes it ideal for building an app upon.
-
-FRONT END: 
-
-Using React: 
-- While the alternatives to react (eg, plain HTML and javascript) are viable, react also provides benefits that make producing a dynamic web app easier. Since our web app will be providing user based content and lists, we decided that using react would make development easier.
-
+1. Overview
+   The purpose of this portion of our document is to follow the design guidelines provided by Atlassian. Since Statify is a web application, it follows a Client-Server architecture       pattern. The intended audience for this web application are Spotify users who want an interactive experience regarding their listening trends. It also serves for developers to         learn about APIs and the user experience. 
+2. Architechture Overview
+   The client consists of any user that uses our website. Clients may make requests to the server by clicking any of the buttons within the website. Once the server receives an           action/request from the client, it will perform whatever action needed to complete the client request and return a response back to the server. The client only interacts with the      frontend of our application, which was built using a combination of React, HTML, and CSS.
+   a. System Components
+   The server (our web application) contains resources to help it fulfill requests made by the client. The two main resources are our backend functionality and the Spotify API. When a    client makes a request to the server, the server uses the backend functions and the Spotify API to formulate a response that is able to return to the client. The server (backend       functionality) was built with Javascript and React.
+   b. Client-Server Interaction
+   An example of a client-server interaction: The client clicks the button to view their top 20 tracks from the past 6 months. This sends a request to the server for the user's top 20    tracks from the past 6 months. One of our functions will then connect to the Spotify API, make the request, receive the request, and send the response back to the client.
 
 ### Software Design
-Spotify API:
-- Spotify Web API interacts with Spotify database allowing simple retrieval of user data.
-- The responsibility of this component is to provide timely and accurate listening data for the current user of the application.
+1. Client (Frontend):
+   - We will use React for the front-end of the application. React uses JSX (JavaScript XML), which is basically an HTML-JavaScript hybrid. This will allow us to easily parse data          retrieved from the Spotify API into a user-friendly format. CSS is also a big part of our front end and will contribute a lot to the user experience.
+   - The responsibility of the front-end is to present a user’s data in a visually appealing and easy to understand format.
+     - Buttons for requesting top tracks and artists.
+     - Display pages for homepage, tracks, and artists.
+     - Authentication flow (Spotify login).
+    
+2. Server (Backend):
+   - Our back-end application is not very robust. Thankfully, the Spotify API contains the only database that we need, so no database will be required on our end. The majority of our       backend application will involve making calls to the Spotify API and retrieving that information in the proper format to be sent to the frontend.
+   - We use Node.js to fetch spotify endpoints from the Spotify API.
+     GET /top-tracks?time_range=6months → Fetches top 20 tracks
+     GET /top-artists?time_range=6months → Fetches top 20 artists
+     POST /authenticate → Handles user authentication
 
-Front End:
-- We will use React for the front-end of the application. React uses JSX (JavaScript XML), which is basically an HTML-JavaScript hybrid. This will allow us to easily parse data retrieved from the Spotify API into a user-friendly format. CSS is also a big part of our front end and will contribute a lot to the user experience.
-- The responsibility of the front-end is to present a user’s data in a visually appealing and easy to understand format.
-
-Back End:
-- Our back-end application is not very robust. Thankfully, the Spotify API contains the only database that we need, so no database will be required on our end. The majority of our backend application will involve making calls to the Spotify API and retrieving that information in the proper format to be sent to the frontend.
-
+3. Spotify API:
+   - Spotify Web API interacts with Spotify database allowing simple retrieval of user data.
+   - The responsibility of this component is to provide timely and accurate listening data for the current user of the application.
+   - An example of the response we would receive is this:
+  {
+  "tracks": [
+    {
+      "name": "Track Name",
+      "artist": "Artist Name",
+      "album": "Album Name",
+      "cover_url": "image_url"
+    }
+   ]
+  }
 
 ### Coding Guidelines
 HTML - https://developer.mozilla.org/en-US/docs/Web/HTML 
@@ -393,5 +403,13 @@ We will be using these guidelines for Vite to standardize how we use Vite for th
 
 React - https://react.dev/learn 
 We will be using these guidelines for React because these guidelines are detailed with the syntax for React. Since only a few team members have used React previously, we will reference these documents. We will enforce the utilization of these guidelines by encouraging team members to reference the documentation whenever questions arise about React.
+
+# Reflections
+## Team Member: Ellie Tanferani
+1. I learned that there are so many different software, processes, and applications that are available to use for similar tasks, which makes it important to choose options that fit the project and teams needs the most.
+2. I learned that it’s important to make sure that the whole team stays on top of documentation - commenting code, testing, bug reports, etc.
+3. I learned that projects go more smoothly when each teammate has their own use case to work on and help out other team members when they can - this kept our project pretty organized and helped us stay on track to the final release.
+
+
 
 
