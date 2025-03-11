@@ -20,7 +20,7 @@ The users top 20 tracks were displayed in order for the last 4 weeks.
 ### Status:
 Passed
 ### Date of Execution:
-3/10/2025
+3/7/2025
 
 # Test Case ID: UAT-02
 ### Title:
@@ -47,7 +47,7 @@ The user was able to login and view their profile photo and username on the home
 ### Status:
 Passed
 ### Date of Execution:
-3/10/2025
+3/7/2025
 
 
 
