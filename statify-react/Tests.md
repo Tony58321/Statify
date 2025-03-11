@@ -5,9 +5,9 @@ Display Top Artists
 Trinity Paulson
 ### Test Objective:
 To test if the display artists button works.
-### Acceptance Criteria
+### Acceptance Criteria:
 The user can easily find the artist page and view their top artists.
-### Preconditions
+### Preconditions:
 The user must be whitelisted properly so that they can log in.
 ### Test steps:
 1. Login in with your spotify account
@@ -24,9 +24,9 @@ Login - Manually Entering Credentials
 Trinity Paulson
 ### Test Objective:
 To test if the login functionality works given correct user credentials. We are unable to automate this because it would be detected as a bot and fail.
-### Acceptance Criteria
+### Acceptance Criteria:
 The user can log in to the website and view their data using their spotify username and password.
-### Preconditions
+### Preconditions:
 The user must be whitelisted properly in the spotify developer account. 
 ### Test steps:
 1. Select the “Log in with Spotify” button on the landing page.
