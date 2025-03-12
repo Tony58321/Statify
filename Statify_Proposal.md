@@ -271,6 +271,84 @@ Several other CI platforms that we could have selected are:
 |CircleCI| Runs automated tests after each code change. - There is a VS code extension. - Easy set-up with Node.js.| Have to authorize and add our project to CircleCI. - May not be free to use.|
 
 **Tests that will be Executed in a CI Build:**
+|Test Case ID      | UAT-04-auto|
+|------------------|--------------|
+|Title |Successful Login to Spotify - Authorization redirect test|
+|Test Designer |Antonio Rodriguez |
+|Test Objective |Bypass Spotify Authorization using a saved session and successfully login with our dummy account. |
+|Acceptance Criteria |Playwright will detect the homepage of Statify by looking for the text, “Welcome, statify”. |
+|Preconditions |The user must be properly whitelisted; The user has a Spotify account; Playwright is installed (it should be if you cloned the repository); The user’s session has been saved in a .json file! Important for Playwright to bypass RECAPTCHA; The user is in the statify-react directory; Statify is running locally|
+|Test Steps |Running npx playwright test --ui in the terminal: <ul> <li>Once playwright opens, navigate to the test file and press play</li> <li>The script goes to http://localhost:5173</li> <li>Clicks log in</li> <li>Hit agree button</li> <li>Wait for local “Welcome, statify” to appear </li> </ul>  |
+|Expected Result |The user is automatically logged into the statify dummy account and is able to see the Welcome page. |
+|Actual Result |The user is automatically logged into the statify dummy account and is redirected to the Welcome page on our Statify website. |
+|Status |Passed |
+|Date of Execution |3/6/25 |
+
+|Test Case ID      | UAT-05-auto|
+|------------------|--------------|
+|Title |Login Redirect|
+|Test Designer |James Grant |
+|Test Objective |Ensure that the user is redirected to the spotify login page upon pressing log in from the Statify app. |
+|Acceptance Criteria |User with a saved session is redirected to the Spotify Authorization page after pressing log in. |
+|Preconditions |User with a saved session is redirected to the Spotify Authorization page after pressing log in. |
+|Test Steps |Press the “Log in with Spotify” Button|
+|Expected Result |The current browser tab is redirected to the Spotify authorization page. |
+|Actual Result |The current browser tab is redirected to the Spotify authorization page. |
+|Status |Passed |
+|Date of Execution |3/8/25 |
+
+|Test Case ID      | UAT-06-auto|
+|------------------|--------------|
+|Title |Get Top Tracks |
+|Test Designer |Aaron Pina-Ramirez |
+|Test Objective |Ensure that the user is able to get their top listened to tracks using our app (Statify). This is a core feature of our app. |
+|Acceptance Criteria |User sees their top tracks (1-50 depending on their selection), over a given time period (past month, 6 months, or year depending on their selection) |
+|Preconditions |User should be logged in and whitelisted.|
+|Test Steps |(running the get_top_tracks.spec.js playwright test will run these steps automatically): <ul> <li>Click on the “Tracks” tab on the top navbar.</li> <li>Enter a “5” on the first input box.</li> <li>Select “4 weeks” on the dropdown box</li> <li>Click the “Get top tracks” button</li> <ul> |
+|Expected Result |Top 5 tracks the user has listened to over the past month will be displayed. |
+|Actual Result |Indeed, the top 5 tracks of the account we tested this on displayed upon running this test case. |
+|Status |Passed |
+|Date of Execution |3/9/2025 |
+
+|Test Case ID      | UAT-09-auto|
+|------------------|--------------|
+|Title |“Not You” Redirect|
+|Test Designer |James Grant|
+|Test Objective |Ensure that the user is redirected to the spotify login page upon pressing “Not you?” from the Spotify Login Page. |
+|Acceptance Criteria |Users with a saved session are redirected to the Spotify login page after pressing “Not you?”. |
+|Preconditions |The user has a Spotify account and is whitelisted for the app; The user has opened the Statify app and is not currently logged in, but the user has a saved session from a recent log in. |
+|Test Steps |<ul> <li>Press the “Log in with Spotify” Button</li> <li> </li>Press the “Not you?” Button<ul>|
+|Expected Result |The current browser tab is redirected to the Spotify login page. |
+|Actual Result |The current browser tab is redirected to the Spotify login page. |
+|Status |Passed |
+|Date of Execution |3/8/25|
+
+|Test Case ID      | UAT-10-auto|
+|------------------|--------------|
+|Title |Invalid login |
+|Test Designer |James Grant |
+|Test Objective |Ensure that login fails when the user enters invalid username and password. |
+|Acceptance Criteria |Users with a saved session are redirected to the Spotify login page after pressing “Not you?”. |
+|Preconditions |The user has a Spotify account and is whitelisted for the app; The user has opened the Statify app and is not currently logged in, but the user has a saved session from a recent log in. |
+|Test Steps | <ul> <li>Press the “Log in with Spotify” Button</li> <li>Press the “Not you?” Button</li> <li>Enter an arbitrary string for username and password.</li> <li>Press log in.</li></ul> |
+|Expected Result |Login is unsuccessful and the user remains on the same page. |
+|Actual Result |Login is unsuccessful and the user remains on the same page. |
+|Status |Passed |
+|Date of Execution |3/8/25 |
+
+|Test Case ID      | UAT-11|
+|------------------|--------------|
+|Title |Page load test |
+|Test Designer |Antonio Rodriguez |
+|Test Objective |Ensure that the initial page loads correctly and has the correct title |
+|Acceptance Criteria |The page expects the webpage to have the title, “Statify” |
+|Preconditions |The user is in the statify-react directory; The Statify app is run locally on localhost:5173 |
+|Test Steps |Running npx playwright test --ui in the terminal: <ul> <li>Once playwright opens, navigate to the test file and press play</li> <li>Playwright will navigate to localhost:5173</li><li>Give the page 3 seconds to render</li> <li>Verify that the page has the title “Statify”</li></ul> |
+|Expected Result |The page will load correctly and return the title “Statify” (pre-login screen) |
+|Actual Result |The page will load correctly and return the title “Statify” (pre-login screen) |
+|Status |Passed |
+|Date of Execution |3/1/25 |
+
 
 **Development Actions that Trigger a CI Build:**
 A CI build is triggered whenever a commit is pushed to any branch. A CI build is also triggered whenever a pull request is opened or updated.
