@@ -155,9 +155,9 @@ b. The user decides they don’t want to make a playlist and clicks “cancel”
 - We will develop our website with full effort and contribution from all team members.
 
 ## Technical Approach
-**High-level Solution**
+**High-level Solution**\
 Statify can display the following statistics: x number of top tracks for 4-weeks, 6 months, and 12 months and x number of top artists for 4-weeks, 6 months, and 12 months. Once a user views their top x number of tracks, they could then create a playlist containing the top tracks. The Spotify API will assist us in completing the above functionality. The application will also provide different choices of themes for users to choose from that will change the presentation of the user interface.
-**Low-level Solution**
+**Low-level Solution**\
 Since we are building a web application, we will be using HTML, CSS, and JavaScript to code the application. We are also using the framework, React, to help build the user interface. Node.js will be used as a server for the backend with Vite. The Spotify API will be used to connect the user accounts with the website and grab user data from. Any database functionality needed should be automatically handled by the Spotify API, so we do not need our own database.
 
 ## Risks
@@ -175,37 +175,35 @@ b. If this risk happens, it will highly impact our project because we would have
 c. We have already begun to integrate the API - it has posed some challenges already, in terms of connecting the API to a Developers account, but our team is working through these challenges.\
 d. To reduce the likelihood of this risk happening, we are testing the API usage early and often. We also proactively read the documentation to ensure that our goals are reasonable based on the info.\
 e. To detect this problem and hopefully prevent it from happening, we will be testing the API consistently on different devices to ensure that it is able to fetch data for any user.\
-f. We will consult the Spotify API as much as possible to learn the API, but if that fails we will consult the wider knowledge community, by looking for youtube videos or asking people on forums such as substack.\
+f. We will consult the Spotify API as much as possible to learn the API, but if that fails we will consult the wider knowledge community, by looking for youtube videos or asking people on forums such as substack.
 2. Fetching individual user data from the API.\
 a. There is a medium likelihood of this being an issue\
 b. The impact if this occurs would be high!!!\
 c. The likelihood of this was estimated to be medium for a few reasons. One of the reasons would be certain permissions needing to be granted. Our group has whitelisted each member’s Spotify account, but this will need to be done for each user wanting to use our app. As for the impact, it would be high because if fetching data from the API fails, the user wouldn’t be able to see any of their desired statistics!\
 d. To reduce the likelihood of this being an issue, we will ensure that authorization keys are given to the TA and professor. To reduce the impact, we can provide error messages to the user if the API fails.\
 e. In order to detect the problem, we will each log in with our individual credentials for Spotify to ensure our app is fetching the right information.\
-f. Our mitigation plan will be to display a message to the user and retry after a set time. If for some reason the API format changes, we will update the logic to accept the new format.\
+f. Our mitigation plan will be to display a message to the user and retry after a set time. If for some reason the API format changes, we will update the logic to accept the new format.
 3. User Privacy and OAuth Authentication.\
 a. Very low risk of this being an issue\
 b. If this were to be an issue, it would be medium to high impact, because it would mean unauthorized actors could hypothetically gain access to listening information of users. Which would be a massive issue for us in terms of delivering a safe project. It could also pose risks such as token leaks or improper permissions.\
 c. We have already implemented the secure authorization code recommended by the Spotify API documentation (https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow). Our flow includes a code verifier and code challenge. With this high standard of security, we ensure that user data is not compromised.\
 d. Moving forward, we are also ensuring to not store any user data. We don’t have any sort of database in which we will store user data. All fetched user data will only exist locally and temporarily when the user is looking at it. This ensures we won’t have to deal with implementing security measures for a database, since we are not storing the data.\
 e. Monitor the our Spotify API dashboard, if we notice suspicious or unexpected API calls, that will be our sign that something is wrong.\
-f. In the unlikely event a security breach somehow does occur, we will immediately shut down the app on the Spotify API dashboard and revoke all user access while we have time to diagnose the source of the issue and implement fixes. We will then use a “dummy” spotify account to test out our fixes before giving everyone access again.\
+f. In the unlikely event a security breach somehow does occur, we will immediately shut down the app on the Spotify API dashboard and revoke all user access while we have time to diagnose the source of the issue and implement fixes. We will then use a “dummy” spotify account to test out our fixes before giving everyone access again.
 4. Issues with integrating all of the tools necessary to build.\
 a. There is a low risk of this being an issue.\
 b. If this becomes an issue, the severity of it will depend on the conflicting tools and the timeframe of when it becomes an issue. The spotify API is central to our project, and not being able to use it would likely necessitate an entire redirection of our project.\
 c. We followed a tutorial for the Spotify API and have ensured that it does work. From working with Vite, we found that it provides templates for different web apps. One of these templates is for react, but it seems that adapting a different template for react would be difficult.\
 d. We do not anticipate needing to integrate any new tools throughout the development process, so we will focus the beginning of the development process on integrating the tools we know we will need.\
 e. Given the short development cycle for this project, we do not anticipate any integration requirements changing dramatically. We will know if integration of any tools fails if we receive error messages that cannot be resolved within the confines of those tools.\
-f. If we have integration issues early in the development cycle, we will discuss routes forward and possible alternatives.\
+f. If we have integration issues early in the development cycle, we will discuss routes forward and possible alternatives.
 5. User Interface Usability.\
 a. There is medium risk of this being an issue.\
 b. If this risk occurs, it will have a medium impact. A poorly designed UI could make it hard for users to navigate and understand how to interact with their data. This would not be detrimental to our application functionality, as it would still work properly, but it may steer users away from the website or create a confusing user experience.\
 c. I base my estimates upon my experience as a user of other applications. Lots of web applications are useful, but have poor UX design, which dims the performance and makes me less eager to use the application. My estimation for the likelihood of this risk occurring is based on common modern design principles. Our application aims to look cool and modern, but this may get in the way of user experience.\
 d. We will follow usability heuristics to mitigate these risks. This includes Nielson’s 10 Inclusivity Heuristics. We can also refer to Web Content Accessibility Guidelines (WCAG) when making design decisions.\
 e. The front-end designers will refer to other teammates to get feedback on design. We can also consult external users who fall within our target audience to get their feedback. Doing this frequently will help us detect problems before they become significant.\
-f. Our mitigation plan is to identify the aspects of the design that are causing an unfriendly user experience, and change them to a more effective and aesthetic design.\
-
-
+f. Our mitigation plan is to identify the aspects of the design that are causing an unfriendly user experience, and change them to a more effective and aesthetic design.
 
 ## Features of Our Project
 ### Major Features/Use Cases:
@@ -256,26 +254,23 @@ By using both Playwright and manual testing, we aim to catch bugs early, report 
 Our Test Automation Infrastructure will be Playwright.
 
 **Why Playwright?**  
-
 Statify relies on user input on a web page for the application to work properly, whether it be clicking buttons or entering information in a form. In order to automate this process, we considered a few testing infrastructures. These included Selenium, Cyprus, Jest, and Playwright. Given the options, we chose an infrastructure that would provide the best tests for our application. Playwright and Jest were our top options after speaking to our TA, however, Playwright offers functionality that Jest doesn’t. Playwright allows us to test each button click, test if the page loads, enter user information, and more while allowing us to see these checks happen in real time. It also works well with Vite and React which our app is built on, and tests the app on multiple web browsers (Firefox, Chrome, etc). Jest has some limitations with Vite and mainly acts to test functions.
 
 **How to add a new test to Playwright:**  
 To add a new test to Playwright, the tester must create a testing file in JavaScript within the “tests” directory in “statify-react”. Each file should run separately so that we can test the source of an error. Ensure that npm run dev is running on localhost:7513. Testers can run a test in two ways, either using npx playwright test --ui or npx playwright test -- header in the terminal. To see the webpage appear and see how each step looks to a user, we recommend running npx playwright test --ui. Here you can click through each test file and simulate a user’s experience.
 
-**Continuous Integration:**
-We will facilitate CI through the use of Github Actions. We chose Github actions because of its ingrained connection to github, where our repository for this project resides. We will configure Github Actions to run our test suite for every new commit to the repository. Since we are primarily using NPM for this project, we will likely use the Node.js workflow by Github Actions for testing. We will, to the best of our ability, add all unit and integration tests in the test suite we create with Playwright to Github Actions.
+**Our CI Service:**
+We will facilitate CI through the use of Github Actions. We chose Github actions because of its ingrained connection to github, where our repository for this project resides. We have configured Github Actions to run our test suite for every new commit to the repository, as well as any pull request. Since we are primarily using NPM for this project, we used the Node.js workflow by Github Actions for testing. We will, to the best of our ability, add all unit and integration tests in the test suite we create with Playwright to Github Actions.
 
 **Other CI platforms**
 Several other CI platforms that we could have selected are:
-Jenkins:
-  Pro: Customizable build pipeline.
-  Cons: Requires additional plugin for Github integration, requires local download.
-Azure Pipelines:
-  Pro: Allows integration with Github.
-  Con: Only a 30-day free trial.
-Gitlab:
-  Pro: Built on top of git.
-  Con: Maximum of 5 users on free plan.
+|CI Service|Pros|Cons|
+|------------------|--------------|------------|
+|Github Actions| Free for public repositories. - Would be connected directly to our repository. - Github has workflow templates available.| May have a more time-consuming set-up.|
+|Travis CI| Minimal configuration code and set-up. - Works with Node.js and all members work environments.| May not be free to use.|
+|CircleCI| Runs automated tests after each code change. - There is a VS code extension. - Easy set-up with Node.js.| Have to authorize and add our project to CircleCI. - May not be free to use.|
+
+**Tests that will be Executed in a CI Build:**
 
 **Development Actions that Trigger a CI Build:**
 A CI build is triggered whenever a commit is pushed to any branch. A CI build is also triggered whenever a pull request is opened or updated.
@@ -349,13 +344,13 @@ Trinity Paulson - UX Expert & Frontend Developer
 |Design a UI that is easy to use and easily understandable for all users.| - Create CSS to style and design the web pages. |Completing this milestone will move us closer to having a finished project that is user friendly.|
 
 ### Software Architecture
-1. Overview
+1. Overview\
    The purpose of this portion of our document is to follow the design guidelines provided by Atlassian. Since Statify is a web application, it follows a Client-Server architecture       pattern. The intended audience for this web application are Spotify users who want an interactive experience regarding their listening trends. It also serves for developers to         learn about APIs and the user experience. 
-2. Architechture Overview
-   The client consists of any user that uses our website. Clients may make requests to the server by clicking any of the buttons within the website. Once the server receives an           action/request from the client, it will perform whatever action needed to complete the client request and return a response back to the server. The client only interacts with the      frontend of our application, which was built using a combination of React, HTML, and CSS.
-   a. System Components
-   The server (our web application) contains resources to help it fulfill requests made by the client. The two main resources are our backend functionality and the Spotify API. When a    client makes a request to the server, the server uses the backend functions and the Spotify API to formulate a response that is able to return to the client. The server (backend       functionality) was built with Javascript and React.
-   b. Client-Server Interaction
+2. Architechture Overview\
+   The client consists of any user that uses our website. Clients may make requests to the server by clicking any of the buttons within the website. Once the server receives an           action/request from the client, it will perform whatever action needed to complete the client request and return a response back to the server. The client only interacts with the      frontend of our application, which was built using a combination of React, HTML, and CSS.\
+   a. System Components\
+   The server (our web application) contains resources to help it fulfill requests made by the client. The two main resources are our backend functionality and the Spotify API. When a    client makes a request to the server, the server uses the backend functions and the Spotify API to formulate a response that is able to return to the client. The server (backend       functionality) was built with Javascript and React.\
+   b. Client-Server Interaction\
    An example of a client-server interaction: The client clicks the button to view their top 20 tracks from the past 6 months. This sends a request to the server for the user's top 20    tracks from the past 6 months. One of our functions will then connect to the Spotify API, make the request, receive the request, and send the response back to the client.
 
 ### Software Design
@@ -368,9 +363,9 @@ Trinity Paulson - UX Expert & Frontend Developer
     
 2. Server (Backend):
    - Our back-end application is not very robust. Thankfully, the Spotify API contains the only database that we need, so no database will be required on our end. The majority of our       backend application will involve making calls to the Spotify API and retrieving that information in the proper format to be sent to the frontend.
-   - We use Node.js to fetch spotify endpoints from the Spotify API.
-     GET /top-tracks?time_range=6months → Fetches top 20 tracks
-     GET /top-artists?time_range=6months → Fetches top 20 artists
+   - We use Node.js to fetch spotify endpoints from the Spotify API.\
+     GET /top-tracks?time_range=6months → Fetches top 20 tracks\
+     GET /top-artists?time_range=6months → Fetches top 20 artists\
      POST /authenticate → Handles user authentication
 
 3. Spotify API:
@@ -405,10 +400,36 @@ React - https://react.dev/learn
 We will be using these guidelines for React because these guidelines are detailed with the syntax for React. Since only a few team members have used React previously, we will reference these documents. We will enforce the utilization of these guidelines by encouraging team members to reference the documentation whenever questions arise about React.
 
 # Reflections
-## Team Member: Ellie Tanferani
+### Team Member: Ellie Tanferani
 1. I learned that there are so many different software, processes, and applications that are available to use for similar tasks, which makes it important to choose options that fit the project and teams needs the most.
 2. I learned that it’s important to make sure that the whole team stays on top of documentation - commenting code, testing, bug reports, etc.
 3. I learned that projects go more smoothly when each teammate has their own use case to work on and help out other team members when they can - this kept our project pretty organized and helped us stay on track to the final release.
+
+### Team Member: Antonio Rodriguez
+1. I learned how to write test cases using Playwright. I had to ask industry professionals for advice at the Career Fair because automating web applications that require user input was something I hadn’t had to deal with before. 
+2. I learned how to be an effective project manager and how hard it can be to keep everyone updated and on track, including myself. Although the role is challenging, it provides some relief since we were all on the same page and made decisions together.
+3. I learned how to use GitHub Actions to have our tests be run automatically when a user makes a commit. This makes it so that anything that has been changed still works, whether it’s a simple button redesign or a new functionality. It keeps us aware of any new tests we may need and that our implementation is correct.
+
+### Team Member: James Grant
+1. I learned that implementing CI tests can be more effective earlier in the development process.
+2. I learned that having a clear focus for the purpose of a project is very helpful in the development process by helping a team work on the most important/central parts.
+3. I learned that working on a project can be difficult when the team isn’t sure about the expectations for the deliverables.
+
+### Team Member: Trinity Paulson
+1. I learned how to use React! and Vite to create a web application.
+2. I learned how to divide and order tasks in terms of execution order. For example the backend for display artists needed to be completed before the front end could.
+3. I learned that if team members are responsible for specific tasks they are more likely to complete them on time and do a good job on it.
+
+### Team Member: Aaron P.
+1. I learned how to use the Spotify API to: Request account authorization from the user, fetch the user’s top tracks for varying time periods, and fetch info from public playlists.
+2. I improved my asynchronous programming skills.
+3. I learned how to use react.js.
+
+
+
+
+
+
 
 
 
