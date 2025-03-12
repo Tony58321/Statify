@@ -13,7 +13,7 @@ The source code currently comes pre-linked to a demo Spotify developer account. 
 1. Create a Spotify account if you don't have one already.
 2. Log in to the Sportify developer dashboard using the account you made in step 1.
 3. Press "Create an app". Select Web API for the app type. Fill "localhost:5173" in the redirect URI field. If you want to use a different redirect URI, you will need to update it here and ensure that the website is being hosted on the new redirect URI.
-4. Copy the client id of the new app. Paste this new client id to replace the existing client id in the source code. It is currently located at the first constant declaration (line ~16) in ./statify-react/src/app.jsx.
+4. Copy the client id of the new app. Paste this new client id to replace the existing client id in the source code. It is currently located at the first constant declaration (line ~19) in ./statify-react/src/app.jsx.
 
 ## How to Run:
 1. Open a terminal and navigate to the "statify-react" folder.
