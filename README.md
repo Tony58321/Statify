@@ -15,7 +15,9 @@ Here are our current operational use cases:
 - Node.js installed
 
 ## How to Build and Test Statify:
-Detailed instructions for building/testing the application can be found in the [User Manual](/user_manual.md) and [Developer Document](/developer_document.md) documents. Along with these are our [Installed Solution](/INSTALL.md) and our [Setup](/SETUP.md) documents. Follow whichever document meets your needs as a user or developer.
+Detailed instructions for building/testing the application can be found in the [User Manual](/user_manual.md) and [Developer Document](/developer_document.md) documents. Along with these are our [Installed Solution](/INSTALL.md) and our [Setup](/SETUP.md) documents. Follow whichever document meets your needs as a user or developer.  
+
+Each team member was responsible for two test cases each, which can be found on our [Tests](/TESTS.md) page.
 
 ## How to Run:
 Detailed instructions for building/testing the application can be found in the [User Manual](/user_manual.md) and [Developer Document](/developer_document.md) documents. Along with these are our [Installed Solution](/INSTALL.md) and our [Setup](/SETUP.md) documents. Follow whichever document meets your needs as a user or developer.
