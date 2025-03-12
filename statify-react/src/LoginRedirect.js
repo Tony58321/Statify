@@ -1,3 +1,7 @@
+//const REDIRECT_URI = "http://localhost:5173/callback"; // Change this as needed
+REDIRECT_URI = "https://statify-gamma.vercel.app/callback" ;
+
+
 async function redirectToAuthCodeFlow(clientId, scope) {
     const verifier = generateCodeVerifier(128);
     const challenge = await generateCodeChallenge(verifier);
@@ -7,7 +11,7 @@ async function redirectToAuthCodeFlow(clientId, scope) {
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("response_type", "code");
-    params.append("redirect_uri", "http://localhost:5173/callback");
+    params.append("redirect_uri", REDIRECT_URI);
     params.append("scope", scope);
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);
