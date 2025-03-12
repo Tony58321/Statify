@@ -1,5 +1,6 @@
 # Statify Setup Guide
-This guide explains how to set up and run Statify on a new machine using localhost and optionally deploy it to a server.
+This guide explains how to set up and run Statify on a new machine using localhost and optionally deploy it to a server.  
+**NOTE**: Statify does not require a dedicated server, as it leverages Spotify's Developer API for authentication and data retrieval.
 
 ## Prerequisites
 Before setting up Statify, ensure that you have:
@@ -41,7 +42,6 @@ npm run dev
 ```
 # Binary Distribution - Zip File for Admins
 For administrators or developers setting up Statify, you may need to package and distribute the required files.  
-NOTE: Statify does not require a dedicated server, as it leverages Spotify's Developer API for authentication and data retrieval.
 ### Creating a ZIP File for Distribution
 1. Copy the following files and directories into a new folder:\
 /statify-react\
