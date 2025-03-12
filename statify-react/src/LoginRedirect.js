@@ -1,5 +1,5 @@
-// const REDIRECT_URI = "http://localhost:5173/callback"; // Change this as needed
-const REDIRECT_URI = "https://statify-gamma.vercel.app/callback" ;
+const REDIRECT_URI = "http://localhost:5173/callback"; // Change this as needed
+//const REDIRECT_URI = "https://statify-gamma.vercel.app/callback" ;
 
 
 async function redirectToAuthCodeFlow(clientId, scope) {
