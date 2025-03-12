@@ -12,13 +12,13 @@ Here are our current operational use cases:
 
 ## Dependencies
 - A Spotify account
-- Node.js
+- Node.js installed
 
 ## How to Build and Test Statify:
-Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
+Detailed instructions for building/testing the application can be found in the [User Manual](Statify/user_manual.md) and [Developer Document](Statify/developer_document.md) documents. Follow whichever document meets your needs as a user or developer.
 
 ## How to Run:
-Detailed instructions for building/testing the application can be found in the user_manual.md and developer_document.md documents. Follow whichever document meets your needs.
+Detailed instructions for building/testing the application can be found in the [User Manual](Statify/user_manual.md) and [Developer Document](Statify/developer_document.md) documents. Follow whichever document meets your needs as a user or developer.
 
 ## Layout of Repository:
 Our GitHub repository currently has 4 main sections: README.md (what you are reading now), Project_Proposal.md, Reports folder, and statify-react folder (where the actual code for our app is located)
