@@ -503,6 +503,15 @@ We will be using these guidelines for React because these guidelines are detaile
 2. I improved my asynchronous programming skills.
 3. I learned how to use react.js.
 
+### Team Member: Shraddha Hegde
+1. I learned how to use and work with react.js and got more comfortable with github. 
+2. I learned how important documentation and communication is in group projects because it helps us stay on track on tasks to complete. 
+3. I also got familiar with Vite and working with API calls.
+
+### Team Member: Elizabeth Stahlke
+1. I learned more about CSS, including how to make a marquee. I also got more comfortable with using flexboxes and CSS variables.
+2. I learned how to use React and Vite to create a web application.
+3. I learned about what it’s like to work in a bigger team. Most other teams I’ve worked in only had a few people, so it was a good experience to work with 7 of us building an application from the ground up.
 
 
 
