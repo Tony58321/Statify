@@ -40,7 +40,8 @@ To start the server, run:
 npm run dev
 ```
 # Binary Distribution - Zip File for Admins
-For administrators or developers setting up Statify, you may need to package and distribute the required files.
+For administrators or developers setting up Statify, you may need to package and distribute the required files.  
+NOTE: Statify does not require a dedicated server, as it leverages Spotify's Developer API for authentication and data retrieval.
 ### Creating a ZIP File for Distribution
 1. Copy the following files and directories into a new folder:\
 /statify-react\
