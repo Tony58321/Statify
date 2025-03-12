@@ -109,6 +109,108 @@ use this template to write more test cases!
 |Date of Execution |3/9/2025 |
 
 
+|Test Case ID      | UAT-08|
+|------------------|--------------|
+|Title |Displaying X Number of Artists |
+|Test Designer |Ellie Tanferani |
+|Test Objective |Display the correct number of artists as specified by the user. |
+|Acceptance Criteria |Users can view the number of artists that they specified. |
+|Preconditions |Users should be logged in; Users should be properly whitelisted.|
+|Test Steps | <ul> <li>Once logged in, navigate to the artists page by clicking “Artists” in the nav bar. </li> <li>Enter the number of artists that you want to display.</li> <li>Click the “Get Top Artists” button.</li> </ul> |
+|Expected Result |The correct number of artists should display. Note: if the user does not have enough artists to fulfill the specified amount, a message will appear stating this.  |
+|Actual Result |The correct number of artists appeared.  |
+|Status |Passed |
+|Date of Execution |03/05/25 |
+
+|Test Case ID      | UAT-09-auto|
+|------------------|--------------|
+|Title |“Not You” Redirect|
+|Test Designer |James Grant|
+|Test Objective |Ensure that the user is redirected to the spotify login page upon pressing “Not you?” from the Spotify Login Page. |
+|Acceptance Criteria |Users with a saved session are redirected to the Spotify login page after pressing “Not you?”. |
+|Preconditions |The user has a Spotify account and is whitelisted for the app; The user has opened the Statify app and is not currently logged in, but the user has a saved session from a recent log in. |
+|Test Steps |<ul> <li>Press the “Log in with Spotify” Button</li> <li> </li>Press the “Not you?” Button<ul>|
+|Expected Result |The current browser tab is redirected to the Spotify login page. |
+|Actual Result |The current browser tab is redirected to the Spotify login page. |
+|Status |Passed |
+|Date of Execution |3/8/25|
+
+|Test Case ID      | UAT-10-auto|
+|------------------|--------------|
+|Title |Invalid login |
+|Test Designer |James Grant |
+|Test Objective |Ensure that login fails when the user enters invalid username and password. |
+|Acceptance Criteria |Users with a saved session are redirected to the Spotify login page after pressing “Not you?”. |
+|Preconditions |The user has a Spotify account and is whitelisted for the app; The user has opened the Statify app and is not currently logged in, but the user has a saved session from a recent log in. |
+|Test Steps | <ul> <li>Press the “Log in with Spotify” Button</li> <li>Press the “Not you?” Button</li> <li>Enter an arbitrary string for username and password.</li> <li>Press log in.</li></ul> |
+|Expected Result |Login is unsuccessful and the user remains on the same page. |
+|Actual Result |Login is unsuccessful and the user remains on the same page. |
+|Status |Passed |
+|Date of Execution |3/8/25 |
+
+|Test Case ID      | UAT-11|
+|------------------|--------------|
+|Title |Page load test |
+|Test Designer |Antonio Rodriguez |
+|Test Objective |Ensure that the initial page loads correctly and has the correct title |
+|Acceptance Criteria |The page expects the webpage to have the title, “Statify” |
+|Preconditions |The user is in the statify-react directory; The Statify app is run locally on localhost:5173 |
+|Test Steps |Running npx playwright test --ui in the terminal: <ul> <li>Once playwright opens, navigate to the test file and press play</li> <li>Playwright will navigate to localhost:5173</li><li>Give the page 3 seconds to render</li> <li>Verify that the page has the title “Statify”</li></ul> |
+|Expected Result |The page will load correctly and return the title “Statify” (pre-login screen) |
+|Actual Result |The page will load correctly and return the title “Statify” (pre-login screen) |
+|Status |Passed |
+|Date of Execution |3/1/25 |
+
+|Test Case ID      | UAT-12|
+|------------------|--------------|
+|Title |Open settings |
+|Test Designer |Elizabeth Stahlke |
+|Test Objective |Ensure that the settings menu is accessible by a logged-in user |
+|Acceptance Criteria |Settings menu appears in the top-right corner of the webpage after settings icon button is pressed |
+|Preconditions |The user is logged-in |
+|Test Steps |Locate the settings button in the top right of the corner and click the button. |
+|Expected Result |The settings menu should pop-up next to the settings button|
+|Actual Result |The settings menu appears next to the settings button |
+|Status |Passed |
+|Date of Execution |03-09-2025 |
 
 
+|Test Case ID      | UAT-13|
+|------------------|--------------|
+|Title |Change theme |
+|Test Designer |Elizabeth Stahlke |
+|Test Objective |Ensure that the user can change the color scheme of the website in the settings menu |
+|Acceptance Criteria |All elements of the webpage change to fit the selected color scheme, this color scheme remains until the user changes the theme again |
+|Preconditions |The user is logged in |
+|Test Steps |<ul> <li>Open the settings menu using the settings button</li> <li>Select the theme that you wish to change to</li> <li>Click on that theme</li> <li>Continue to navigate around webpage</li> </ul> |
+|Expected Result |The page should change themes and maintain that theme while navigating around the website (unless the user selects the same theme that was already applied, in that case the theme will remain the same) |
+|Actual Result |The theme changes correctly based on the one selected by the user and the page remains that theme until they change the theme again or the page is refreshed|
+|Status |Passed |
+|Date of Execution |03-09-2025|
 
+
+|Test Case ID      | UAT-14|
+|------------------|--------------|
+|Title |Show error message for invalid numbers of tracks or artists |
+|Test Designer |Shraddha Hegde |
+|Test Objective |Make sure that no results are displayed when the number entered are not between 1 to 50.  |
+|Acceptance Criteria |When the user enters a number that isn’t between 1 and 50, it should prompt the user to change it and not display any information.  |
+|Preconditions |User is logged in and either on get top tracks or get top artists page.  |
+|Test Steps |<ul> <li>Log in with spotify account.</li> <li>Go to either top tracks or top artists page. </li> <li>Enter a negative number (or 0) and a number above 50. </li></ul> |
+|Expected Result |It should throw an error message and prompt the user to re-enter a number within the bounds.  |
+|Actual Result |It asked to enter a number between 1 and 50 and didn’t display any of my top artists or tracks. |
+|Status |Passed |
+|Date of Execution |03-08-2025 |
+
+|Test Case ID      | UAT-15|
+|------------------|--------------|
+|Title |Show message if enough tracks or artists have not been listened to.  |
+|Test Designer |Shraddha Hegde|
+|Test Objective |If the user has not listened to the number of tracks or artists they wanted to be displayed, then it should show all the available data but also say that the number of artists or tracks they requested isn’t available.  |
+|Acceptance Criteria |A message pops up asking the user to listen to more tracks or artists if enough data isn’t available, but still display the data that is available.  |
+|Preconditions |User is logged in and either on get top tracks or get top artists page; User doesn’t have 50 artists or tracks listened to.|
+|Test Steps |<ul> <li>Log in with spotify account. </li> <li>Go to either top tracks or top artists page.</li> <li>Enter 50 for tracks and artists. </li> </ul> |
+|Expected Result |If there isn’t enough data, it should throw a message saying that enough tracks or artists hasn’t been listened to and then still display all the available data.  |
+|Actual Result |It said that enough artists had not been listened to and it displayed the available data.   |
+|Status |Passed |
+|Date of Execution |03-08-2025 |
